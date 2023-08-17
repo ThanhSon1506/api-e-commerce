@@ -1,41 +1,34 @@
 const express = require('express');
-const mongodb = require("mongoose");
+const mongoose = require("mongoose");
 const dotenv = require('dotenv');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
+const authRouter = require('./routers/authRouters');
 
-const User = require('./models/User');
+
 
 
 const app = express();
-const bcryptSalt = bcrypt.genSalt();
+
 dotenv.config();
 // json
 app.use(express.json());
 // cors
-app.use(cors({
+const corsOptions = {
     credentials: true,
-    origin: "http://localhost:5173"
+    origin: 'http://127.0.0.1:5173',
+    exposedHeaders: ['set-cookie'],
+}
+app.use(cors({
+    corsOptions
 }));
-console.log(process.env.MONGO_DB);
+app.options('*', cors(corsOptions));
 // mongodb
-mongodb.connect(process.env.MONGO_DB);
-
-
-
-
-app.get('/test', (req, res) => {
-    res.json('test ok');
-});
-app.post('/register', (req, res) => {
-    const { name, email, password } = req.body;
-    User.create({
-        name,
-        email,
-        password
-    });
-    res.json({
-        name, email, password
-    });
-})
+mongoose
+    .connect(process.env.MONGO_LOCAL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() => console.log("Database connected!"))
+    .catch(err => console.log(err));
 app.listen(4000);
+app.use(authRouter)
