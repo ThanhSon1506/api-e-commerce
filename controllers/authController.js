@@ -1,60 +1,151 @@
 const User = require('../models/User');
-const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const redisClient = require('../databases/initRedis');
+/* 
+Store token
+1) Local storage
+ XSS : sẽ bị chạy lệnh script lấy token
+2) HTTPONLY Cookies 
+ - ít bị ảnh hưởng xss, nhưng lại nguy hiểm với tk tấn công CSRF
+ - Có thể khắc phục CSRF -> SAMESITE của tk cookie
+3) Redux Store -> ACCESS TOKEN
+   HTTPONLY COOKIES -> REFRESHTOKEN
 
-const bcryptSalt = bcrypt.genSaltSync(12);
-const jwtSecret = "asd4sdsd14asd14sda1s4d5sdc4b";
+=> BFF PATERN (Backend for Frontend)
+**/
 
-// handle errors
-const handleErrors = (err) => {
-    console.log(err.message, err.code);
-    let errors = { email: '', password: '' };
-    // validation errors
-    if (err.message.includes('user validator failed')) {
-        Object.values(err.errors).forEach(({ properties }) => {
-            errors[properties.path] = properties.message;
-        });
-    }
-    return errors;
-}
 
-module.exports.postRegister = async (req, res) => {
-    try {
-        const { name, email, password } = req.body;
-        const newUser = User.create({
-            name,
-            email,
-            password: bcrypt.hashSync(password, bcryptSalt),
-        });
-        return res(201).json(newUser);
-    } catch (errors) {
-        const error = handleErrors(errors);
-        res.status(422).json(errors);
-    }
-}
-
-module.exports.postLogin = async (req, res) => {
-    try {
-        const { email, password } = req.body;
-        const user = await User.findOne({ email });
-        if (user) {
-            const match = await bcrypt.compare(password, user.password);
-            if (match) {
-                jwt.sign({ email: user.email, id: user._id }, jwtSecret, {}, (err, token) => {
-                    if (err) throw err;
-                    return res.cookie("token", token).json('pass ok');
-                });
-            } else {
-                return res.json('pass not ok');
+const authController = {
+    // handle errors
+    handleErrors: (err) => {
+        const errorList = {};
+        if (err['code'] != undefined) {
+            for (let x in err) {
+                const keyValue = Object.keys(err['keyValue'])[0];
+                if (err['code'] === 11000) {
+                    errorList[keyValue] = `There is an user with the ${keyValue} repeated.`
+                }
             }
         } else {
-            return res.json('not found');
+            const errorJson = err['errors'];
+            for (let x in errorJson) {
+                errorList[x] = errorJson[x]['properties']['message'];
+            }
+        }
+        return errorList;
+    },
+    generateAccessToken: (id, booleanAdmin) => {
+        return jwt.sign({
+            id: id,
+            admin: booleanAdmin
+        },
+            process.env.JWT_ACCESS_KEY,
+            { expiresIn: process.env.JWT_ACCESS_TIME }
+        );
+    },
+
+    generateRefreshToken: (id, booleanAdmin) => {
+        return jwt.sign({
+            id: id,
+            admin: booleanAdmin
+        },
+            process.env.JWT_REFRESH_KEY,
+            { expiresIn: process.env.JWT_REFRESH_TIME }
+        );
+
+    },
+
+    postRegister: async (req, res) => {
+        const { name, email, password } = req.body;
+        const propertyRemove = 'password';
+        try {
+            const user = await User.create({
+                name,
+                email,
+                password,
+            });
+            const token = authController.generateAccessToken(user);
+            const { [propertyRemove]: property_remove, ...other } = user._doc;
+            res.status(201).json({ status: true, message: "Register successfully", data: other });
+        } catch (err) {
+            const errors = authController.handleErrors(err);
+            res.status(400).json({ errors });
+        }
+    },
+
+    postLogin: async (req, res) => {
+        try {
+            const { email, password } = req.body;
+            const user = await User.findOne({ email });
+            if (!user) {
+                return res.json("Email is not exits");
+            }
+            const validPassword = await bcrypt.compare(password, user.password);
+            if (!validPassword) {
+                return res.json('Wrong password');
+            }
+            if (user && validPassword) {
+                const accessToken = authController.generateAccessToken(user._id, user.admin);
+                const refreshToken = authController.generateRefreshToken(user._id, user.admin);
+                // refreshTokens.push(refreshToken);
+                redisClient.set(user._id.toString(), JSON.stringify({ token: refreshToken }));
+
+                res.cookie("refreshToken", refreshToken, {
+                    httpOnly: true,
+                    secure: process.env.JWT_SECURE,
+                    path: "/",
+                    sameSite: "strict",
+                });
+                const { password, ...other } = user._doc;
+                res.status(201).json({ status: true, message: "Login successfully", ...other, accessToken });
+            }
+        } catch (err) {
+            const errors = authController.handleErrors(err);
+            console.log(err);
+            res.status(400).json({ errors });
         }
 
-    } catch (error) {
-        // const error = handleErrors(errors);
-        console.log(error);
-        res.status(422).json(error);
-    }
+    },
+    // Redis
+    requestRefreshToken: async (req, res) => {
+        // Take refresh token from user
+        const refreshToken = req.cookies.refreshToken;
+        if (!refreshToken) return res.status(401).json("You're not authenticated");
 
-}
+        jwt.verify(refreshToken, process.env.JWT_REFRESH_KEY, (err, user) => {
+            if (err) {
+                console.log(err);
+            }
+            // Create new accessToken, refresh token
+            const newAccessToken = authController.generateAccessToken(user.id, user.admin);
+            const newRefreshToken = authController.generateRefreshToken(user.id, user.admin);
+
+            redisClient.set(user.id, JSON.stringify({ token: newRefreshToken }));
+
+            res.cookie("refreshToken", newRefreshToken, {
+                httpOnly: true,
+                secure: process.env.JWT_SECURE,
+                path: "/",
+                sameSite: "strict",
+            });
+            res.status(200).json({ accessToken: newAccessToken });
+        });
+    },
+    userLogout: async (req, res) => {
+        const refreshToken = req.cookies.refreshToken;
+        jwt.verify(refreshToken, process.env.JWT_REFRESH_KEY, async (err, user) => {
+            if (err) {
+                console.log(err);
+            }
+            // remove the refresh token
+            await redisClient.del(user.id);
+            // blacklist current access token
+            res.clearCookie("refreshToken");
+            res.status(200).json({ status: true, message: "Logged out!" });
+        });
+    }
+};
+
+
+module.exports = authController;
