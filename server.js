@@ -1,37 +1,27 @@
 const express = require('express');
-const mongoose = require("mongoose");
 const dotenv = require('dotenv');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const authRouter = require('./routers/authRouters');
 const userRouter = require('./routers/userRouters');
-
+const dbConnect = require('./config/initMongo');
+const initRoutes = require('./routers');
 const app = express();
-const corsOptions = {
-    credentials: true,
-    origin: 'http://127.0.0.1:5173',
-}
 
+const corsOptions = {
+    origin: 'http://localhost:5173',
+    credentials: true,
+    optionSuccessStatus: 200,           //access-control-allow-credentials:true
+}
+dbConnect();
 
 dotenv.config();
 app.use(express.json());
-app.use(cookieParser());
-app.use(cors({
-    corsOptions
-}));
+app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));
-
-// mongodb
-mongoose
-    .connect(process.env.MONGO_LOCAL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
-    .then(() => console.log("Database connected!"))
-    .catch(err => console.log(err));
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.listen(4000);
-
-app.use("/v1/auth", authRouter);
-app.use("/v1/user", userRouter);
-
+initRoutes(app);
 // JSON WEB TOKEN

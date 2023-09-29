@@ -1,15 +1,20 @@
 const jwt = require("jsonwebtoken");
-const redisClient = require('../databases/initRedis');
+const redisClient = require('../config/initRedis');
+const expressAsyncHandler = require("express-async-handler");
 
 const authMiddleware = {
     // verifyToken
-    verifyToken: (req, res, next) => {
-        const token = req.headers.token;
+    verifyToken: expressAsyncHandler((req, res, next) => {
+        const token = req.headers.authorization;
         if (token) {
             const accessToken = token.split(" ")[1];
             jwt.verify(accessToken, process.env.JWT_ACCESS_KEY, (err, user) => {
                 if (err) {
-                    return res.status(403).json("Token is not valid");
+                    return res.status(403).json({
+                        success: false,
+                        message: "Token is not valid",
+                        stack: err
+                    });
                 }
                 req.user = user;
                 // verify blacklisted access token
@@ -17,25 +22,27 @@ const authMiddleware = {
             });
         }
         else {
-            return res.status(401).json("You're not authenticated");
+            return res.status(401).json({ success: false, message: "You're not authenticated" });
         }
-    },
-    verifyTokenAndAdminAuth: (req, res, next) => {
-        authMiddleware.verifyToken(req, res, () => {
-            if (req.user.id === req.params.id || req.user.admin) {
-                next();
-            }
-            else {
-                res.status(403).json("You're not allowed to delete other");
-            }
-        });
-    },
-    verifyRefreshToken: (req, res, next) => {
+    }),
+    verifyAdminAuth: expressAsyncHandler((req, res, next) => {
+        const { role } = req.user;
+        if (role !== "admin")
+            return res.status(401).json({
+                success: false,
+                message: "Required admin role"
+            })
+        next();
+        // authMiddleware.verifyToken(req, res, () => {
+        // });
+    }),
+    verifyRefreshToken: expressAsyncHandler((req, res, next) => {
         const refreshToken = req.cookies.refreshToken;
+        console.log("refreshToken", refreshToken);
         if (refreshToken === null) return res.status(401).json({ status: false, message: "Invalid request" });
         try {
             const decodeJwt = jwt.verify(refreshToken, process.env.JWT_REFRESH_KEY);
-            req.userData = decodeJwt;
+            console.log(decodeJwt);
             // verify if token is cookie or not
             redisClient.get(decodeJwt.id, (err, data) => {
                 if (err) {
@@ -46,11 +53,13 @@ const authMiddleware = {
                 next();
             });
         } catch (error) {
+            console.log(error);
             return res.status(401).json({
                 status: false, message: "Your token is not valid", data: error
             });
         }
-    },
+    })
+    ,
 }
 
 module.exports = authMiddleware;

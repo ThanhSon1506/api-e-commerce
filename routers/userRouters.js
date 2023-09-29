@@ -3,9 +3,16 @@ const userController = require('../controllers/userController');
 const authMiddleware = require('../middleware/authMiddleware');
 const router = Router();
 
-// Get All users
-router.get("/", authMiddleware.verifyToken, userController.getAllUsers);
-// Delete user
-router.delete("/:id", authMiddleware.verifyTokenAndAdminAuth, userController.deleteUser);
+const { verifyToken, verifyAdminAuth } = authMiddleware;
+//CRUD user
+router.get("/", [verifyToken, verifyAdminAuth], userController.getAllUsers);
+router.delete("/", [verifyToken, verifyAdminAuth], userController.deleteUser);
+router.put("/:uid", [verifyToken, verifyAdminAuth], userController.updateUser);
+router.put("/current", [verifyToken], userController.updateUser);
+router.get("/current", verifyToken, userController.getCurrent);
+// Get reset password
+router.get('/forgot-password', userController.forgotPassword);
+router.put('/reset-password', userController.resetPassword);
 
-module.exports = router;    
+
+module.exports = router;      

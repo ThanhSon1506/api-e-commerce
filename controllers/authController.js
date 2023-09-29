@@ -1,7 +1,8 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const redisClient = require('../databases/initRedis');
+const redisClient = require('../config/initRedis');
+const expressAsyncHandler = require('express-async-handler');
 /* 
 Store token
 1) Local storage
@@ -13,42 +14,46 @@ Store token
    HTTPONLY COOKIES -> REFRESHTOKEN
 
 => BFF PATERN (Backend for Frontend)
+=================================================================
+== refresh token => cấp mới access token
+== access token => xác thực người dùng, phân quyền người dùng
+
+
 **/
 
 
 const authController = {
     // handle errors
-    handleErrors: (err) => {
-        const errorList = {};
-        if (err['code'] != undefined) {
-            for (let x in err) {
-                const keyValue = Object.keys(err['keyValue'])[0];
-                if (err['code'] === 11000) {
-                    errorList[keyValue] = `There is an user with the ${keyValue} repeated.`
-                }
-            }
-        } else {
-            const errorJson = err['errors'];
-            for (let x in errorJson) {
-                errorList[x] = errorJson[x]['properties']['message'];
-            }
-        }
-        return errorList;
-    },
-    generateAccessToken: (id, booleanAdmin) => {
+    // handleErrors: (err) => {
+    //     const errorList = {};
+    //     if (err['code'] != undefined) {
+    //         for (let x in err) {
+    //             const keyValue = Object.keys(err['keyValue'])[0];
+    //             if (err['code'] === 11000) {
+    //                 errorList[keyValue] = `There is an user with the ${keyValue} repeated.`
+    //             }
+    //         }
+    //     } else {
+    //         const errorJson = err['errors'];
+    //         for (let x in errorJson) {
+    //             errorList[x] = errorJson[x]['properties']['message'];
+    //         }
+    //     }
+    //     throw new Error(errorList);
+    // },
+    generateAccessToken: (id, role) => {
         return jwt.sign({
             id: id,
-            admin: booleanAdmin
+            role: role
         },
             process.env.JWT_ACCESS_KEY,
             { expiresIn: process.env.JWT_ACCESS_TIME }
         );
     },
 
-    generateRefreshToken: (id, booleanAdmin) => {
+    generateRefreshToken: (id) => {
         return jwt.sign({
             id: id,
-            admin: booleanAdmin
         },
             process.env.JWT_REFRESH_KEY,
             { expiresIn: process.env.JWT_REFRESH_TIME }
@@ -56,95 +61,104 @@ const authController = {
 
     },
 
-    postRegister: async (req, res) => {
-        const { name, email, password } = req.body;
-        const propertyRemove = 'password';
-        try {
-            const user = await User.create({
-                name,
-                email,
-                password,
+    postRegister: expressAsyncHandler(async (req, res) => {
+        const { firstName, lastName, email, password } = req.body;
+        if (!email || !password || !lastName || !firstName)
+            return res.status(400).json({
+                success: false,
+                message: 'Missing inputs'
             });
-            const token = authController.generateAccessToken(user);
-            const { [propertyRemove]: property_remove, ...other } = user._doc;
-            res.status(201).json({ status: true, message: "Register successfully", data: other });
-        } catch (err) {
-            const errors = authController.handleErrors(err);
-            res.status(400).json({ errors });
-        }
-    },
-
-    postLogin: async (req, res) => {
-        try {
-            const { email, password } = req.body;
-            const user = await User.findOne({ email });
-            if (!user) {
-                return res.json("Email is not exits");
-            }
-            const validPassword = await bcrypt.compare(password, user.password);
-            if (!validPassword) {
-                return res.json('Wrong password');
-            }
-            if (user && validPassword) {
-                const accessToken = authController.generateAccessToken(user._id, user.admin);
-                const refreshToken = authController.generateRefreshToken(user._id, user.admin);
-                // refreshTokens.push(refreshToken);
-                redisClient.set(user._id.toString(), JSON.stringify({ token: refreshToken }));
-
-                res.cookie("refreshToken", refreshToken, {
-                    httpOnly: true,
-                    secure: process.env.JWT_SECURE,
-                    path: "/",
-                    sameSite: "strict",
-                });
-                const { password, ...other } = user._doc;
-                res.status(201).json({ status: true, message: "Login successfully", ...other, accessToken });
-            }
-        } catch (err) {
-            const errors = authController.handleErrors(err);
-            console.log(err);
-            res.status(400).json({ errors });
+        const user = await User.findOne({ email });
+        if (user)
+            throw new Error('User has existed!');
+        else {
+            const newUser = await User.init().then(() => User.create(req.body));
+            return res.status(201).json({
+                status: newUser ? true : false,
+                message: newUser ? "Register successfully" : "Something went wrong"
+            });
         }
 
-    },
-    // Redis
-    requestRefreshToken: async (req, res) => {
-        // Take refresh token from user
-        const refreshToken = req.cookies.refreshToken;
-        if (!refreshToken) return res.status(401).json("You're not authenticated");
 
-        jwt.verify(refreshToken, process.env.JWT_REFRESH_KEY, (err, user) => {
-            if (err) {
-                console.log(err);
-            }
-            // Create new accessToken, refresh token
-            const newAccessToken = authController.generateAccessToken(user.id, user.admin);
-            const newRefreshToken = authController.generateRefreshToken(user.id, user.admin);
+    }),
 
-            redisClient.set(user.id, JSON.stringify({ token: newRefreshToken }));
+    postLogin: expressAsyncHandler(async (req, res) => {
+        const { email, password } = req.body;
+        if (!email || !password)
+            return res.status(400).json({
+                success: false,
+                message: 'Missing inputs'
+            });
+        const user = await User.findOne({ email });
+        if (!user)
+            throw new Error("Email is not exits");
+        if (!await user.isCorrectPassword(password))
+            throw new Error("Wrong password");
+        if (user && await user.isCorrectPassword(password)) {
+            // Create access token
+            const accessToken = authController.generateAccessToken(user._id, user.role);
+            // Create refresh token
+            const refreshToken = authController.generateRefreshToken(user._id);
 
-            res.cookie("refreshToken", newRefreshToken, {
+            // Save refresh token in database
+            // await User.findByIdAndUpdate(user._id, { refreshToken }, { new: true });
+
+            // Save refresh token in redis
+            redisClient.set(user._id.toString(), JSON.stringify({ token: refreshToken }));
+            res.cookie("refreshToken", refreshToken, {
                 httpOnly: true,
-                secure: process.env.JWT_SECURE,
+                secure: false,
                 path: "/",
                 sameSite: "strict",
             });
-            res.status(200).json({ accessToken: newAccessToken });
+            const { password, role, ...other } = user._doc;
+            return res.status(201).json({ status: true, message: "Login successfully", ...other, accessToken });
+        }
+
+    }),
+    // Redis
+    requestRefreshToken: expressAsyncHandler(async (req, res) => {
+        // Take refresh token from user
+        const refreshToken = req.cookies.refreshToken;
+        if (!refreshToken) throw new Error('No refresh token in cookies');
+        // Do is token in valid ?
+        jwt.verify(refreshToken, process.env.JWT_REFRESH_KEY, async (err, user) => {
+            if (err) throw new Error(error);
+            // Create new accessToken, refresh token
+            const newAccessToken = authController.generateAccessToken(user.id, user.role);
+            // const newRefreshToken = authController.generateRefreshToken(user.id, user.admin);
+            // Save redis in database
+            // redisClient.set(user.id, JSON.stringify({ token: newRefreshToken }));
+            // =========In with mongodb========
+            // Check token is correct token had save database
+            // const response = await User.findOne({ _id: user.id, refreshToken: refreshToken });
+            // ================================
+            // res.cookie("refreshToken", newRefreshToken, {
+            //     httpOnly: true,
+            //     secure: false,
+            //     path: "/",
+            //     sameSite: "strict",
+            // });
+            return res.status(200).json({ accessToken: newAccessToken });
         });
-    },
-    userLogout: async (req, res) => {
+    }),
+    userLogout: expressAsyncHandler(async (req, res) => {
         const refreshToken = req.cookies.refreshToken;
         jwt.verify(refreshToken, process.env.JWT_REFRESH_KEY, async (err, user) => {
-            if (err) {
-                console.log(err);
-            }
+            if (err) throw new Error(error);
+            // delete refresh token in database mongo 
+            // await User.findOneAndUpdate({ refreshToken: cookie.refreshToken }, { refreshToken: '' }, { new: true })
             // remove the refresh token
             await redisClient.del(user.id);
             // blacklist current access token
-            res.clearCookie("refreshToken");
-            res.status(200).json({ status: true, message: "Logged out!" });
+            res.clearCookie("refreshToken", {
+                httpOnly: true,
+                secure: true,
+            });
+            return res.status(200).json({ success: true, message: "Logged out!" });
         });
-    }
+    }),
+
 };
 
 
