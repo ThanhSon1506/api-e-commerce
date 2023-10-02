@@ -96,7 +96,6 @@ const userController = {
             message: user ? "Update password" : "Something went wrong"
         });
     }),
-
 }
 
 module.exports = userController;

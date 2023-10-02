@@ -112,7 +112,7 @@ const authController = {
                 sameSite: "strict",
             });
             const { password, role, ...other } = user._doc;
-            return res.status(201).json({ status: true, message: "Login successfully", ...other, accessToken });
+            return res.status(201).json({ status: true, message: "Login successfully", accessToken, ...other });
         }
 
     }),
