@@ -12,9 +12,8 @@ const corsOptions = {
     credentials: true,
     optionSuccessStatus: 200,           //access-control-allow-credentials:true
 }
-dbConnect();
-
 dotenv.config();
+dbConnect();
 app.use(express.json());
 app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));

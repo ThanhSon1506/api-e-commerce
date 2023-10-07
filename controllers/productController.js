@@ -107,8 +107,15 @@ const productController = {
                 $push: { ratings: { star, comment, posteBy: id } }
             }, { new: true });
         }
+        const updateProduct = await Product.findById(pid);
+        const ratingCount = updateProduct.ratings.length;
+        const sumRatings = updateProduct.ratings.reduce((sum, element) => sum + +element.star, 0);
+        updateProduct.totalRating = Math.round(sumRatings * 10 / ratingCount) / 10;
+        await updateProduct.save();
+
         return res.status(200).json({
             status: true,
+            updateProduct
         });
     }),
 }

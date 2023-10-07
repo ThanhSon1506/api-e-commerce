@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const crypto = require('crypto')
 
 
-const UserSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
         required: true,
@@ -71,13 +71,13 @@ const UserSchema = new mongoose.Schema({
 );
 
 // fire a function after doc saved to db
-UserSchema.post('save', function (doc, next) {
-    console.log('new user was created & saved', doc);
-    next();
-});
+// userSchema.post('save', function (doc, next) {
+//     console.log('new user was created & saved', doc);
+//     next();
+// });
 
 // fire a function before doc saved to db
-UserSchema.pre('save', function (next) {
+userSchema.pre('save', function (next) {
     console.log('user about to be created & saved', this);
     if (!this.isModified('password')) {
         next();
@@ -87,7 +87,7 @@ UserSchema.pre('save', function (next) {
     next();
 });
 
-UserSchema.methods = {
+userSchema.methods = {
     isCorrectPassword: async function (password) {
         return await bcrypt.compare(password, this.password);
     },
@@ -98,6 +98,6 @@ UserSchema.methods = {
         return resetToken;
     }
 }
-const userModel = mongoose.model('User', UserSchema);
+const userModel = mongoose.model('User', userSchema);
 
 module.exports = userModel;
