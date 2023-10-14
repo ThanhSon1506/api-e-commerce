@@ -8,23 +8,19 @@ components:
         email:
           type: string
           format: email
-        name:
+        firstName:
+          type: string
+        lastName:
           type: string
         role:
           type: string
           enum: [user, admin]
       example:
-        id: 5ebac534954b54139806c112
-        email: fake@example.com
-        name: fake name
-        role: user
-    AuthTokens:
-      type: object
-      properties:
-        access:
-          $ref: '#/components/schemas/Token'
-        refresh:
-          $ref: '#/components/schemas/Token'
+        email: admin@gmail.com
+        lastName: A
+        firstName: cumque
+        password: 123456
+        mobile: 123456789
     Error:
       type: object
       properties:
@@ -32,7 +28,6 @@ components:
           type: number
         message:
           type: string
-
   responses:
     DuplicateEmail:
       description: Email already taken

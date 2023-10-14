@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "lint": "eslint src --ext js --report-unused-disable-directives --max-warnings 0",
-    "clean": "rm -rf build && mkdir build",
+    "clean": "rmdir /q /s build && mkdir build",
     "build-babel": "babel ./src -d ./build/src",
     "build": "npm run clean && npm run build-babel",
     "production": "npm run build && node ./build/src/server.js",
@@ -18,8 +18,10 @@
     "crypto": "^1.0.1",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
+    "http-status": "^1.7.0",
     "joi": "^17.11.0",
     "jsonwebtoken": "^9.0.1",
+    "moment": "^2.29.4",
     "mongoose": "^7.4.3",
     "morgan": "^1.10.0",
     "nodemailer": "^6.9.5",
@@ -27,7 +29,8 @@
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
     "validator": "^13.11.0",
-    "winston": "^3.11.0"
+    "winston": "^3.11.0",
+    "winston-daily-rotate-file": "^4.7.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.10",
@@ -40,7 +43,10 @@
     "body-parser": "^1.20.2",
     "dotenv": "^16.3.1",
     "eslint": "^8.51.0",
+    "http": "^0.0.1-security",
     "nodemon": "^3.0.1",
-    "redis": "^3.1.2"
+    "patch": "^0.0.1",
+    "redis": "^3.1.2",
+    "stream": "^0.0.2"
   }
 }

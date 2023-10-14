@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken'
 import redisClient from '~/config/initRedis'
 import expressAsyncHandler from 'express-async-handler'
+import config from '~/config/config'
 
 const authMiddleware = {
   // verifyToken
@@ -8,7 +9,7 @@ const authMiddleware = {
     const token = req.headers.authorization
     if (token) {
       const accessToken = token.split(' ')[1]
-      jwt.verify(accessToken, process.env.JWT_ACCESS_KEY, (err, user) => {
+      jwt.verify(accessToken, config.jwt.secret, (err, user) => {
         if (err) {
           return res.status(403).json({
             success: false,
@@ -40,13 +41,13 @@ const authMiddleware = {
     const refreshToken = req.cookies.refreshToken
     if (refreshToken === null) return res.status(401).json({ status: false, message: 'Invalid request' })
     try {
-      const decodeJwt = jwt.verify(refreshToken, process.env.JWT_REFRESH_KEY)
+      const decodeJwt = jwt.verify(refreshToken, config.jwt.secret)
       // verify if token is cookie or not
-      redisClient.get(decodeJwt.id, (err, data) => {
+      redisClient.get(decodeJwt.sub, (err, data) => {
         if (err) throw new Error(err)
 
         if (data === null) return res.status(401).json({ status: false, message: 'Invalid request. Token is not invalid' })
-        if (JSON.parse(data).token != refreshToken) return res.status(401).json({ status: false, message: 'Invalid request. Token is not invalid' })
+        if (JSON.parse(data).token != refreshToken) return res.status(401).json({ status: false, message: 'Invalid request. Token is not correct data' })
         next()
       })
     } catch (error) {

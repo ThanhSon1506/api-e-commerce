@@ -1,7 +1,8 @@
-import User from '~/models/User'
-import jwt from 'jsonwebtoken'
-import redisClient from '~/config/initRedis'
+
 import expressAsyncHandler from 'express-async-handler'
+import httpStatus from 'http-status'
+import emailService from '~/services/emailService'
+const { authService, userService, tokenService } = require('../services')
 /*
 Store token
 1) Local storage
@@ -16,150 +17,110 @@ Store token
 =================================================================
 == refresh token => cấp mới access token
 == access token => xác thực người dùng, phân quyền người dùng
-
-
 **/
 
-
+/**
+ * register auth
+ * @param {string} password
+ * @param {string} email
+ * @param {string} lastName
+ * @param {string} firstName
+ * @param {string} phone
+ * @returns {Promise<Object>}
+ */
 const authController = {
-  // handle errors
-  // handleErrors: (err) => {
-  //     const errorList = {};
-  //     if (err['code'] != undefined) {
-  //         for (let x in err) {
-  //             const keyValue = Object.keys(err['keyValue'])[0];
-  //             if (err['code'] === 11000) {
-  //                 errorList[keyValue] = `There is an user with the ${keyValue} repeated.`
-  //             }
-  //         }
-  //     } else {
-  //         const errorJson = err['errors'];
-  //         for (let x in errorJson) {
-  //             errorList[x] = errorJson[x]['properties']['message'];
-  //         }
-  //     }
-  //     throw new Error(errorList);
-  // },
-  generateAccessToken: (id, role) => {
-    return jwt.sign({
-      id: id,
-      role: role
-    },
-    process.env.JWT_ACCESS_KEY,
-    { expiresIn: process.env.JWT_ACCESS_TIME }
-    )
-  },
-
-  generateRefreshToken: (id) => {
-    return jwt.sign({
-      id: id
-    },
-    process.env.JWT_REFRESH_KEY,
-    { expiresIn: process.env.JWT_REFRESH_TIME }
-    )
-
-  },
-
   postRegister: expressAsyncHandler(async (req, res) => {
-    const { firstName, lastName, email, password } = req.body
-    if (!email || !password || !lastName || !firstName)
-      return res.status(400).json({
-        success: false,
-        message: 'Missing inputs'
-      })
-    const user = await User.findOne({ email })
-    if (user)
-      throw new Error('User has existed!')
-    else {
-      const newUser = await User.init().then(() => User.create(req.body))
-      return res.status(201).json({
-        status: newUser ? true : false,
-        message: newUser ? 'Register successfully' : 'Something went wrong'
-      })
-    }
+    const newUser = await userService.createUser(req.body)
+    const tokens = await tokenService.generateAuthTokens(newUser)
+    const accessToken= tokens.access.token
 
-
+    res.status(httpStatus.CREATED).send({
+      status: newUser ? true : false,
+      accessToken,
+      message: newUser ? 'Register successfully' : 'Something went wrong'
+    })
   }),
-
+  /**
+ * Login auth
+ * @param {string} password
+ * @param {string} email
+ * @returns {Promise<Object>}
+ */
   postLogin: expressAsyncHandler(async (req, res) => {
     const { email, password } = req.body
-    if (!email || !password)
-      return res.status(400).json({
-        success: false,
-        message: 'Missing inputs'
-      })
-    const user = await User.findOne({ email })
-    if (!user)
-      throw new Error('Email is not exits')
-    if (!await user.isCorrectPassword(password))
-      throw new Error('Wrong password')
-    if (user && await user.isCorrectPassword(password)) {
-      // Create access token
-      const accessToken = authController.generateAccessToken(user._id, user.role)
-      // Create refresh token
-      const refreshToken = authController.generateRefreshToken(user._id)
-
-      // Save refresh token in database
-      // await User.findByIdAndUpdate(user._id, { refreshToken }, { new: true });
-
-      // Save refresh token in redis
-      redisClient.set(user._id.toString(), JSON.stringify({ token: refreshToken }))
-      res.cookie('refreshToken', refreshToken, {
-        httpOnly: true,
-        secure: false,
-        path: '/',
-        sameSite: 'strict'
-      })
-      // eslint-disable-next-line no-unused-vars
-      const { password, role, ...other } = user._doc
-      return res.status(201).json({ status: true, message: 'Login successfully', accessToken, ...other })
-    }
-
-  }),
-  // Redis
-  requestRefreshToken: expressAsyncHandler(async (req, res) => {
-    // Take refresh token from user
-    const refreshToken = req.cookies.refreshToken
-    if (!refreshToken) throw new Error('No refresh token in cookies')
-    // Do is token in valid ?
-    jwt.verify(refreshToken, process.env.JWT_REFRESH_KEY, async (err, user) => {
-      if (err) throw new Error(err)
-      // Create new accessToken, refresh token
-      const newAccessToken = authController.generateAccessToken(user.id, user.role)
-      // const newRefreshToken = authController.generateRefreshToken(user.id, user.admin);
-      // Save redis in database
-      // redisClient.set(user.id, JSON.stringify({ token: newRefreshToken }));
-      // =========In with mongodb========
-      // Check token is correct token had save database
-      // const response = await User.findOne({ _id: user.id, refreshToken: refreshToken });
-      // ================================
-      // res.cookie("refreshToken", newRefreshToken, {
-      //     httpOnly: true,
-      //     secure: false,
-      //     path: "/",
-      //     sameSite: "strict",
-      // });
-      return res.status(200).json({ accessToken: newAccessToken })
+    const user = await authService.loginUserWithEmailAndPassword(email, password)
+    const tokens = await tokenService.generateAuthTokens(user)
+    const accessToken= tokens.access.token
+    res.cookie('refreshToken', tokens.refresh.token, {
+      httpOnly: true,
+      secure: false,
+      path: '/',
+      sameSite: 'strict'
     })
+    // eslint-disable-next-line no-unused-vars
+    const { password: userPassword, role, ...other } = user._doc
+    return res.send({ status:true, message:'Login successfully', accessToken, other })
   }),
+  /**
+ * Logout auth
+ * @param {cookie} refreshToken
+ * @returns {Promise<Object>}
+ */
   userLogout: expressAsyncHandler(async (req, res) => {
     const refreshToken = req.cookies.refreshToken
-    jwt.verify(refreshToken, process.env.JWT_REFRESH_KEY, async (err, user) => {
-      if (err) throw new Error(err)
-      // delete refresh token in database mongo
-      // await User.findOneAndUpdate({ refreshToken: cookie.refreshToken }, { refreshToken: '' }, { new: true })
-      // remove the refresh token
-      await redisClient.del(user.id)
-      // blacklist current access token
-      res.clearCookie('refreshToken', {
-        httpOnly: true,
-        secure: true
-      })
-      return res.status(200).json({ success: true, message: 'Logged out!' })
+    await authService.logout(refreshToken)
+    res.clearCookie('refreshToken', {
+      httpOnly: true,
+      secure: true
     })
+    return res.status(200).json({ success: true, message: 'Logged out!' })
+  }),
+  /**
+ * refresh token in auth
+ * @param {cookie} refreshToken
+ * @returns {Promise<Object>}
+ */
+  requestRefreshToken: expressAsyncHandler(async (req, res) => {
+    const refreshToken = req.cookies.refreshToken
+    const tokens = await authService.refreshAuth(refreshToken)
+    const newAccessToken=tokens.access.token
+    res.cookie('refreshToken', tokens.refresh.token, {
+      httpOnly: true,
+      secure: false,
+      path: '/',
+      sameSite: 'strict'
+    })
+    return res.status(200).json({ accessToken: newAccessToken })
+  }),
+  /**
+ * forgot password
+ * @param {body} email
+ * @returns {Promise<Object>}
+ */
+  forgotPassword : expressAsyncHandler(async (req, res) => {
+    const resetPasswordToken = await tokenService.generateResetPasswordToken(req.body.email)
+    await emailService.sendResetPasswordEmail(req.body.email, resetPasswordToken)
+    res.status(httpStatus.NO_CONTENT).send()
+  }),
+  /**
+ * reset password
+ * @param {body} token
+ * @param {body} password
+ * @returns {Promise<Object>}
+ */
+  resetPassword : expressAsyncHandler(async (req, res) => {
+    await authService.resetPassword(req.query.token, req.body.password)
+    res.status(httpStatus.NO_CONTENT).send()
+  }),
+  sendVerificationEmail : expressAsyncHandler(async (req, res) => {
+    const user = await userService.getUserById(req.user.sub)
+    const verifyEmailToken = await tokenService.generateVerifyEmailToken(user)
+    await emailService.sendVerificationEmail(user.email, verifyEmailToken)
+    res.status(httpStatus.NO_CONTENT).send()
+  }),
+  verifyEmail : expressAsyncHandler(async (req, res) => {
+    await authService.verifyEmail(req.query.token)
+    res.status(httpStatus.NO_CONTENT).send()
   })
-
 }
-
-
 module.exports = authController

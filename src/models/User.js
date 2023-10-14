@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { toJSON } from './plugins'
 const { isEmail } = require('validator')
 const bcrypt = require('bcrypt')
 const crypto = require('crypto')
@@ -16,7 +17,7 @@ const userSchema = new mongoose.Schema({
   mobile: {
     type: String,
     required: true,
-    unique: [true, 'Please enter an phone']
+    unique: [true, 'Số điện thoại của bạn đã bị trùng']
   },
   email: {
     type: String,
@@ -54,6 +55,10 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
+  isEmailVerified:{
+    type:Boolean,
+    default:false
+  },
   refreshToken: {
     type: String
   },
@@ -85,7 +90,21 @@ userSchema.pre('save', function (next) {
   this.password = bcrypt.hashSync(this.password, bcryptSalt)
   next()
 })
-
+/**
+ * Check if email is taken
+ * @param {string} email - The user's email
+ * @param {ObjectId} [excludeUserId] - The id of the user to be excluded
+ * @returns {Promise<boolean>}
+ */
+userSchema.statics.isEmailTaken = async function (email, excludeUserId) {
+  const user = await this.findOne({ email, _id: { $ne: excludeUserId } })
+  return !!user
+}
+/**
+ * Check if password is change
+ * @param {string} password - The user's password
+ * @returns {Promise<boolean>}
+ */
 userSchema.methods = {
   isCorrectPassword: async function (password) {
     return await bcrypt.compare(password, this.password)
@@ -97,6 +116,8 @@ userSchema.methods = {
     return resetToken
   }
 }
+userSchema.plugin(toJSON)
+
 const userModel = mongoose.model('User', userSchema)
 
 module.exports = userModel

@@ -11,6 +11,7 @@ const specs = swaggerJsdoc({
 })
 
 router.use('/', swaggerUi.serve)
+
 router.get(
   '/',
   swaggerUi.setup(specs, {
