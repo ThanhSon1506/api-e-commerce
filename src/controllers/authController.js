@@ -30,15 +30,25 @@ Store token
  */
 const authController = {
   postRegister: expressAsyncHandler(async (req, res) => {
-    const newUser = await userService.createUser(req.body)
-    const tokens = await tokenService.generateAuthTokens(newUser)
-    const accessToken= tokens.access.token
+    try {
+      const newUser = await userService.createUser(req.body)
+      const tokens = await tokenService.generateAuthTokens(newUser)
+      const accessToken= tokens.access.token
 
-    res.status(httpStatus.CREATED).send({
-      status: newUser ? true : false,
-      accessToken,
-      message: newUser ? 'Register successfully' : 'Something went wrong'
-    })
+      res.status(httpStatus.CREATED).send({
+        status: newUser ? true : false,
+        accessToken,
+        message: newUser ? 'Register successfully' : 'Something went wrong'
+      })
+    } catch (error) {
+      if (error.message.includes('duplicate key') ) {
+        const keyValue = Object.keys(error['keyValue'])[0]
+        res.status(httpStatus.CONFLICT).send({ message:`${keyValue} đã tồn tại trong hệ thống.` })
+      } else {
+        res.status(httpStatus.CONFLICT).send({ message:error.message })
+      }
+    }
+
   }),
   /**
  * Login auth

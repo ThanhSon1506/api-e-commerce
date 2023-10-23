@@ -77,8 +77,35 @@ const userService = {
       success: response ? true : false,
       updateUser: response ? response : 'Some thing went wrong'
     })
+  }),
+  /**
+ * Query for blog Categories
+ * @param {Object} filter - Mongo filter
+ * @param {Object} options - Query options
+ * @param {string} [options.sortBy] - Sort option in the format: sortField:(desc|asc)
+ * @param {number} [options.limit] - Maximum number of results per page (default = 10)
+ * @param {number} [options.page] - Current page (default = 1)
+ * @returns {Promise<QueryResult>}
+ */
+  queryUsers : async (filter, options) => {
+    const user = await User.paginate(filter, options)
+    return user
+  }
+  ,
+  /**
+ * Verify email
+ * @param {string} promoteUserToAdmin
+ * @returns {Promise}
+ */
+  promoteUserToAdmin: expressAsyncHandler(async (userId) => {
+    const user=await userService.getUserById(userId)
+    if (!user) {
+      throw new Error()
+    }
+    user.role='admin'
+    await user.save()
+    return user
   })
-
 }
 
 module.exports = userService

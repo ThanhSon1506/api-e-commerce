@@ -1,24 +1,28 @@
 import expressAsyncHandler from 'express-async-handler'
 import BlogCategory from '~/models/BlogCategory'
+import { blogCategoryService } from '~/services'
+import pick from '~/utils/pick'
 
-const BlogCategoryController = {
+const blogCategoryController = {
   createCategory: expressAsyncHandler(async (req, res) => {
-    const response = await BlogCategory.create(req.body)
+    const response = await blogCategoryService.createBlogCategories(req.body)
     return res.status(200).json({
       success: response ? true : false,
       createdCategory: response ? response : 'Cannot create new blog-category'
     })
   }),
   getCategory: expressAsyncHandler(async (req, res) => {
-    const response = await BlogCategory.find().select('title _id')
+    const filter = pick(req.query, ['title', 'role'])
+    const options= pick(req.query, ['sortBy', 'limit', 'page', 'fields', 'populate'])
+    const result = await blogCategoryService.queryBlogCategories(filter, options)
     return res.status(200).json({
-      success: response ? true : false,
-      blogCategories: response ? response : 'Cannot create new blog-category'
+      success: result ? true : false,
+      blogCategories: result ? result : 'Cannot create new blog-category'
     })
   }),
   updateCategory: expressAsyncHandler(async (req, res) => {
     const { bcid } = req.params
-    const response = await BlogCategory.findByIdAndUpdate(bcid, req.body, { new: true })
+    const response = await blogCategoryService.updateBlogCategories(bcid, req.body)
     return res.status(200).json({
       success: response ? true : false,
       updateCategory: response ? response : 'Cannot update blog-category'
@@ -35,4 +39,4 @@ const BlogCategoryController = {
 
 }
 
-module.exports = BlogCategoryController
+module.exports = blogCategoryController

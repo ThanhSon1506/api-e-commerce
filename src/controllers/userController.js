@@ -2,13 +2,24 @@ import expressAsyncHandler from 'express-async-handler'
 import { userService } from '~/services'
 import ApiError from '~/utils/ApiError'
 import httpStatus from 'http-status'
+import pick from '~/utils/pick'
 
 const userController = {
+  createUser:expressAsyncHandler(async(req, res) => {
+    const user = await userService.createUser(req.body)
+    res.status(httpStatus.CREATED).send(user)
+  }),
   getAllUsers: expressAsyncHandler(async (req, res) => {
-    const user =await userService.getAllUsers()
+    const filter = pick(req.query, ['title', 'role'])
+    const options= pick(req.query, ['sortBy', 'limit', 'page', 'fields', 'populate'])
+    if (!('fields' in options)) {
+      options.fields='-password -role'
+    }
+    const result = await userService.queryUsers(filter, options)
+    // eslint-disable-next-line no-unused-vars
     return res.status(200).json({
-      success: user ? true : false,
-      users: user
+      success: result ? true : false,
+      users: result
     })
   }),
   getCurrent: expressAsyncHandler(async (req, res) => {
@@ -47,7 +58,16 @@ const userController = {
       success: response ? true : false,
       updateUser: response ? response : 'Some thing went wrong'
     })
+  }),
+  promoteUserToAdmin:expressAsyncHandler(async(req, res) => {
+    const { uid } = req.params
+    const response = await userService.promoteUserToAdmin(uid)
+    return res.status(200).json({
+      success: response ? true : false,
+      updateUser: response ? response : 'Some thing went wrong'
+    })
   })
+
 
 }
 

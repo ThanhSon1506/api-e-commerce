@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { toJSON } from './plugins'
+import { paginate, toJSON } from './plugins'
 const { isEmail } = require('validator')
 const bcrypt = require('bcrypt')
 const crypto = require('crypto')
@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    unique: [true, 'Please enter an email'],
+    unique: [true, 'Email của bạn bị trùng'],
     required: true,
     lowercase: true,
     validate: [isEmail, 'Please enter a valid email']
@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, 'Please enter an password'],
-    minLength: [6, 'Minimum password length is 6 characters']
+    minLength: [8, 'Minimum password length is 8 characters']
   },
   role: {
     type: String,
@@ -116,8 +116,9 @@ userSchema.methods = {
     return resetToken
   }
 }
+// add plugin that converts mongoose to json
 userSchema.plugin(toJSON)
-
+userSchema.plugin(paginate)
 const userModel = mongoose.model('User', userSchema)
 
 module.exports = userModel

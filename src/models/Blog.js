@@ -1,4 +1,5 @@
 import mongoose from 'mongoose' // Erase if already required
+import { paginate, toJSON } from './plugins'
 
 // Declare the Schema of the Mongo model
 var blogSchema = new mongoose.Schema({
@@ -53,5 +54,8 @@ var blogSchema = new mongoose.Schema({
   toObject: { virtuals: true }
 })
 
+// add plugin that converts mongoose to json
+blogSchema.plugin(toJSON)
+blogSchema.plugin(paginate)
 //Export the model
 module.exports = mongoose.model('Blog', blogSchema)

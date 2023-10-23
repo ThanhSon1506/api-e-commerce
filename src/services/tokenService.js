@@ -69,7 +69,9 @@ const tokenService ={
       const accessToken = tokenService.generateToken(user.id, user.role, accessTokenExpires, tokenTypes.ACCESS)
       const refreshTokenExpires = moment().add(config.jwt.refreshExpirationDays, 'days')
       const refreshToken = tokenService.generateToken(user.id, user.role, refreshTokenExpires, tokenTypes.REFRESH)
+      // Mongo
       await tokenService.saveToken(refreshToken, user.id, refreshTokenExpires, tokenTypes.REFRESH)
+      // Redis
       await tokenService.saveTokenWithRedis(user, refreshToken)
       return {
         access: {
