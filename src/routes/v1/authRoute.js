@@ -3,8 +3,23 @@ const authController = require('~/controllers/authController')
 const { verifyRefreshToken, verifyToken } = require('~/middleware/authMiddleware')
 const validate = require('~/middleware/validate')
 const { authValidation } = require('~/validations')
-
+const { useTags, usePaths } =require('~/docs/swagger')
 const router = Router()
+// tag name
+useTags({
+  name: 'User',
+  description: ''
+})
+
+// docs path
+usePaths({
+  tag: 'User',
+  summary: 'Login form: username, password',
+  path: '/com/user/login.json',
+  method: 'post',
+  query: [],
+  auth: false
+})
 router.post('/register', validate(authValidation.register), authController.postRegister)
 router.post('/login', validate(authValidation.login), authController.postLogin)
 router.post('/refresh', verifyRefreshToken, authController.requestRefreshToken)

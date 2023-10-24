@@ -7,6 +7,9 @@ dotenv.config({ path: path.join(__dirname, '../../.env') })
 const envVarsSchema = Joi.object()
   .keys({
     NODE_ENV: Joi.string().valid('production', 'development', 'test').required(),
+    HOST_NAME: Joi.string().description('the host name serve in host'),
+    URL_SERVER: Joi.string().description('the url serve in host'),
+    URL_CLIENT: Joi.string().description('the url client in host'),
     PORT: Joi.number().default(3000),
     MONGO_DB: Joi.string().required().description('Mongo DB url'),
     MONGO_LOCAL: Joi.string().required().description('Mongo DB url'),
@@ -22,7 +25,6 @@ const envVarsSchema = Joi.object()
     EMAIL_APP_PASSWORD: Joi.string().description('password for email server'),
     EMAIL_FROM: Joi.string().description('the from field in the emails sent by the app'),
     LIMIT_PRODUCTS: Joi.number().default(2).description('limit product'),
-    URL_SERVER: Joi.string().description('the url serve in host'),
     REDIS_URI:Joi.string().description('Redis DB url'),
     REDIS_PASSWORD:Joi.string().description('Redis DB password'),
     REDIS_PORT:Joi.string().description('Redis DB port')
@@ -36,7 +38,9 @@ if (error) {
 }
 
 module.exports = {
+  host:envVars.HOST_NAME,
   url: envVars.URL_SERVER,
+  urlClient:envVars.URL_CLIENT,
   env: envVars.NODE_ENV,
   port: envVars.PORT,
   redis:{

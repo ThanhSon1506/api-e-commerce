@@ -1,4 +1,4 @@
-// ở đây mình set cứng quyền 
+// ở đây mình set cứng quyền
 
 const roles = ['user', 'admin']
 

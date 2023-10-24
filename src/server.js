@@ -19,17 +19,14 @@ import httpStatus from 'http-status'
 const app = express()
 
 const corsOptions = {
-  origin: process.env.URL_CLIENT,
+  origin: config.urlClient,
   credentials: true,
   optionSuccessStatus: 200, //access-control-allow-credentials:true
   methods: ['GET', 'POST', 'PUT', 'DELETE']
 }
-
-const port = process.env.PORT || 3000
-
-
 dotenv.config()
 dbConnect()
+
 if (config.env !== 'test') {
   app.use(morgan.successHandler)
   app.use(morgan.errorHandler)
@@ -61,5 +58,4 @@ app.use((req, res, next) => {
 app.use(ErrorHandler.notFound)
 app.use(ErrorHandler.errorHandler)
 // eslint-disable-next-line no-console
-app.listen(port, () => console.log(`Server is running on the port ${port}`))
-// JSON WEB TOKEN
+app.listen(() => console.log(`Server is running on the port ${config.host}:${config.port}/v1/docs`))
