@@ -17,7 +17,8 @@ import ApiError from './utils/ApiError'
 import httpStatus from 'http-status'
 
 const app = express()
-
+const host = config.host
+const port = config.port
 const corsOptions = {
   origin: config.urlClient,
   credentials: true,
@@ -58,4 +59,4 @@ app.use((req, res, next) => {
 app.use(ErrorHandler.notFound)
 app.use(ErrorHandler.errorHandler)
 // eslint-disable-next-line no-console
-app.listen(() => console.log(`Server is running on the port ${config.host}:${config.port}/v1/docs`))
+app.listen( port, () => console.log(`Server is running on the port http://${host}:${port}/v1/docs`))

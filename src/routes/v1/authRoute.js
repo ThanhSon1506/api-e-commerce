@@ -8,16 +8,21 @@ const router = Router()
 // tag name
 useTags({
   name: 'User',
-  description: ''
+  description: 'Operations related to user management'
 })
 
 // docs path
 usePaths({
   tag: 'User',
   summary: 'Login form: username, password',
-  path: '/com/user/login.json',
+  path: '{{base_url}}/v1/auth/login',
   method: 'post',
-  query: [],
+  query: [
+    {
+      'email': 'admin@gmail.com',
+      'password': 'admin@123456'
+    }
+  ],
   auth: false
 })
 router.post('/register', validate(authValidation.register), authController.postRegister)
