@@ -57,6 +57,21 @@ const swagger = {
         }
       }
     }
+    if (options.parameters) {
+      for (let indexParameter of options.parameters) {
+        swagger.docs.paths[options.path][options.method].parameters = []
+        swagger.docs.paths[options.path][options.method].parameters.push({
+          name: indexParameter.name,
+          in: indexParameter.in ?? 'string',
+          description: indexParameter.description ?? '',
+          required: Boolean(indexParameter.required),
+          schema: {
+            type: indexParameter.type ?? 'string'
+          }
+        })
+      }
+    }
+
     swagger.docs.paths[options.path][options.method].responses = {
       200: {
         description: 'Successfully !!!',
