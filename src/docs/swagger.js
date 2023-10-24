@@ -3,8 +3,8 @@ const config = require('~/config/config')
 
 const expressAsyncHandler = require('express-async-handler')
 
-const swagger={
-  docs : {
+const swagger = {
+  docs: {
     tags: [],
     paths: {},
     components: {
@@ -22,17 +22,19 @@ const swagger={
       }
     }
   },
-  useTags :  expressAsyncHandler((options) => {
+  useTags: expressAsyncHandler((options) => {
     swagger.docs.tags.push(options)
   }),
-  usePaths : expressAsyncHandler ((options) => {
+  usePaths: expressAsyncHandler((options) => {
     if (!options.path || !options.method || !options.tag) return
 
     swagger.docs.paths[options.path] = swagger.docs.paths[options.path] ?? {}
-    swagger.docs.paths[options.path][options.method] = swagger.docs.paths[options.path][options.method] ?? {}
+    swagger.docs.paths[options.path][options.method] =
+      swagger.docs.paths[options.path][options.method] ?? {}
 
     swagger.docs.paths[options.path][options.method].tags = [options.tag]
-    swagger.docs.paths[options.path][options.method].description = options.description ?? ''
+    swagger.docs.paths[options.path][options.method].description =
+      options.description ?? ''
     swagger.docs.paths[options.path][options.method].summary = options.summary
 
     if (options.query) {
@@ -45,13 +47,22 @@ const swagger={
         })
       }
     }
-
+    if (options.requestBody) {
+      swagger.docs.paths[options.path][options.method].requestBody = {
+        required: true,
+        content: {
+          'application/json': {
+            schema: options.requestBody.schema || {}
+          }
+        }
+      }
+    }
     swagger.docs.paths[options.path][options.method].responses = {
       200: {
         description: 'Successfully !!!',
         content: {
           'application/json': {
-            schema: {
+            schema: options.responseSchema || {
               type: 'object'
             }
           }
@@ -94,7 +105,7 @@ const swagger={
       }
     }
   }),
-  swaggerDocuments : () => {
+  swaggerDocuments: () => {
     return {
       openapi: '3.0.3',
       info: {
@@ -121,4 +132,4 @@ const swagger={
   }
 }
 
-module.exports= swagger
+module.exports = swagger
