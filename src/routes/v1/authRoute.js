@@ -6,6 +6,17 @@ const { authValidation } = require('~/validations')
 const { useTags, usePaths } =require('~/docs/swagger')
 const router = Router()
 
+
+// =================================ROUTER====================================================
+router.post('/register', validate(authValidation.register), authController.postRegister)
+router.post('/login', validate(authValidation.login), authController.postLogin)
+router.post('/refresh', verifyRefreshToken, authController.requestRefreshToken)
+router.post('/logout', verifyToken, authController.userLogout)
+router.post('/forgot-password', validate(authValidation.forgotPassword), authController.forgotPassword)
+router.put('/reset-password', validate(authValidation.resetPassword), authController.resetPassword)
+router.post('/email-verification', verifyToken, authController.sendVerificationEmail)
+router.put('/email-confirmation', authController.verifyEmail)
+
 // TAG NAME AND PATH USER LOGIN
 useTags({
   name: 'Auth',
@@ -466,13 +477,5 @@ usePaths({
     }
   }
 })
-// =================================ROUTER====================================================
-router.post('/register', validate(authValidation.register), authController.postRegister)
-router.post('/login', validate(authValidation.login), authController.postLogin)
-router.post('/refresh', verifyRefreshToken, authController.requestRefreshToken)
-router.post('/logout', verifyToken, authController.userLogout)
-router.post('/forgot-password', validate(authValidation.forgotPassword), authController.forgotPassword)
-router.put('/reset-password', validate(authValidation.resetPassword), authController.resetPassword)
-router.post('/email-verification', verifyToken, authController.sendVerificationEmail)
-router.put('/email-confirmation', authController.verifyEmail)
+
 module.exports = router

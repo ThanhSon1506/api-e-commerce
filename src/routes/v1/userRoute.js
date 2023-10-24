@@ -2,12 +2,26 @@ const express = require('express')
 const userController = require('~/controllers/userController')
 const { useTags, usePaths } = require('~/docs/swagger')
 const auth = require('~/middleware/auth')
-const authMiddleware = require('~/middleware/authMiddleware')
 const validate = require('~/middleware/validate')
 const userValidation = require('~/validations/user.validation')
 const router = express.Router()
 
-const { verifyToken, verifyAdminAuth } = authMiddleware
+//============================CRUD user===============================
+router
+  .route('/')
+  .post(auth('manageUsers'), validate(userValidation.createUser), userController.createUser)
+  .get(auth('getUsers'), validate(userValidation.getUsers), userController.getAllUsers)
+
+router
+  .route('/current')
+  .get( auth(), userController.getCurrent)
+  .put( auth(), validate(userValidation.updateUser), userController.updateUser)
+
+router.put('/promote/:uid', auth('manageUsers'), validate(userValidation.updateUser), userController.promoteUserToAdmin)
+router
+  .route('/:uid')
+  .delete( auth('manageUsers'), validate(userValidation.deleteUser), userController.deleteUser)
+  .put( auth('manageUsers'), validate(userValidation.updateUser), userController.updateUser)
 
 // TAG NAME AND PATH USER CREATE
 useTags({
@@ -569,23 +583,6 @@ usePaths({
     }
   }
 })
-
-//============================CRUD user===============================
-router
-  .route('/')
-  .post([auth('manageUsers')], validate(userValidation.createUser), userController.createUser)
-  .get( [auth('getUsers'), verifyToken, verifyAdminAuth], userController.getAllUsers)
-
-router
-  .route('/current')
-  .get( verifyToken, userController.getCurrent)
-  .put( [verifyToken], userController.updateUser)
-
-router.put('/promote/:uid', auth('manageUsers'), userController.promoteUserToAdmin)
-router
-  .route('/:uid')
-  .delete( [verifyToken, verifyAdminAuth], userController.deleteUser)
-  .put( [verifyToken, verifyAdminAuth], userController.updateUser)
 
 
 module.exports = router

@@ -5,6 +5,11 @@ const { useTags, usePaths } = require('~/docs/swagger')
 const router = Router()
 
 const { verifyToken, verifyAdminAuth } = authMiddleware
+//=======================CRUD PRODUCT CATEGORY=================================
+router.post('/', [verifyToken, verifyAdminAuth], productCategoryController.createCategory)
+router.get('/', productCategoryController.getCategory)
+router.put('/:pcid', [verifyToken, verifyAdminAuth], productCategoryController.updateCategory)
+router.delete('/:pcid', [verifyToken, verifyAdminAuth], productCategoryController.deleteCategory)
 
 // TAG NAME AND PATH PRODUCT CREATE CATEGORY
 useTags({
@@ -320,10 +325,5 @@ usePaths({
   }
 })
 
-//=======================CRUD PRODUCT CATEGORY=================================
-router.post('/', [verifyToken, verifyAdminAuth], productCategoryController.createCategory)
-router.get('/', productCategoryController.getCategory)
-router.put('/:pcid', [verifyToken, verifyAdminAuth], productCategoryController.updateCategory)
-router.delete('/:pcid', [verifyToken, verifyAdminAuth], productCategoryController.deleteCategory)
 
 module.exports = router

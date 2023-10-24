@@ -47,6 +47,7 @@ const userValidation ={
       userId: Joi.string().custom(objectId)
     })
   },
+
   updateUser : {
     params: Joi.object().keys({
       userId: Joi.required().custom(objectId)

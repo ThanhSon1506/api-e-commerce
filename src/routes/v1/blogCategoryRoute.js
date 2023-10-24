@@ -6,6 +6,12 @@ const router = Router()
 
 const { verifyToken, verifyAdminAuth } = authMiddleware
 
+//====================CRUD BLOG CATEGORY==================================
+router.post('/', [verifyToken, verifyAdminAuth], BlogCategoryController.createCategory)
+router.get('/', BlogCategoryController.getCategory)
+router.put('/:bcid', [verifyToken, verifyAdminAuth], BlogCategoryController.updateCategory)
+router.delete('/:bcid', [verifyToken, verifyAdminAuth], BlogCategoryController.deleteCategory)
+
 // TAG NAME AND PATH BLOG CREATE CATEGORY
 useTags({
   name: 'Blog',
@@ -369,10 +375,5 @@ usePaths({
   }
 })
 
-//====================CRUD BLOG CATEGORY==================================
-router.post('/', [verifyToken, verifyAdminAuth], BlogCategoryController.createCategory)
-router.get('/', BlogCategoryController.getCategory)
-router.put('/:bcid', [verifyToken, verifyAdminAuth], BlogCategoryController.updateCategory)
-router.delete('/:bcid', [verifyToken, verifyAdminAuth], BlogCategoryController.deleteCategory)
 
 module.exports = router
