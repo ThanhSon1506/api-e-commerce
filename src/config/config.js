@@ -27,7 +27,8 @@ const envVarsSchema = Joi.object()
     LIMIT_PRODUCTS: Joi.number().default(2).description('limit product'),
     REDIS_URI:Joi.string().description('Redis DB url'),
     REDIS_PASSWORD:Joi.string().description('Redis DB password'),
-    REDIS_PORT:Joi.string().description('Redis DB port')
+    REDIS_PORT:Joi.string().description('Redis DB port'),
+    DAYS_TO_KEEP:Joi.number().default(7).description('Days to keep file in project')
   })
   .unknown()
 
@@ -43,6 +44,7 @@ module.exports = {
   urlClient:envVars.URL_CLIENT,
   env: envVars.NODE_ENV,
   port: envVars.PORT,
+  days: envVars.DAYS_TO_KEEP,
   redis:{
     uri:envVars.REDIS_URI,
     pass:envVars.REDIS_PASSWORD,

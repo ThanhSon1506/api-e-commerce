@@ -1,16 +1,15 @@
 const { Router } = require('express')
-const authMiddleware = require('~/middleware/authMiddleware')
 const BlogCategoryController = require('~/controllers/blogCategoryController')
 const { useTags, usePaths } = require('~/docs/swagger')
+const auth = require('~/middleware/auth')
+const validate = require('~/middleware/validate')
+const blogCategoryValidation = require('~/validations/blogCategory.validation')
 const router = Router()
-
-const { verifyToken, verifyAdminAuth } = authMiddleware
-
 //====================CRUD BLOG CATEGORY==================================
-router.post('/', [verifyToken, verifyAdminAuth], BlogCategoryController.createCategory)
-router.get('/', BlogCategoryController.getCategory)
-router.put('/:bcid', [verifyToken, verifyAdminAuth], BlogCategoryController.updateCategory)
-router.delete('/:bcid', [verifyToken, verifyAdminAuth], BlogCategoryController.deleteCategory)
+router.post('/', auth('manageUsers'), validate(blogCategoryValidation.createBlogCategory), BlogCategoryController.createCategory)
+router.get('/', validate(blogCategoryValidation.getBlogCategories), BlogCategoryController.getCategory)
+router.put('/:bcid', auth('manageUsers'), validate(blogCategoryValidation.updateBlogCategory), BlogCategoryController.updateCategory)
+router.delete('/:bcid', auth('manageUsers'), validate(blogCategoryValidation.deleteBlogCategory), BlogCategoryController.deleteCategory)
 
 // TAG NAME AND PATH BLOG CREATE CATEGORY
 useTags({

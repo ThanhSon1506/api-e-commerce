@@ -1,15 +1,16 @@
 const { Router } = require('express')
-const authMiddleware = require('~/middleware/authMiddleware')
 const productCategoryController = require('~/controllers/productCategoryController')
 const { useTags, usePaths } = require('~/docs/swagger')
+const auth = require('~/middleware/auth')
+const validate = require('~/middleware/validate')
+const productCategoryValidation = require('~/validations/productCategory.validation')
 const router = Router()
 
-const { verifyToken, verifyAdminAuth } = authMiddleware
 //=======================CRUD PRODUCT CATEGORY=================================
-router.post('/', [verifyToken, verifyAdminAuth], productCategoryController.createCategory)
-router.get('/', productCategoryController.getCategory)
-router.put('/:pcid', [verifyToken, verifyAdminAuth], productCategoryController.updateCategory)
-router.delete('/:pcid', [verifyToken, verifyAdminAuth], productCategoryController.deleteCategory)
+router.post('/', auth('manageUsers'), validate(productCategoryValidation.createProductCategory), productCategoryController.createCategory)
+router.get('/', validate(productCategoryValidation.getProductCategories), productCategoryController.getCategory)
+router.put('/:pcid', auth('manageUsers'), validate(productCategoryController.updateCategory), productCategoryController.updateCategory)
+router.delete('/:pcid', auth('manageUsers'), validate(productCategoryValidation.deleteProductCategory), productCategoryController.deleteCategory)
 
 // TAG NAME AND PATH PRODUCT CREATE CATEGORY
 useTags({

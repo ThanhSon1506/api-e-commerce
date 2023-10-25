@@ -15,10 +15,8 @@ import xss from 'xss-clean'
 import { apiLimiter, authLimiter } from '~/middleware/rateLimiter'
 import ApiError from './utils/ApiError'
 import httpStatus from 'http-status'
-
+require('./utils/cleanupLogsJob')
 const app = express()
-const host = config.host
-const port = config.port
 const corsOptions = {
   origin: config.urlClient,
   credentials: true,
@@ -38,7 +36,6 @@ app.use(helmet())
 app.use(xss())
 
 app.use(express.json())
-
 app.use(cors(corsOptions))
 app.options('*', cors(corsOptions))
 app.use(cookieParser())
@@ -49,7 +46,6 @@ if (config.env === 'production') {
   app.use('/v1/auth', authLimiter)
 }
 
-
 app.use('/v1', routes)
 
 app.use((req, res, next) => {
@@ -58,5 +54,5 @@ app.use((req, res, next) => {
 
 app.use(ErrorHandler.notFound)
 app.use(ErrorHandler.errorHandler)
-// eslint-disable-next-line no-console
-app.listen( port, () => console.log(`Server is running on the port http://${host}:${port}/v1/docs`))
+
+module.exports = app

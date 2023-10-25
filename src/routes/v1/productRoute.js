@@ -1,19 +1,19 @@
 const { Router } = require('express')
 const productController = require('~/controllers/productController')
 const { useTags, usePaths } = require('~/docs/swagger')
-const authMiddleware = require('~/middleware/authMiddleware')
+const auth = require('~/middleware/auth')
+const validate = require('~/middleware/validate')
+const productValidation = require('~/validations/product.validation')
 const router = Router()
 
-const { verifyToken, verifyAdminAuth } = authMiddleware
-
 //======================================CRUD PRODUCT================================
-router.post('/', [verifyToken, verifyAdminAuth], productController.createProduct)
-router.get('/', productController.getProducts)
-router.put('/ratings', verifyToken, productController.ratingProduct)
+router.post('/', auth('manageUsers'), validate(productValidation.createProduct), productController.createProduct)
+router.get('/', validate(productValidation.getProducts), productController.getProducts)
+router.put('/ratings', validate(productValidation.ratingProduct), productController.ratingProduct)
 
-router.get('/:pid', productController.getProduct)
-router.put('/:pid', [verifyToken, verifyAdminAuth], productController.updateProduct)
-router.delete('/:pid', [verifyToken, verifyAdminAuth], productController.deleteProduct)
+router.get('/:pid', validate(productValidation.getProduct), productController.getProduct)
+router.put('/:pid', auth('manageUser'), validate(productValidation.updateProduct), productController.updateProduct)
+router.delete('/:pid', auth('manageUser'), validate(productController.deleteProduct), productController.deleteProduct)
 
 // TAG NAME AND PATH PRODUCT CREATE
 useTags({
