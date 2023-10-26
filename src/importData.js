@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const zlib = require('zlib')
 const logger = require('./config/logger')
 
 // Đường dẫn đến thư mục models
@@ -13,6 +14,12 @@ if (!fs.existsSync(exportsPath)) {
 }
 // Lấy danh sách tất cả các thư mục trong thư mục exports
 const exportFolders = fs.readdirSync(exportsPath)
+
+// Hàm giải nén dữ liệu từ tệp đã nén
+function decompressData(compressedData) {
+  return zlib.gunzipSync(compressedData).toString('utf-8')
+}
+
 // Import dữ liệu từ mỗi mô hình
 async function importData() {
   try {
@@ -34,8 +41,12 @@ async function importData() {
 
             // Đọc dữ liệu từ tệp JSON
             const dataPath = path.join(folderPath, dataFile)
-            const rawData = fs.readFileSync(dataPath, 'utf-8')
-            const jsonData = JSON.parse(rawData)
+            const rawData = fs.readFileSync(dataPath)
+
+            // Kiểm tra xem dữ liệu đã nén chưa
+            const jsonData = dataFile.endsWith('.gz')
+              ? JSON.parse(decompressData(rawData))
+              : JSON.parse(rawData)
 
             // Xóa tất cả dữ liệu hiện có của mô hình trước khi nhập
             await Model.deleteMany({})

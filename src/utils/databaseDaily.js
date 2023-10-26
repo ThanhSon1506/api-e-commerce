@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const logger = require('~/config/logger')
+const zlib = require('zlib')
 
 // Đường dẫn đến thư mục models
 const modelsPath = path.join(__dirname, '..', 'models')
@@ -31,7 +32,8 @@ async function exportData() {
         }
         // Ghi dữ liệu ra tệp JSON
         const outputPath = path.join(modelExportPath, `${modelFile.replace('.js', '')}_data.json`)
-        fs.writeFileSync(outputPath, JSON.stringify(data, null, 2))
+        const compressedData = zlib.gzipSync(JSON.stringify(data, null, 2))
+        fs.writeFileSync(outputPath, compressedData)
         logger.info(`Dữ liệu từ ${modelFile.replace('.js', '')} đã được xuất thành công.`)
       }
     }
