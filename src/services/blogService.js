@@ -60,17 +60,29 @@ const blogService = {
  */
   deleteBlogById:async(blogId) => {
     return Blog.findByIdAndDelete(blogId)
-  }
+  },
   /**
    * Khi người dùng like một bài blog thì:
    * 1. Check xem người đó trước có dislike hay không => bỏ đislike
    * 2. Check xem người đó trước có like hay không => bỏ like / Thêm like
    *
    * */
-  // likeBlog:async()=>{
-  //   const {sub} = req.user
-
-  // }
+  likeBlog:async(userId, blogId) => {
+    const blog = await blogService.getBlogById(blogId)
+    const alreadyDisliked= blog?.dislikes.find(element => element.toString() === userId)
+    if (alreadyDisliked) {
+      const response=await Blog.findByAndUpdate(blogId, { $pull: { dislikes:userId }, isDisliked:false }, { new:true })
+      return response
+    }
+    const isLiked = blog?.isLiked
+    if (isLiked) {
+      const response = await Blog.findByAndUpdate(blogId, { $pull: { like:userId }, isLiked:false }, { new:true })
+      return response
+    } else {
+      const response =await Blog.findByAndUpdate(blogId, { $push:{ likes:userId }, isLiked:true }, { new:true })
+      return response
+    }
+  }
 
 
 }

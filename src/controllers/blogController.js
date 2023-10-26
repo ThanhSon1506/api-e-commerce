@@ -43,6 +43,15 @@ const BlogController = {
       success: deleteBlog ? true : false,
       deleteBlog: deleteBlog ? deleteBlog : 'Cannot delete blog'
     })
+  }),
+  likeBlog: expressAsyncHandler(async(req, res) => {
+    const { sub:userId } = req.user
+    const { bid:blogId } =req.body
+    const response = blogService.likeBlog(userId, blogId)
+    return res.status(200).json({
+      success: response ? true : false,
+      likeBlog: response ? response : 'Cannot delete blog'
+    })
   })
 
 }
