@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
+    "data:backup": "node ./src/importData.js",
     "lint:fix": "eslint . --fix",
     "lint": "eslint src --ext js --report-unused-disable-directives --max-warnings 0",
     "clean": "rmdir /q /s build && mkdir build",
@@ -29,6 +30,7 @@
     "joi": "^17.11.0",
     "jsonwebtoken": "^9.0.1",
     "moment": "^2.29.4",
+    "moment-timezone": "^0.5.43",
     "mongoose": "^7.4.3",
     "morgan": "^1.10.0",
     "node-cron": "^3.0.2",

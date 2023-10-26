@@ -7,13 +7,17 @@ const productValidation = require('~/validations/product.validation')
 const router = Router()
 
 //======================================CRUD PRODUCT================================
-router.post('/', auth('manageUsers'), validate(productValidation.createProduct), productController.createProduct)
-router.get('/', validate(productValidation.getProducts), productController.getProducts)
-router.put('/ratings', validate(productValidation.ratingProduct), productController.ratingProduct)
+router
+  .route('/')
+  .post( auth('manageUsers'), validate(productValidation.createProduct), productController.createProduct)
+  .get( validate(productValidation.getProducts), productController.getProducts)
 
-router.get('/:pid', validate(productValidation.getProduct), productController.getProduct)
-router.put('/:pid', auth('manageUser'), validate(productValidation.updateProduct), productController.updateProduct)
-router.delete('/:pid', auth('manageUser'), validate(productController.deleteProduct), productController.deleteProduct)
+router.put('/ratings', validate(productValidation.ratingProduct), productController.ratingProduct)
+router
+  .route('/:pid')
+  .get( validate(productValidation.getProduct), productController.getProduct)
+  .put( auth('manageUser'), validate(productValidation.updateProduct), productController.updateProduct)
+  .delete( auth('manageUser'), validate(productController.deleteProduct), productController.deleteProduct)
 
 // TAG NAME AND PATH PRODUCT CREATE
 useTags({

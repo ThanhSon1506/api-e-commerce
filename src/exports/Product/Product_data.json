@@ -1,0 +1,67 @@
+[
+  {
+    "title": "Máy giặt Toshiba",
+    "slug": "may-giat-toshiba",
+    "description": "Máy giặt Toshiba",
+    "brand": "Lenovo",
+    "price": 50000,
+    "quantity": 0,
+    "sold": 0,
+    "images": [],
+    "totalRating": 0,
+    "ratings": [],
+    "id": "6528c7d71a605eeda6b608c2"
+  },
+  {
+    "title": "Máy giặt Toshiba11",
+    "slug": "may-giat-toshiba11",
+    "description": "Máy giặt Toshiba11",
+    "brand": "Lenovo",
+    "price": 60000,
+    "quantity": 0,
+    "sold": 0,
+    "images": [],
+    "totalRating": 17,
+    "ratings": [
+      {
+        "star": 17,
+        "posteBy": "65254f630ae0138006e6d2e6",
+        "comment": "Sản phẩm tệ",
+        "_id": "652bf505b23c67bdc495eda3"
+      },
+      {
+        "star": 17,
+        "posteBy": "65255dde56519fad824cd401",
+        "comment": "Sản phẩm tệ",
+        "_id": "652bfd86ff848eeb48bf31fa"
+      }
+    ],
+    "id": "652a24fb24ea2dd7f978e02d"
+  },
+  {
+    "title": "Máy giặt Toshibsa111",
+    "slug": "may-giat-toshibsa111",
+    "description": "Máy giặt Tosshiba111",
+    "brand": "Aenovo",
+    "price": 60000,
+    "quantity": 0,
+    "sold": 0,
+    "images": [],
+    "totalRating": 0,
+    "ratings": [],
+    "id": "652a281c2877c3a7773e15e5"
+  },
+  {
+    "title": "Máy giặt",
+    "slug": "may-giat",
+    "description": "Máy giặt",
+    "brand": "Aenovo",
+    "price": 60000,
+    "quantity": 0,
+    "sold": 0,
+    "images": [],
+    "totalRating": 0,
+    "ratings": [],
+    "id": "652a87f7ac325c4cc511aaba"
+  }
+]

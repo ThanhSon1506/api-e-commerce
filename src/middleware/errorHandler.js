@@ -1,3 +1,4 @@
+const logger = require('~/config/logger')
 // not found
 const ErrorHandler = {
   notFound: (req, res, next) => {
@@ -9,8 +10,7 @@ const ErrorHandler = {
   // Error Handler
   // eslint-disable-next-line no-unused-vars
   errorHandler: (err, req, res, next) => {
-    // eslint-disable-next-line no-console
-    console.log(err?.stack)
+    logger.error(err?.stack)
     const statusCode = res.statusCode === 200 ? 500 : res.statusCode
     return res.status(statusCode).json({
       success: false,
