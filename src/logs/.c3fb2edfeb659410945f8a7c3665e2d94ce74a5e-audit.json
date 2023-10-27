@@ -6,11 +6,6 @@
     "auditLog": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\.c3fb2edfeb659410945f8a7c3665e2d94ce74a5e-audit.json",
     "files": [
         {
-            "date": 1697161997050,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-13.log",
-            "hash": "58e12875d90ac47bc78fc86f6e684e9d351952745bc8d4263b512f342284ede6"
-        },
-        {
             "date": 1697252817563,
             "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-14.log",
             "hash": "431efc78a502c28e060fd802449c31a0f97166dbb685e713fae2b2f609141a8e"
@@ -69,6 +64,11 @@
             "date": 1698293564265,
             "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-26.log",
             "hash": "b3d64ef004631ad4d27171ce6a91aa0d2f7d96f3c53fcef8ae40dd555ae7376f"
+        },
+        {
+            "date": 1698377324008,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-27.log",
+            "hash": "eced233c023877ac122aaaa9e4e00cb65f78642891ecfcef2b9d5e9d283a0e2e"
         }
     ],
     "hashType": "sha256"

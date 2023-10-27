@@ -1,6 +1,5 @@
 import expressAsyncHandler from 'express-async-handler'
 import { userService } from '~/services'
-import ApiError from '~/utils/ApiError'
 import httpStatus from 'http-status'
 import pick from '~/utils/pick'
 
@@ -32,7 +31,6 @@ const userController = {
   }),
   deleteUser: expressAsyncHandler(async (req, res) => {
     const { uid } = req.params
-    if (!uid) throw new ApiError(httpStatus.BAD_REQUEST, 'Missing input')
     const response = await userService.deleteUserById(uid)
     return res.status(200).json(
       {
@@ -43,7 +41,6 @@ const userController = {
   }),
   updateUser: expressAsyncHandler(async (req, res) => {
     const { sub:uid } = req.user
-    if (!uid || Object.keys(req.body).length === 0) throw new Error('Missing input')
     const response = await userService.updateUserById(uid, req.body)
     return res.status(200).json({
       success: response ? true : false,
@@ -52,7 +49,6 @@ const userController = {
   }),
   updateUserByAdmin: expressAsyncHandler(async (req, res) => {
     const { uid } = req.params
-    if (Object.keys(req.body).length === 0) throw new Error('Missing input')
     const response = await userService.updateUserById(uid, req.body)
     return res.status(200).json({
       success: response ? true : false,

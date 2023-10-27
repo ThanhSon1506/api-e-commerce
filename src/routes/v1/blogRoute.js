@@ -3,17 +3,19 @@ const blogController = require('~/controllers/blogController')
 const { usePaths, useTags } = require('~/docs/swagger')
 const auth = require('~/middleware/auth')
 const router = Router()
-
+const authMiddleware =require('~/middleware/authMiddleware')
+const { verifyToken } =authMiddleware
 //===========================CRUD BLOG==========================
 router
   .route('/')
   .get(blogController.getBlogs)
-  .post( auth('manageUsers'), blogController.createBlog)
-
+  .post( auth('manageBlogs'), blogController.createBlog)
+router.put('/like/:bid', verifyToken, blogController.likeBlog)
+router.put('/dislike/:bid', verifyToken, blogController.disLikeBlog)
 router
   .route('/:bid')
-  .put( auth('manageUsers'), blogController.updateBlog)
-  .delete(auth('manageUsers'), blogController.deleteBlog)
+  .put( auth('manageBlogs'), blogController.updateBlog)
+  .delete(auth('manageBlogs'), blogController.deleteBlog)
   .get(blogController.getBlog)
 
 module.exports = router

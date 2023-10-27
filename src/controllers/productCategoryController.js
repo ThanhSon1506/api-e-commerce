@@ -1,14 +1,25 @@
 import expressAsyncHandler from 'express-async-handler'
+import httpStatus from 'http-status'
 import { productCategoryService } from '~/services'
 import pick from '~/utils/pick'
 
 const productCategoryController = {
   createCategory: expressAsyncHandler(async (req, res) => {
-    const response = await productCategoryService.createProductCategories(req.body)
-    return res.status(200).json({
-      success: response ? true : false,
-      createdCategory: response ? response : 'Cannot create new product-category'
-    })
+    try {
+      const response = await productCategoryService.createProductCategories(req.body)
+      return res.status(200).json({
+        success: response ? true : false,
+        createdCategory: response ? response : 'Cannot create new product-category'
+      })
+    } catch (error) {
+      if (error.message.includes('duplicate key') ) {
+        const keyValue = Object.keys(error['keyValue'])[0]
+        res.status(httpStatus.CONFLICT).send({ message:`${keyValue} đã tồn tại trong hệ thống.` })
+      } else {
+        res.status(httpStatus.CONFLICT).send({ message:error.message })
+      }
+    }
+
   }),
   getCategory: expressAsyncHandler(async (req, res) => {
     const filter = pick(req.query, ['title', 'role'])

@@ -1,18 +1,29 @@
 const expressAsyncHandler = require('express-async-handler')
+const httpStatus = require('http-status')
 const { blogService } = require('~/services')
 const pick = require('~/utils/pick')
 
 const BlogController = {
   createBlog: expressAsyncHandler(async (req, res) => {
-    const response = await blogService.createBlog(req.body)
-    return res.status(200).json({
-      success: response ? true : false,
-      blog: response ? response : 'Cannot create new blog'
-    })
+    try {
+      const response = await blogService.createBlog(req.body)
+      return res.status(200).json({
+        success: response ? true : false,
+        blog: response ? response : 'Cannot create new blog'
+      })
+    } catch (error) {
+      if (error.message.includes('duplicate key') ) {
+        const keyValue = Object.keys(error['keyValue'])[0]
+        res.status(httpStatus.CONFLICT).send({ message:`${keyValue} đã tồn tại trong hệ thống.` })
+      } else {
+        res.status(httpStatus.CONFLICT).send({ message:error.message })
+      }
+    }
+
   }),
   updateBlog: expressAsyncHandler(async (req, res) => {
     const { bid } = req.params
-    const updateBlog = await blogService.updateProductById(bid, req.body)
+    const updateBlog = await blogService.updateBlogById(bid, req.body)
     return res.status(200).json({
       success: updateBlog ? true : false,
       updateBlog: updateBlog ? updateBlog : 'Cannot update blog'
@@ -46,11 +57,20 @@ const BlogController = {
   }),
   likeBlog: expressAsyncHandler(async(req, res) => {
     const { sub:userId } = req.user
-    const { bid:blogId } =req.body
-    const response = blogService.likeBlog(userId, blogId)
+    const { bid:blogId } =req.params
+    const response = await blogService.likeBlog(userId, blogId)
     return res.status(200).json({
       success: response ? true : false,
-      likeBlog: response ? response : 'Cannot delete blog'
+      likeBlog: response ? response : 'Cannot like blog'
+    })
+  }),
+  disLikeBlog:expressAsyncHandler(async(req, res) => {
+    const { sub:userId } = req.user
+    const { bid:blogId } =req.params
+    const response = await blogService.disLikeBlog(userId, blogId)
+    return res.status(200).json({
+      success: response ? true : false,
+      disLikeBlog: response ? response : 'Cannot like blog'
     })
   })
 

@@ -22,12 +22,12 @@ const productCategoryValidation = {
   },
   getProductCategory: {
     params: Joi.object().keys({
-      categoryId: Joi.string().custom(objectId)
+      pcid: Joi.string().custom(objectId)
     })
   },
   updateProductCategory: {
     params: Joi.object().keys({
-      categoryId: Joi.required().custom(objectId)
+      pcid: Joi.required().custom(objectId)
     }),
     body: Joi.object().keys({
       title: Joi.string().required().messages({
@@ -39,7 +39,7 @@ const productCategoryValidation = {
   },
   deleteProductCategory: {
     params: Joi.object().keys({
-      categoryId: Joi.string().custom(objectId)
+      pcid: Joi.string().custom(objectId)
     })
   }
 }

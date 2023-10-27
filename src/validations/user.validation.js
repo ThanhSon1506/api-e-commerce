@@ -42,15 +42,20 @@ const userValidation ={
       page: Joi.number().integer()
     })
   },
+  promoteUser:{
+    params: Joi.object().keys({
+      uid: Joi.string().custom(objectId)
+    })
+  },
   getUser : {
     params: Joi.object().keys({
-      userId: Joi.string().custom(objectId)
+      uid: Joi.string().custom(objectId)
     })
   },
 
   updateUser : {
     params: Joi.object().keys({
-      userId: Joi.required().custom(objectId)
+      uid: Joi.required().custom(objectId)
     }),
     body: Joi.object()
       .keys({
@@ -63,7 +68,7 @@ const userValidation ={
   },
   deleteUser : {
     params: Joi.object().keys({
-      userId: Joi.string().custom(objectId)
+      uid: Joi.string().custom(objectId)
     })
   }
 }

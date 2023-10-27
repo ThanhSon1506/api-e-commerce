@@ -6,18 +6,18 @@ import ApiError from '~/utils/ApiError'
 
 const blogService = {
   /**
- * Create product categories
+ * Create Blog categories
  * @param {string} blogBody
- * @returns {Promise<Product>}
+ * @returns {Promise<Blog>}
  */
   createBlog : expressAsyncHandler ( async (blogBody) => {
     if (blogBody.title) blogBody.slug = slugify(blogBody.title, { locale:'vi' })
     return Blog.create(blogBody)
   }),
   /**
- * Get info product by id
+ * Get info Blog by id
  * @param {string} pid
- * @returns {Promise<Product>}
+ * @returns {Promise<Blog>}
  */
   getBlogById: expressAsyncHandler(async (bid) => {
     return Blog.findById(bid)
@@ -26,9 +26,9 @@ const blogService = {
  * Update Blog by id
  * @param {ObjectId} blogId
  * @param {Object} updateBody
- * @returns {Promise<Product>}
+ * @returns {Promise<Blog>}
  */
-  updateProductById : async (blogId, updateBody) => {
+  updateBlogById : async (blogId, updateBody) => {
     if (updateBody.title) updateBody.slug=slugify(updateBody.title, { locale:'vi' })
     const blog = await blogService.getBlogById(blogId)
     if (!blog) {
@@ -56,7 +56,7 @@ const blogService = {
  * delete Blog by id
  * @param {ObjectId} blogId
  * @param {Object} deleteBody
- * @returns {Promise<Product>}
+ * @returns {Promise<Blog>}
  */
   deleteBlogById:async(blogId) => {
     return Blog.findByIdAndDelete(blogId)
@@ -67,24 +67,53 @@ const blogService = {
    * 2. Check xem người đó trước có like hay không => bỏ like / Thêm like
    *
    * */
+
+  /**
+ * Like blog
+ * @param {ObjectId} userId
+ * @param {ObjectId} blogId
+ * @param {Object} response
+ * @returns {Promise<Blog>}
+ */
   likeBlog:async(userId, blogId) => {
     const blog = await blogService.getBlogById(blogId)
     const alreadyDisliked= blog?.dislikes.find(element => element.toString() === userId)
     if (alreadyDisliked) {
-      const response=await Blog.findByAndUpdate(blogId, { $pull: { dislikes:userId }, isDisliked:false }, { new:true })
+      const response=await Blog.findByIdAndUpdate(blogId, { $pull: { dislikes:userId } }, { new:true })
       return response
     }
-    const isLiked = blog?.isLiked
+    const isLiked = blog?.likes.find(element => element.toString() === userId)
     if (isLiked) {
-      const response = await Blog.findByAndUpdate(blogId, { $pull: { like:userId }, isLiked:false }, { new:true })
+      const response = await Blog.findByIdAndUpdate(blogId, { $pull: { likes:userId } }, { new:true })
       return response
     } else {
-      const response =await Blog.findByAndUpdate(blogId, { $push:{ likes:userId }, isLiked:true }, { new:true })
+      const response =await Blog.findByIdAndUpdate(blogId, { $push:{ likes:userId } }, { new:true })
+      return response
+    }
+  },
+  /**
+ * Dislike blog
+ * @param {ObjectId} userId
+ * @param {ObjectId} blogId
+ * @param {Object} response
+ * @returns {Promise<Blog>}
+ */
+  disLikeBlog:async(userId, blogId) => {
+    const blog = await blogService.getBlogById(blogId)
+    const alreadyLiked= blog?.likes.find(element => element.toString() === userId)
+    if (alreadyLiked) {
+      const response=await Blog.findByIdAndUpdate(blogId, { $pull: { likes:userId } }, { new:true })
+      return response
+    }
+    const isDisliked = blog?.dislikes.find(element => element.toString() === userId)
+    if (isDisliked) {
+      const response = await Blog.findByIdAndUpdate(blogId, { $pull: { dislikes:userId } }, { new:true })
+      return response
+    } else {
+      const response =await Blog.findByIdAndUpdate(blogId, { $push:{ dislikes:userId } }, { new:true })
       return response
     }
   }
-
-
 }
 
 module.exports = blogService

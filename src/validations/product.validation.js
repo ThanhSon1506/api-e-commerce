@@ -32,17 +32,22 @@ const productValidation = {
       role: Joi.string(),
       sortBy: Joi.string(),
       limit: Joi.number().integer(),
-      page: Joi.number().integer()
+      page: Joi.number().integer(),
+      price: Joi.object().pattern(
+        Joi.string().valid('gt', 'gte', 'lt', 'lte'),
+        Joi.number().positive()
+      ),
+      fields: Joi.string()
     })
   },
   getProduct: {
     params: Joi.object().keys({
-      productId: Joi.string().custom(objectId)
+      pid: Joi.string().custom(objectId)
     })
   },
   updateProduct: {
     params: Joi.object().keys({
-      productId: Joi.required().custom(objectId)
+      pid: Joi.required().custom(objectId)
     }),
     body: Joi.object().keys({
       title: Joi.string(),
@@ -53,7 +58,7 @@ const productValidation = {
   },
   deleteProduct: {
     params: Joi.object().keys({
-      productId: Joi.string().custom(objectId)
+      pid: Joi.string().custom(objectId)
     })
   },
   ratingProduct: {

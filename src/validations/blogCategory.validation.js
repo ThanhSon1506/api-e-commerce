@@ -22,12 +22,12 @@ const blogCategoryValidation = {
   },
   getBlogCategory: {
     params: Joi.object().keys({
-      categoryId: Joi.string().custom(objectId)
+      bcid: Joi.string().custom(objectId)
     })
   },
   updateBlogCategory: {
     params: Joi.object().keys({
-      categoryId: Joi.required().custom(objectId)
+      bcid: Joi.required().custom(objectId)
     }),
     body: Joi.object().keys({
       title: Joi.string().required().messages({
@@ -39,7 +39,7 @@ const blogCategoryValidation = {
   },
   deleteBlogCategory: {
     params: Joi.object().keys({
-      categoryId: Joi.string().custom(objectId)
+      bcid: Joi.string().custom(objectId)
     })
   }
 }

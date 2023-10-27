@@ -9,15 +9,15 @@ const router = Router()
 //======================================CRUD PRODUCT================================
 router
   .route('/')
-  .post( auth('manageUsers'), validate(productValidation.createProduct), productController.createProduct)
+  .post( auth('manageProducts'), validate(productValidation.createProduct), productController.createProduct)
   .get( validate(productValidation.getProducts), productController.getProducts)
 
-router.put('/ratings', validate(productValidation.ratingProduct), productController.ratingProduct)
+router.put('/ratings', auth(), validate(productValidation.ratingProduct), productController.ratingProduct)
 router
   .route('/:pid')
   .get( validate(productValidation.getProduct), productController.getProduct)
-  .put( auth('manageUser'), validate(productValidation.updateProduct), productController.updateProduct)
-  .delete( auth('manageUser'), validate(productController.deleteProduct), productController.deleteProduct)
+  .put( auth('manageProducts'), validate(productValidation.updateProduct), productController.updateProduct)
+  .delete( auth('manageProducts'), validate(productController.deleteProduct), productController.deleteProduct)
 
 // TAG NAME AND PATH PRODUCT CREATE
 useTags({

@@ -26,23 +26,15 @@ var blogSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  isLiked: {
-    type: Boolean,
-    default: false
-  },
-  isDisliked: {
-    type: Boolean,
-    default: false
-  },
   likes: [
     {
-      type: mongoose.Types.ObjectId,
+      type: mongoose.SchemaTypes.ObjectId,
       ref: 'User'
     }
   ],
   dislikes: [
     {
-      type: mongoose.Types.ObjectId,
+      type: mongoose.SchemaTypes.ObjectId,
       ref: 'User'
     }
   ],

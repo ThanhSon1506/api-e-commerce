@@ -30,7 +30,8 @@ const auth = (...requiredRights) => async (req, res, next) => {
       const hasRequiredRights = requiredRights.every((requiredRight) =>
         userRights.includes(requiredRight)
       )
-      if (!hasRequiredRights && req.params.userId !== decodedToken.sub) {
+      // && req.params.userId !== decodedToken.sub
+      if (!hasRequiredRights) {
         throw new ApiError(httpStatus.FORBIDDEN, 'Bạn ko đủ quyền để thực hiện chức năng này')
       }
     }

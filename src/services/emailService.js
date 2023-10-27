@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer')
 const config = require('~/config/config')
+const logger = require('~/config/logger')
 // const logger = require('~/config/logger')
 
 
@@ -12,11 +13,24 @@ const emailService ={
  * @param {string} text
  * @returns {Promise}
  */
-  sendEmail :async (to, subject, text) => {
-    const msg = { from: config.email.from, to, subject, text }
+  sendEmail :async (to, subject, text, attachmentData = null) => {
+    const msg = {
+      from: config.email.from,
+      to,
+      subject,
+      text,
+      attachments: attachmentData
+        ? [
+          {
+            filename: 'exported_data.zip',
+            content: attachmentData,
+            encoding: 'base64'
+          }
+        ]
+        : []
+    }
     await emailService.transport.sendMail(msg)
   },
-
   /**
  * Send reset password email
  * @param {string} to
@@ -47,6 +61,19 @@ const emailService ={
     To verify your email, click on this link: ${verificationEmailUrl}
     If you did not create an account, then ignore this email.`
     await emailService.sendEmail(to, subject, text)
+  },
+  /**
+ * Send database daily email
+ * @param {string} to
+ * @param {string} attachmentData
+ * @returns {Promise}
+ */
+  sendDatabaseDaily :async (to, attachmentData) => {
+    // Gửi email với dữ liệu đính kèm
+    const subject = 'Export Database Notification'
+    const text = 'The database export process has completed successfully.'
+    await emailService.sendEmail(to, subject, text, attachmentData)
+    logger.info('send email success')
   }
 }
 

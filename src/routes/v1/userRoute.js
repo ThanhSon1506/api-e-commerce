@@ -15,9 +15,9 @@ router
 router
   .route('/current')
   .get( auth(), userController.getCurrent)
-  .put( auth(), validate(userValidation.updateUser), userController.updateUser)
+  .put( auth(), userController.updateUser)
 
-router.put('/promote/:uid', auth('manageUsers'), validate(userValidation.updateUser), userController.promoteUserToAdmin)
+router.put('/promote/:uid', auth('manageUsers'), validate(userValidation.promoteUser), userController.promoteUserToAdmin)
 router
   .route('/:uid')
   .delete( auth('manageUsers'), validate(userValidation.deleteUser), userController.deleteUser)

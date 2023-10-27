@@ -1,11 +1,25 @@
 
 import expressAsyncHandler from 'express-async-handler'
+import httpStatus from 'http-status'
 import { productService } from '~/services'
 import pick from '~/utils/pick'
 
 const productController = {
   createProduct: expressAsyncHandler(async (req, res) => {
-    if (Object.keys(req.body).length === 0) throw new Error('Missing inputs')
+    try {
+      const newProduct = await productService.createProduct(req.body)
+      return res.status(200).json({
+        success: newProduct ? true : false,
+        createProduct: newProduct ? newProduct : 'Cannot create new product'
+      })
+    } catch (error) {
+      if (error.message.includes('duplicate key') ) {
+        const keyValue = Object.keys(error['keyValue'])[0]
+        res.status(httpStatus.CONFLICT).send({ message:`${keyValue} đã tồn tại trong hệ thống.` })
+      } else {
+        res.status(httpStatus.CONFLICT).send({ message:error.message })
+      }
+    }
     const newProduct = await productService.createProduct(req.body)
     return res.status(200).json({
       success: newProduct ? true : false,
@@ -49,6 +63,7 @@ const productController = {
   }),
   ratingProduct: expressAsyncHandler(async (req, res) => {
     const { sub:uid } = req.user
+    console.log(req.user)
     const updateProduct = await productService.ratingProduct(uid, req.body)
     return res.status(200).json({
       status: true,
