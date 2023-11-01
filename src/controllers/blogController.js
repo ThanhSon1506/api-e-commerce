@@ -39,8 +39,8 @@ const BlogController = {
   }),
   // Filtering, sorting, pagination
   getBlogs: expressAsyncHandler(async (req, res) => {
-    const filter = pick(req.query, ['title', 'role', 'price'])
-    const options= pick(req.query, ['sortBy', 'limit', 'page', 'fields', 'populate'])
+    const filter = pick(req.query, ['title'])
+    const options= pick(req.query, ['sortBy', 'limit', 'page', 'fields', 'populate', 'select'])
     const result = await blogService.queryBlogs(filter, options)
     return res.status(200).json({
       success:result?true:false,

@@ -56,7 +56,9 @@ var productSchema = new mongoose.Schema({
     type: Number,
     default: 0
   }
-}, {
+},
+{
+  strictPopulate: false,
   timestamps: true
 })
 // add plugin that converts mongoose to json

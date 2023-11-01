@@ -6,26 +6,6 @@
     "auditLog": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\.c3fb2edfeb659410945f8a7c3665e2d94ce74a5e-audit.json",
     "files": [
         {
-            "date": 1697252817563,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-14.log",
-            "hash": "431efc78a502c28e060fd802449c31a0f97166dbb685e713fae2b2f609141a8e"
-        },
-        {
-            "date": 1697339606722,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-15.log",
-            "hash": "f073eace1be41545bc1bc718f6abeb07f15e2e19412e6a8ee3c898d8ed7140d6"
-        },
-        {
-            "date": 1697431354879,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-16.log",
-            "hash": "eac91b0e83b30159498c33ee67b12daaf1921b875d8e4e14abb47c9d9ea03986"
-        },
-        {
-            "date": 1697516775891,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-17.log",
-            "hash": "c19a930dc5834b6d46e8b346a3a4d86c8467e5c0c9e8fec4bbe22459dff2c4a2"
-        },
-        {
             "date": 1697687807731,
             "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-19.log",
             "hash": "35c34c683e40771ca66d298444a4caf3f05c108860c619561637e4f1c17a0306"
@@ -69,6 +49,31 @@
             "date": 1698377324008,
             "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-27.log",
             "hash": "eced233c023877ac122aaaa9e4e00cb65f78642891ecfcef2b9d5e9d283a0e2e"
+        },
+        {
+            "date": 1698426038781,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-28.log",
+            "hash": "e8605ed4468c5f9f67d4bd15e593721bfaeb360104feb5ff3d62bd3c795bedca"
+        },
+        {
+            "date": 1698550169651,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-29.log",
+            "hash": "1a4022c3322c053dc6f15a24c07ca16c870e52020eea54c7b47af88f5132f926"
+        },
+        {
+            "date": 1698642366971,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-30.log",
+            "hash": "d4f4990b3d881f67b408b392660e26090d76716be27fed430204989a399976e4"
+        },
+        {
+            "date": 1698723902629,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-31.log",
+            "hash": "769c03cf6598f9ced134bfac7f45c80b4e15fd674e1f9cb62f71136d7e151808"
+        },
+        {
+            "date": 1698812327780,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-01.log",
+            "hash": "f3e5d6e37437be9dd983ef2106ea130bab88665271c2128e69a6beece84fad03"
         }
     ],
     "hashType": "sha256"

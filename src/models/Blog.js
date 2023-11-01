@@ -28,13 +28,13 @@ var blogSchema = new mongoose.Schema({
   },
   likes: [
     {
-      type: mongoose.SchemaTypes.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'User'
     }
   ],
   dislikes: [
     {
-      type: mongoose.SchemaTypes.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'User'
     }
   ],
@@ -51,7 +51,10 @@ var blogSchema = new mongoose.Schema({
   toJSON: { virtuals: true },
   toObject: { virtuals: true }
 })
-
+// Function to increment numberViews
+blogSchema.statics.incrementViews = async function (blogId) {
+  return await this.findByIdAndUpdate(blogId, { $inc: { numberViews: 1 } }, { new: true })
+}
 // add plugin that converts mongoose to json
 blogSchema.plugin(toJSON)
 blogSchema.plugin(paginate)

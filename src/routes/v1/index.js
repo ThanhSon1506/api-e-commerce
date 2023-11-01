@@ -5,6 +5,7 @@ const productCategoryRoute = require('./productCategoryRoute')
 const blogCategoryRoute = require('./blogCategoryRoute')
 const blogRoute = require('./blogRoute')
 const docsRoute =require('./docsRoute')
+const brandRoute =require('./brandRoute')
 const express = require('express')
 const config = require('~/config/config')
 
@@ -34,6 +35,10 @@ const defaultRoutes = [
   {
     path: '/blog',
     route: blogRoute
+  },
+  {
+    path: '/brand',
+    route:brandRoute
   }
 ]
 

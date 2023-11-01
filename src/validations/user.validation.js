@@ -35,11 +35,23 @@ const userValidation ={
   },
   getUsers : {
     query: Joi.object().keys({
-      name: Joi.string(),
-      role: Joi.string(),
-      sortBy: Joi.string(),
-      limit: Joi.number().integer(),
-      page: Joi.number().integer()
+      name: Joi.string().messages({
+        'string.base': 'Trường "name" phải là một chuỗi ký tự.'
+      }),
+      role: Joi.string().messages({
+        'string.base': 'Trường "role" phải là một chuỗi ký tự.'
+      }),
+      sortBy: Joi.string().messages({
+        'string.base': 'Trường "sortBy" phải là một chuỗi ký tự.'
+      }),
+      limit: Joi.number().integer().messages({
+        'number.base': 'Trường "limit" phải là một số nguyên.',
+        'number.integer': 'Trường "limit" phải là một số nguyên.'
+      }),
+      page: Joi.number().integer().messages({
+        'number.base': 'Trường "page" phải là một số nguyên.',
+        'number.integer': 'Trường "page" phải là một số nguyên.'
+      })
     })
   },
   promoteUser:{

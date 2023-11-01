@@ -28,16 +28,38 @@ const productValidation = {
   },
   getProducts: {
     query: Joi.object().keys({
-      title: Joi.string(),
-      role: Joi.string(),
-      sortBy: Joi.string(),
-      limit: Joi.number().integer(),
-      page: Joi.number().integer(),
+      title: Joi.string().messages({
+        'string.base': 'Trường "title" phải là một chuỗi ký tự.'
+      }),
+      role: Joi.string().messages({
+        'string.base': 'Trường "role" phải là một chuỗi ký tự.'
+      }),
+      sortBy: Joi.string().messages({
+        'string.base': 'Trường "sortBy" phải là một chuỗi ký tự.'
+      }),
+      limit: Joi.number().integer().messages({
+        'number.base': 'Trường "limit" phải là một số nguyên.',
+        'number.integer': 'Trường "limit" phải là một số nguyên.'
+      }),
+      page: Joi.number().integer().messages({
+        'number.base': 'Trường "page" phải là một số nguyên.',
+        'number.integer': 'Trường "page" phải là một số nguyên.'
+      }),
       price: Joi.object().pattern(
-        Joi.string().valid('gt', 'gte', 'lt', 'lte'),
-        Joi.number().positive()
+        Joi.string().valid('gt', 'gte', 'lt', 'lte').messages({
+          'any.only': 'Trường "price" phải có giá trị là "gt", "gte", "lt" hoặc "lte".'
+        }),
+        Joi.number().positive().messages({
+          'number.base': 'Trường "price" phải là một số dương.',
+          'number.positive': 'Trường "price" phải là một số dương.'
+        })
       ),
-      fields: Joi.string()
+      populate: Joi.string().messages({
+        'string.base': 'Trường "populate" phải là một chuỗi ký tự.'
+      }),
+      fields: Joi.string().messages({
+        'string.base': 'Trường "fields" phải là một chuỗi ký tự.'
+      })
     })
   },
   getProduct: {

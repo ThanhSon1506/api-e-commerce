@@ -1,8 +1,8 @@
 const Joi = require('@hapi/joi')
 const { objectId } = require('./custom.validation')
 
-const blogCategoryValidation = {
-  createBlogCategory: {
+const brandValidation = {
+  createBrand: {
     body: Joi.object().keys({
       title: Joi.string().required().messages({
         'string.base': 'Title phải là một chuỗi',
@@ -11,7 +11,7 @@ const blogCategoryValidation = {
       })
     })
   },
-  getBlogCategories: {
+  getBrands: {
     query: Joi.object().keys({
       title: Joi.string(),
       role: Joi.string(),
@@ -21,14 +21,14 @@ const blogCategoryValidation = {
       select:Joi.string()
     })
   },
-  getBlogCategory: {
+  getBrand: {
     params: Joi.object().keys({
-      bcid: Joi.string().custom(objectId)
+      bid: Joi.string().custom(objectId)
     })
   },
-  updateBlogCategory: {
+  updateBrand: {
     params: Joi.object().keys({
-      bcid: Joi.required().custom(objectId)
+      bid: Joi.required().custom(objectId)
     }),
     body: Joi.object().keys({
       title: Joi.string().required().messages({
@@ -38,11 +38,11 @@ const blogCategoryValidation = {
       })
     })
   },
-  deleteBlogCategory: {
+  deleteBrand: {
     params: Joi.object().keys({
-      bcid: Joi.string().custom(objectId)
+      bid: Joi.string().custom(objectId)
     })
   }
 }
 
-module.exports = blogCategoryValidation
+module.exports = brandValidation

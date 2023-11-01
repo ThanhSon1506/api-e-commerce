@@ -51,17 +51,37 @@ const paginate = (schema) => {
     const countPromise = this.countDocuments(formattedFilter).exec()
     let docsPromise = this.find(formattedFilter).sort(sort).skip(skip).limit(limit)
 
+    // if (options.populate) {
+    //   options.populate.split(',').forEach((populateOption) => {
+    //     docsPromise = docsPromise.populate(
+    //       populateOption
+    //         .split('.')
+    //         .reverse()
+    //         .reduce((a, b) => ({ path: b, populate: a}))
+    //     )
+    //   })
+    // }
     if (options.populate) {
       options.populate.split(',').forEach((populateOption) => {
-        docsPromise = docsPromise.populate(
-          populateOption
-            .split('.')
-            .reverse()
-            .reduce((a, b) => ({ path: b, populate: a }))
-        )
+        const pathArray = populateOption.split('.').reverse()
+        const selectArray = options.select ? options.select.split(',') : []
+        const populateItems = []
+        pathArray.forEach((b) => {
+          const populateItem = { path: b }
+          populateItem.select = selectArray.join(' ')
+          populateItems.push(populateItem)
+        })
+        const populateObj = populateItems.reduce((a, b) => ({
+          path: b.path,
+          populate: {
+            ...b.populate,
+            path: a.path,
+            select: b.populate.select || a.populate.select
+          }
+        }))
+        docsPromise = docsPromise.populate(populateObj)
       })
     }
-
     // Áp dụng Fields limiting
     if (options.fields) {
       const fields = options.fields.split(',').join(' ')

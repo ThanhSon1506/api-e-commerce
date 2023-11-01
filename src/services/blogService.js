@@ -35,7 +35,7 @@ const blogService = {
       throw new ApiError(httpStatus.NOT_FOUND, 'Blog not found')
     }
     Object.assign(blog, updateBody)
-    await blog.save()
+    await Blog.save()
     return blog
   },
   /**

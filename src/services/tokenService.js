@@ -38,6 +38,7 @@ const tokenService ={
     })
     return tokenDoc
   },
+
   saveTokenWithRedis:async(user, refreshToken) => {
     redisClient.set(user._id.toString(), JSON.stringify({ token: refreshToken }))
   },
