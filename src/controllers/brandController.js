@@ -1,6 +1,5 @@
 import expressAsyncHandler from 'express-async-handler'
 import httpStatus from 'http-status'
-import Brand from '~/models/Brand'
 import { brandService } from '~/services'
 import pick from '~/utils/pick'
 
@@ -49,13 +48,12 @@ const brandController = {
   }),
   deleteBrand: expressAsyncHandler(async (req, res) => {
     const { brandId } = req.params
-    const response = await Brand.findByIdAndDelete(brandId)
+    const response = await brandService.deleteBrand(brandId)
     return res.status(200).json({
       success: response ? true : false,
       deleteBrand: response ? response : 'Cannot delete brand'
     })
   })
-
 }
 
 module.exports = brandController

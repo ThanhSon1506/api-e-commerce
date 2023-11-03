@@ -42,7 +42,7 @@ const brandService ={
  * @param {string} bid
  * @returns {Promise<Blog>}
  */
-  deleteBlogCategory:expressAsyncHandler(async(bid) => {
+  deleteBrand:expressAsyncHandler(async(bid) => {
     return Brand.findByIdAndDelete(bid)
   }),
   /**

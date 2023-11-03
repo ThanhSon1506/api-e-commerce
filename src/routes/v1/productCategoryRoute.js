@@ -11,15 +11,17 @@ router.post('/', auth('manageUsers'), validate(productCategoryValidation.createP
 router.get('/', validate(productCategoryValidation.getProductCategories), productCategoryController.getCategory)
 router.put('/:pcid', auth('manageUsers'), validate(productCategoryController.updateCategory), productCategoryController.updateCategory)
 router.delete('/:pcid', auth('manageUsers'), validate(productCategoryValidation.deleteProductCategory), productCategoryController.deleteCategory)
+module.exports = router
 
 // TAG NAME AND PATH PRODUCT CREATE CATEGORY
+
 useTags({
-  name: 'Product',
+  name: 'Product-Category',
   description: 'Operations related to products'
 })
 
 usePaths({
-  tag: 'Product',
+  tag: 'Product-Category',
   summary: 'Create product category',
   path: '/product-category',
   method: 'post',
@@ -86,12 +88,12 @@ usePaths({
 
 // TAG NAME AND PATH PRODUCT GET CATEGORY
 useTags({
-  name: 'Product',
+  name: 'Product-Category',
   description: 'Operations related to products'
 })
 
 usePaths({
-  tag: 'Product',
+  tag: 'Product-Category',
   summary: 'Get product categories',
   path: '/product-category',
   method: 'get',
@@ -147,12 +149,12 @@ usePaths({
 
 // TAG NAME AND PATH PRODUCT UPDATE CATEGORY
 useTags({
-  name: 'Product',
+  name: 'Product-Category',
   description: 'Operations related to products'
 })
 
 usePaths({
-  tag: 'Product',
+  tag: 'Product-Category',
   summary: 'Update product category',
   path: '/product-category/{pcid}',
   method: 'put',
@@ -251,12 +253,12 @@ usePaths({
 })
 // TAG NAME AND PATH PRODUCT DELETE CATEGORY
 useTags({
-  name: 'Product',
+  name: 'Product-Category',
   description: 'Operations related to products'
 })
 
 usePaths({
-  tag: 'Product',
+  tag: 'Product-Category',
   summary: 'Delete product category',
   path: '/product-category/{pcid}',
   method: 'delete',
@@ -326,5 +328,3 @@ usePaths({
   }
 })
 
-
-module.exports = router

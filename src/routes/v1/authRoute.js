@@ -16,6 +16,7 @@ router.post('/forgot-password', validate(authValidation.forgotPassword), authCon
 router.put('/reset-password', validate(authValidation.resetPassword), authController.resetPassword)
 router.post('/email-verification', verifyToken, authController.sendVerificationEmail)
 router.put('/email-confirmation', authController.verifyEmail)
+module.exports = router
 
 // TAG NAME AND PATH USER LOGIN
 useTags({
@@ -478,4 +479,3 @@ usePaths({
   }
 })
 
-module.exports = router

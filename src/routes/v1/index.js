@@ -6,6 +6,7 @@ const blogCategoryRoute = require('./blogCategoryRoute')
 const blogRoute = require('./blogRoute')
 const docsRoute =require('./docsRoute')
 const brandRoute =require('./brandRoute')
+const couponRoute =require('./couponRoute')
 const express = require('express')
 const config = require('~/config/config')
 
@@ -25,20 +26,24 @@ const defaultRoutes = [
     route: productRoute
   },
   {
-    path: '/blog-category',
-    route: blogCategoryRoute
+    path: '/blog',
+    route: blogRoute
   },
   {
     path: '/product-category',
     route: productCategoryRoute
   },
   {
-    path: '/blog',
-    route: blogRoute
+    path: '/blog-category',
+    route: blogCategoryRoute
   },
   {
     path: '/brand',
     route:brandRoute
+  },
+  {
+    path: '/coupon',
+    route:couponRoute
   }
 ]
 

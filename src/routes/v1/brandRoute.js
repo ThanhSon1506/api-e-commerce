@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const brandController = require('~/controllers/brandController')
-const { useTags, usePaths } = require('~/docs/swagger')
+const { useTags, usePaths } =require('~/docs/swagger')
 const auth = require('~/middleware/auth')
 const validate = require('~/middleware/validate')
 const brandValidation = require('~/validations/brand.validation')
@@ -16,6 +16,8 @@ router
   .get(validate('getBrand'), brandController.getBrand)
   .put( auth('manageBrands'), brandController.updateBrand)
   .delete(auth('manageBrands'), brandController.deleteBrand)
+module.exports = router
+
 // TAG NAME AND PATH BRAND CREATE
 useTags({
   name: 'Brand',
@@ -346,5 +348,3 @@ usePaths({
     }
   }
 })
-
-module.exports = router

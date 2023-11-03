@@ -22,6 +22,7 @@ router
   .route('/:uid')
   .delete( auth('manageUsers'), validate(userValidation.deleteUser), userController.deleteUser)
   .put( auth('manageUsers'), validate(userValidation.updateUser), userController.updateUser)
+module.exports = router
 
 // TAG NAME AND PATH USER CREATE
 useTags({
@@ -32,7 +33,7 @@ useTags({
 usePaths({
   tag: 'User',
   summary: 'Create a new user',
-  path: '/auth/create-user',
+  path: '/auth/user',
   method: 'post',
   requestBody: {
     schema: {
@@ -97,7 +98,7 @@ useTags({
 usePaths({
   tag: 'User',
   summary: 'Get all users',
-  path: '/auth/get-all-users',
+  path: '/auth/user',
   method: 'get',
   responses: {
     200: {
@@ -584,5 +585,3 @@ usePaths({
   }
 })
 
-
-module.exports = router

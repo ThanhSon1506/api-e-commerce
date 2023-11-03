@@ -24,6 +24,7 @@ const swagger = {
   },
   useTags: expressAsyncHandler((options) => {
     swagger.docs.tags.push(options)
+
   }),
   usePaths: expressAsyncHandler((options) => {
     if (!options.path || !options.method || !options.tag) return
@@ -142,9 +143,9 @@ const swagger = {
           url: `http://localhost:${config.port}/v1`
         }
       ],
+
       ...swagger.docs
     }
   }
 }
-
 module.exports = swagger

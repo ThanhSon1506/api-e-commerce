@@ -20,7 +20,6 @@ router
 
 module.exports = router
 
-
 // TAG NAME AND PATH BLOG CREATE POST
 useTags({
   name: 'Blog',

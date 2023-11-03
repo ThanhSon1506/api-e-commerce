@@ -10,15 +10,16 @@ router.post('/', auth('manageUsers'), validate(blogCategoryValidation.createBlog
 router.get('/', validate(blogCategoryValidation.getBlogCategories), BlogCategoryController.getCategory)
 router.put('/:bcid', auth('manageUsers'), validate(blogCategoryValidation.updateBlogCategory), BlogCategoryController.updateCategory)
 router.delete('/:bcid', auth('manageUsers'), validate(blogCategoryValidation.deleteBlogCategory), BlogCategoryController.deleteCategory)
+module.exports = router
 
 // TAG NAME AND PATH BLOG CREATE CATEGORY
 useTags({
-  name: 'Blog',
+  name: 'Blog-Category',
   description: 'Operations related to blogs'
 })
 
 usePaths({
-  tag: 'Blog',
+  tag: 'Blog-Category',
   summary: 'Create blog category',
   path: '/blog-category',
   method: 'post',
@@ -106,12 +107,12 @@ usePaths({
 
 // TAG NAME AND PATH BLOG GET CATEGORY
 useTags({
-  name: 'Blog',
+  name: 'Blog-Category',
   description: 'Operations related to blogs'
 })
 
 usePaths({
-  tag: 'Blog',
+  tag: 'Blog-Category',
   summary: 'Get all blog categories',
   path: '/blog-category',
   method: 'get',
@@ -180,12 +181,12 @@ usePaths({
 })
 // TAG NAME AND PATH BLOG UPDATE CATEGORY
 useTags({
-  name: 'Blog',
+  name: 'Blog-Category',
   description: 'Operations related to blogs'
 })
 
 usePaths({
-  tag: 'Blog',
+  tag: 'Blog-Category',
   summary: 'Update a blog category',
   path: '/blog-category/{bcid}',
   method: 'put',
@@ -289,12 +290,12 @@ usePaths({
 })
 // TAG NAME AND PATH BLOG DELETE CATEGORY
 useTags({
-  name: 'Blog',
+  name: 'Blog-Category',
   description: 'Operations related to blogs'
 })
 
 usePaths({
-  tag: 'Blog',
+  tag: 'Blog-Category',
   summary: 'Delete a blog category',
   path: '/blog-category/{bcid}',
   method: 'delete',
@@ -374,5 +375,3 @@ usePaths({
   }
 })
 
-
-module.exports = router

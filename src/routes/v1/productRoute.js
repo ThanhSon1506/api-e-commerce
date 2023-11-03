@@ -18,6 +18,7 @@ router
   .get( validate(productValidation.getProduct), productController.getProduct)
   .put( auth('manageProducts'), validate(productValidation.updateProduct), productController.updateProduct)
   .delete( auth('manageProducts'), validate(productController.deleteProduct), productController.deleteProduct)
+module.exports = router
 
 // TAG NAME AND PATH PRODUCT CREATE
 useTags({
@@ -423,5 +424,3 @@ usePaths({
   }
 })
 
-
-module.exports = router
