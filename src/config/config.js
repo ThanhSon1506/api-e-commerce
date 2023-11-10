@@ -28,7 +28,10 @@ const envVarsSchema = Joi.object()
     REDIS_URI:Joi.string().description('Redis DB url'),
     REDIS_PASSWORD:Joi.string().description('Redis DB password'),
     REDIS_PORT:Joi.string().description('Redis DB port'),
-    DAYS_TO_KEEP:Joi.number().default(7).description('Days to keep file in project')
+    DAYS_TO_KEEP:Joi.number().default(7).description('Days to keep file in project'),
+    CLOUDINARY_NAME:Joi.string().description('the name cloudinary'),
+    CLOUDINARY_KEY:Joi.string().description('the key cloudinary'),
+    CLOUDINARY_SECRET:Joi.string().description('the secret cloudinary')
   })
   .unknown()
 
@@ -77,5 +80,10 @@ module.exports = {
       }
     },
     from: envVars.EMAIL_FROM
+  },
+  cloudinary:{
+    cloud_name:envVars.CLOUDINARY_NAME,
+    api_key:envVars.CLOUDINARY_KEY,
+    api_secret:envVars.CLOUDINARY_SECRET
   }
 }

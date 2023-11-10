@@ -6,7 +6,6 @@ const pick = require('~/utils/pick')
 const couponController = {
   createCoupon: expressAsyncHandler(async (req, res) => {
     try {
-      console.log('create coupon')
       const response = await couponService.createCoupon(req.body)
       return res.status(200).json({
         success: response ? true : false,

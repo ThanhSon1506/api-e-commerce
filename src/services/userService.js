@@ -28,7 +28,7 @@ const userService = {
  * @returns {Promise<User>}
  */
   getUserById:expressAsyncHandler(async(id) => {
-    return User.findById(id).select('-refreshToken -password -role')
+    return await User.findById(id).select('-refreshToken -password -role')
   }),
   /**
  * Update user by id

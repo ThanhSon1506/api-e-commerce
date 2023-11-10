@@ -4,26 +4,26 @@ import { paginate, toJSON } from './plugins'
 // Declare the Schema of the Mongo model
 var blogSchema = new mongoose.Schema({
   title: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     required: true
   },
   slug: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     required: true,
     unique: true,
     lowercase: true
   },
   description: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     required: true
   },
   category: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     required: true,
     unique: true
   },
   numberViews: {
-    type: Number,
+    type: mongoose.Schema.Types.Number,
     default: 0
   },
   likes: [
@@ -39,11 +39,11 @@ var blogSchema = new mongoose.Schema({
     }
   ],
   image: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     default: 'https://images.pexels.com/photos/3826683/pexels-photo-3826683.jpeg'
   },
   author: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     default: 'Admin'
   }
 }, {

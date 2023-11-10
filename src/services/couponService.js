@@ -11,7 +11,6 @@ const couponService = {
  * @returns {Promise<Coupon>}
  */
   createCoupon : expressAsyncHandler ( async (couponBody) => {
-    console.log(couponBody)
     if (couponBody.title) couponBody.slug = slugify(couponBody.title, { locale:'vi' })
     couponBody.expiry = Date.now() + couponBody.expiry*24*60*60*1000
     return Coupon.create(couponBody)

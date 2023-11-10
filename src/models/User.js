@@ -7,69 +7,68 @@ const crypto = require('crypto')
 
 const userSchema = new mongoose.Schema({
   firstName: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     required: true
   },
   lastName: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     required: true
   },
   mobile: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     required: true,
     unique: [true, 'Số điện thoại của bạn đã bị trùng']
   },
   email: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     unique: [true, 'Email của bạn bị trùng'],
     required: true,
     lowercase: true,
     validate: [isEmail, 'Please enter a valid email']
   },
   password: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     required: [true, 'Please enter an password'],
-    minLength: [8, 'Minimum password length is 8 characters']
+    minlength: [8, 'Minimum password length is 8 characters']
   },
   role: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     default: 'user'
   },
-  cart: {
-    type: Array,
-    default: []
+  cart:[{
+    product:{ type: mongoose.Schema.Types.ObjectId, ref:'Product' },
+    quantity:Number,
+    color:mongoose.Schema.Types.String
+  }],
+  address: {
+    type:mongoose.Schema.Types.Array,
+    default:[]
   },
-  address: [
-    {
-      type: mongoose.Types.ObjectId,
-      ref: 'Address'
-    }
-  ],
   wishlist: [
     {
-      type: mongoose.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'Product'
     }
   ],
   isBlocked: {
-    type: Boolean,
+    type: mongoose.Schema.Types.Boolean,
     default: false
   },
   isEmailVerified:{
-    type:Boolean,
+    type:mongoose.Schema.Types.Boolean,
     default:false
   },
   refreshToken: {
-    type: String
+    type: mongoose.Schema.Types.String
   },
   passwordChangeAt: {
-    type: String
+    type: mongoose.Schema.Types.String
   },
   passwordResetToken: {
-    type: String
+    type: mongoose.Schema.Types.String
   },
   passwordResetExpires: {
-    type: String
+    type: mongoose.Schema.Types.String
   }
 },
 { timestamps: true }
@@ -92,7 +91,7 @@ userSchema.pre('save', function (next) {
 })
 /**
  * Check if email is taken
- * @param {string} email - The user's email
+ * @param {mongoose.Schema.Types.String} email - The user's email
  * @param {ObjectId} [excludeUserId] - The id of the user to be excluded
  * @returns {Promise<boolean>}
  */
@@ -102,7 +101,7 @@ userSchema.statics.isEmailTaken = async function (email, excludeUserId) {
 }
 /**
  * Check if password is change
- * @param {string} password - The user's password
+ * @param {mongoose.Schema.Types.String} password - The user's password
  * @returns {Promise<boolean>}
  */
 userSchema.methods = {
@@ -110,7 +109,7 @@ userSchema.methods = {
     return await bcrypt.compare(password, this.password)
   },
   createPasswordChangedToken: async function () {
-    const resetToken = crypto.randomBytes(32).toString('hex')
+    const resetToken = crypto.randomBytes(32).tomongoose.Schema.Types.String('hex')
     this.passwordResetToken = crypto.createHash('sha256').update(resetToken).digest('hex')
     this.passwordResetExpires = Date.now() + 15 * 60 * 1000
     return resetToken

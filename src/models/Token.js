@@ -5,7 +5,7 @@ const { tokenTypes } = require('../config/tokens')
 const tokenSchema = mongoose.Schema(
   {
     token: {
-      type: String,
+      type: mongoose.Schema.Types.String,
       required: true,
       index: true
     },
@@ -15,16 +15,16 @@ const tokenSchema = mongoose.Schema(
       required: true
     },
     type: {
-      type: String,
+      type: mongoose.Schema.Types.String,
       enum: [tokenTypes.REFRESH, tokenTypes.RESET_PASSWORD, tokenTypes.VERIFY_EMAIL],
       required: true
     },
     expires: {
-      type: Date,
+      type: mongoose.Schema.Types.Date,
       required: true
     },
     blacklisted: {
-      type: Boolean,
+      type: mongoose.Schema.Types.Boolean,
       default: false
     }
   },

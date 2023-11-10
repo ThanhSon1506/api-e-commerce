@@ -1,6 +1,6 @@
 const expressAsyncHandler = require('express-async-handler')
 const httpStatus = require('http-status')
-const { blogService } = require('~/services')
+const { blogService, cloudinaryService } = require('~/services')
 const pick = require('~/utils/pick')
 
 const BlogController = {
@@ -71,6 +71,14 @@ const BlogController = {
     return res.status(200).json({
       success: response ? true : false,
       disLikeBlog: response ? response : 'Cannot like blog'
+    })
+  }),
+  uploadImagesBlog:expressAsyncHandler(async(req, res) => {
+    const { bid:blogId } = req.params
+    const response = await cloudinaryService.uploadImageBlog(req.file, blogId)
+    return res.status(200).json({
+      success: response ? true : false,
+      uploadImages: response ? response : 'Cannot upload product'
     })
   })
 

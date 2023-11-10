@@ -4,26 +4,26 @@ import { paginate, toJSON } from './plugins'
 // Declare the Schema of the Mongo model
 var productSchema = new mongoose.Schema({
   title: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     required: true,
     trim: true
   },
   slug: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     required: true,
     unique: true,
     lowercase: true
   },
   description: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     required: true
   },
   brand: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     required: true
   },
   price: {
-    type: Number,
+    type: mongoose.Schema.Types.Number,
     required: true
   },
   category: {
@@ -31,29 +31,29 @@ var productSchema = new mongoose.Schema({
     ref: 'Category'
   },
   quantity: {
-    type: Number,
+    type: mongoose.Schema.Types.Number,
     default: 0
   },
   sold: {
-    type: Number,
+    type: mongoose.Schema.Types.Number,
     default: 0
   },
   images: {
     type: Array
   },
   color: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     enum: ['Black', 'Grown', 'Red']
   },
   ratings: [
     {
-      star: { type: Number },
+      star: { type: mongoose.Schema.Types.Number },
       posteBy: { type: mongoose.Types.ObjectId, ref: 'User' },
-      comment: { type: String }
+      comment: { type: mongoose.Schema.Types.String }
     }
   ],
   totalRating: {
-    type: Number,
+    type: mongoose.Schema.Types.Number,
     default: 0
   }
 },

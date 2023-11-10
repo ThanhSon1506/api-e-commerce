@@ -6,41 +6,6 @@
     "auditLog": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\.c3fb2edfeb659410945f8a7c3665e2d94ce74a5e-audit.json",
     "files": [
         {
-            "date": 1697894047069,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-21.log",
-            "hash": "a9a807ace412477f99bc8ceb7aed9fc983c37e69a64f982efe008239febbeadf"
-        },
-        {
-            "date": 1697943149119,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-22.log",
-            "hash": "a0326a86239c75510fac0690bbb0e932fc06aca7a0e7f2f26142dbe9d230880e"
-        },
-        {
-            "date": 1698034158629,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-23.log",
-            "hash": "fed30bac5c436108882484eb54e769b38f6b87870da853caeeb9c337d6d65d04"
-        },
-        {
-            "date": 1698119733094,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-24.log",
-            "hash": "8f6b70407990be73878bc3157613cfe3a285a973c8ff66956c430c7f61d3549d"
-        },
-        {
-            "date": 1698205313599,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-25.log",
-            "hash": "6041dea552a886ee073fa4d407b18e1d0eceba10d7b536cf97c1b48bbe1d52ce"
-        },
-        {
-            "date": 1698293564265,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-26.log",
-            "hash": "b3d64ef004631ad4d27171ce6a91aa0d2f7d96f3c53fcef8ae40dd555ae7376f"
-        },
-        {
-            "date": 1698377324008,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-27.log",
-            "hash": "eced233c023877ac122aaaa9e4e00cb65f78642891ecfcef2b9d5e9d283a0e2e"
-        },
-        {
             "date": 1698426038781,
             "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-28.log",
             "hash": "e8605ed4468c5f9f67d4bd15e593721bfaeb360104feb5ff3d62bd3c795bedca"
@@ -74,6 +39,41 @@
             "date": 1698981304041,
             "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-03.log",
             "hash": "325dca37d6a379debb27d9a02bb3bcc07562fea5b6128ae496f71c0df85ae0fa"
+        },
+        {
+            "date": 1699075333230,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-04.log",
+            "hash": "d2a9a43ec62c630fcaadd58d1d4568d5e6967681da1bd9c9b1d80de32a7e893e"
+        },
+        {
+            "date": 1699160180706,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-05.log",
+            "hash": "33c0e6abcd208288c8828ac5f088d565ac9bd5f7d99a7bb3cd1d8e59be5f8ef0"
+        },
+        {
+            "date": 1699240778212,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-06.log",
+            "hash": "653339a4574606fd659fa23446870783916e90b6340b52cf57ddab3344185d25"
+        },
+        {
+            "date": 1699328984428,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-07.log",
+            "hash": "7840577d047a1168664920c29c678e6ad4e1d108abd4247a24bf63166f11ccc0"
+        },
+        {
+            "date": 1699420550254,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-08.log",
+            "hash": "c4a4cb3bb6a3c9cf3c144fb7775fae6d8dedd9dc053591888afdfeae70779acc"
+        },
+        {
+            "date": 1699501012900,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-09.log",
+            "hash": "77d162dbcb8d93dac40b6733ccd1eb4e944a15f5de58ed1006a00f637ae0e6fc"
+        },
+        {
+            "date": 1699588133560,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-10.log",
+            "hash": "d166be2c31bdfcf7c026517435545c46859877b1275f0f44e575401dee3a148f"
         }
     ],
     "hashType": "sha256"

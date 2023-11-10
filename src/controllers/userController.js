@@ -1,5 +1,5 @@
 import expressAsyncHandler from 'express-async-handler'
-import { userService } from '~/services'
+import { addressService, cartService, userService } from '~/services'
 import httpStatus from 'http-status'
 import pick from '~/utils/pick'
 
@@ -62,9 +62,23 @@ const userController = {
       success: response ? true : false,
       updateUser: response ? response : 'Some thing went wrong'
     })
+  }),
+  updateUserAddress:expressAsyncHandler(async(req, res) => {
+    const { sub:userId } = req.user
+    const response = await addressService.updateUserAddress(userId, req.body)
+    return res.status(200).json({
+      success: response ? true : false,
+      updateUser: response ? response : 'Some thing went wrong'
+    })
+  }),
+  updateUserCart:expressAsyncHandler(async(req, res) => {
+    const { sub:userId } = req.user
+    const response = await cartService.createCart(userId, req.body)
+    return res.status(200).json({
+      success: response ? true : false,
+      updateUser: response ? response : 'Some thing went wrong'
+    })
   })
-
-
 }
 
 module.exports = userController

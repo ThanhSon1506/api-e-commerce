@@ -4,22 +4,22 @@ const { toJSON, paginate } = require('./plugins')
 // Declare the Schema of the Mongo model
 var couponSchema = new mongoose.Schema({
   name:{
-    type:String,
+    type:mongoose.Schema.Types.String,
     required:true,
     unique:true,
     uppercase:true
   },
   slug:{
-    type:String,
+    type:mongoose.Schema.Types.String,
     unique:true,
     index:true
   },
   discount:{
-    type:Number,
+    type:mongoose.Schema.Types.Number,
     required:true
   },
   expiry:{
-    type:Date,
+    type:mongoose.Schema.Types.Date,
     required:true,
     unique:true
   }

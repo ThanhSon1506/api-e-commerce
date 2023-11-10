@@ -4,13 +4,13 @@ import { paginate, toJSON } from './plugins'
 // Declare the Schema of the Mongo model
 var productCategorySchema = new mongoose.Schema({
   title: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     required: true,
     unique: true,
     index: true
   },
   slug: {
-    type: String,
+    type: mongoose.Schema.Types.String,
     required: true,
     unique: true,
     lowercase: true

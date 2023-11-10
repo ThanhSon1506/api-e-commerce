@@ -4,13 +4,13 @@ const { toJSON, paginate } = require('./plugins')
 // Declare the Schema of the Mongo model
 var brandSchema = new mongoose.Schema({
   title:{
-    type:String,
+    type:mongoose.Schema.Types.String,
     required:true,
     unique:true,
     index:true
   },
   slug:{
-    type:String,
+    type:mongoose.Schema.Types.String,
     required:true,
     unique:true,
     index:true

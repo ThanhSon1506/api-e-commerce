@@ -2,6 +2,7 @@
 import expressAsyncHandler from 'express-async-handler'
 import httpStatus from 'http-status'
 import { productService } from '~/services'
+import cloudinaryService from '~/services/cloudinaryService'
 import pick from '~/utils/pick'
 
 const productController = {
@@ -67,6 +68,14 @@ const productController = {
     return res.status(200).json({
       status: true,
       updateProduct
+    })
+  }),
+  uploadImagesProduct:expressAsyncHandler(async (req, res) => {
+    const { pid } = req.params
+    const response = await cloudinaryService.uploadImagesProduct(req.files, pid)
+    return res.status(200).json({
+      success: response ? true : false,
+      uploadImages: response ? response : 'Cannot delete product'
     })
   })
 }
