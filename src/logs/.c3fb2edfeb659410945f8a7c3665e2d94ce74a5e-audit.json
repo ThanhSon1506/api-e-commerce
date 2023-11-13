@@ -6,21 +6,6 @@
     "auditLog": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\.c3fb2edfeb659410945f8a7c3665e2d94ce74a5e-audit.json",
     "files": [
         {
-            "date": 1698426038781,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-28.log",
-            "hash": "e8605ed4468c5f9f67d4bd15e593721bfaeb360104feb5ff3d62bd3c795bedca"
-        },
-        {
-            "date": 1698550169651,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-29.log",
-            "hash": "1a4022c3322c053dc6f15a24c07ca16c870e52020eea54c7b47af88f5132f926"
-        },
-        {
-            "date": 1698642366971,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-30.log",
-            "hash": "d4f4990b3d881f67b408b392660e26090d76716be27fed430204989a399976e4"
-        },
-        {
             "date": 1698723902629,
             "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-10-31.log",
             "hash": "769c03cf6598f9ced134bfac7f45c80b4e15fd674e1f9cb62f71136d7e151808"
@@ -74,6 +59,21 @@
             "date": 1699588133560,
             "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-10.log",
             "hash": "d166be2c31bdfcf7c026517435545c46859877b1275f0f44e575401dee3a148f"
+        },
+        {
+            "date": 1699673920129,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-11.log",
+            "hash": "8cfbbd7001ce253c000a0560538e0a6494cce542c61a573e38ac62ff09046ce7"
+        },
+        {
+            "date": 1699767027971,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-12.log",
+            "hash": "50fcf9a7a7664404dde905931a70f642081b511a795352e02d6bf74ebce1ddb8"
+        },
+        {
+            "date": 1699852912305,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-13.log",
+            "hash": "ac6c22b6e169062a7484b1411ea8d52780d9dd3ce62985969a7c3c448b047499"
         }
     ],
     "hashType": "sha256"

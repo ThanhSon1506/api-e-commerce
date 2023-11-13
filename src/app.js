@@ -16,6 +16,7 @@ import { apiLimiter, authLimiter } from '~/middleware/rateLimiter'
 import ApiError from './utils/ApiError'
 import httpStatus from 'http-status'
 require('./utils/cleanupLogsJob')
+require('./data/backupData')
 const app = express()
 const corsOptions = {
   origin: config.urlClient,

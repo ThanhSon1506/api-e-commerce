@@ -11,7 +11,10 @@ const productCategoryService={
  * @returns {Promise<Product>}
  */
   createProductCategories : expressAsyncHandler ( async (productCategoryBody) => {
-    if (productCategoryBody.title) productCategoryBody.slug = slugify(productCategoryBody.title, { locale:'vi' })
+    if (productCategoryBody.title) {
+      productCategoryBody.slug = slugify(productCategoryBody.title, { locale:'vi' })
+      productCategoryBody.link = slugify(productCategoryBody.title, { locale:'vi' })
+    }
     return ProductCategory.create(productCategoryBody)
   }),
   /**

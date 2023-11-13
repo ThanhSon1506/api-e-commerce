@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { paginate, toJSON } from './plugins'
+import { paginate } from './plugins'
 const { isEmail } = require('validator')
 const bcrypt = require('bcrypt')
 const crypto = require('crypto')
@@ -116,7 +116,6 @@ userSchema.methods = {
   }
 }
 // add plugin that converts mongoose to json
-userSchema.plugin(toJSON)
 userSchema.plugin(paginate)
 const userModel = mongoose.model('User', userSchema)
 

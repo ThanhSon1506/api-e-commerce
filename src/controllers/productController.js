@@ -78,5 +78,6 @@ const productController = {
       uploadImages: response ? response : 'Cannot delete product'
     })
   })
+
 }
 module.exports = productController

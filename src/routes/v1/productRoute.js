@@ -1,4 +1,4 @@
-const uploadCloud = require('~/config/cloudinary.config')
+const { uploadCloud } = require('~/config/cloudinary.config')
 const productController = require('~/controllers/productController')
 const auth = require('~/middleware/auth')
 const validate = require('~/middleware/validate')

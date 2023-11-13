@@ -1,5 +1,5 @@
 import mongoose from 'mongoose' // Erase if already required
-import { paginate, toJSON } from './plugins'
+import { paginate } from './plugins'
 
 // Declare the Schema of the Mongo model
 var blogCategorySchema = new mongoose.Schema({
@@ -19,7 +19,6 @@ var blogCategorySchema = new mongoose.Schema({
   timestamps: true
 })
 // add plugin that converts mongoose to json
-blogCategorySchema.plugin(toJSON)
 blogCategorySchema.plugin(paginate)
 
 //Export the model

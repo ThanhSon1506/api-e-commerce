@@ -1,4 +1,4 @@
-const uploadCloud = require('~/config/cloudinary.config')
+const { uploadCloud } = require('~/config/cloudinary.config')
 const blogController = require('~/controllers/blogController')
 const auth = require('~/middleware/auth')
 const authMiddleware =require('~/middleware/authMiddleware')

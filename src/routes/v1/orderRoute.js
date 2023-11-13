@@ -7,4 +7,9 @@ const router = extendRouter(express.Router())
 router
   .routeWithTag('/', { tag: 'Order' })
   .post(auth(), orderController.createOrder)
+  .get(auth(), orderController.getOrders)
+router.routeWithTag('/status/:orderId', { tag:'Order' }).put(auth(), orderController.updateStatusOrder)
+router
+  .routeWithTag('/:orderId', { tag: 'Order' })
+  .get(auth(), orderController.getOrder)
 module.exports = router

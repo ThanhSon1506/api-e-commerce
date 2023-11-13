@@ -1,5 +1,5 @@
 import mongoose from 'mongoose' // Erase if already required
-import { paginate, toJSON } from './plugins'
+import { paginate } from './plugins'
 
 // Declare the Schema of the Mongo model
 var blogSchema = new mongoose.Schema({
@@ -56,7 +56,6 @@ blogSchema.statics.incrementViews = async function (blogId) {
   return await this.findByIdAndUpdate(blogId, { $inc: { numberViews: 1 } }, { new: true })
 }
 // add plugin that converts mongoose to json
-blogSchema.plugin(toJSON)
 blogSchema.plugin(paginate)
 //Export the model
 module.exports = mongoose.model('Blog', blogSchema)

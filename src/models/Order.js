@@ -1,9 +1,10 @@
 const mongoose = require('mongoose') // Erase if already required
+const { paginate } = require('./plugins')
 
 // Declare the Schema of the Mongo model
 var orderSchema = new mongoose.Schema({
   products:[{
-    product:{ type:mongoose.Types.ObjectId, ref:'Product' },
+    product:{ type:mongoose.Schema.Types.ObjectId, ref:'Product' },
     count:Number,
     color:mongoose.Schema.Types.String
   }],
@@ -14,11 +15,19 @@ var orderSchema = new mongoose.Schema({
   },
   paymentIntent:{
   },
+  total:{
+    type:mongoose.Schema.Types.Number
+  },
+  coupon:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'User'
+  },
   orderBy:{
-    type:mongoose.Types.ObjectId,
+    type:mongoose.Schema.Types.ObjectId,
     ref:'User'
   }
 })
-
+// add plugin that converts mongoose to json
+orderSchema.plugin(paginate)
 //Export the model
 module.exports = mongoose.model('Order', orderSchema)

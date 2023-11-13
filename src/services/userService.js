@@ -53,6 +53,7 @@ const userService = {
  * @returns {Promise<User>}
  */
   getAllUsers : expressAsyncHandler(async () => {
+
     return User.find().select('-refreshToken -password -role')
   }),
 

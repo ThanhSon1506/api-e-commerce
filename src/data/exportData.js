@@ -1,46 +1,53 @@
 const fs = require('fs')
 const path = require('path')
+const config = require('~/config/config')
 const logger = require('~/config/logger')
-const zlib = require('zlib')
-// Đường dẫn đến thư mục models
+const mongoose = require('mongoose')
+
+// const zlib = require('zlib')
 const modelsPath = path.join(__dirname, '..', 'models')
 
-// Đường dẫn đến thư mục exports
 const exportsPath = path.join(__dirname, '..', 'exports')
-// Tạo thư mục exports nếu nó không tồn tại
 if (!fs.existsSync(exportsPath)) {
   fs.mkdirSync(exportsPath)
 }
 
-
-// Xuất dữ liệu từ tất cả các mô hình
-async function exportData() {
+(async function exportData() {
+  await mongoose.connect(config.mongoose.url_local, config.mongoose.options).then(() => logger.info('Database connected!')).catch(err => logger.error(err))
+  if (mongoose.connection.readyState === 1) {
+    logger.info('Đã kết nối đến cơ sở dữ liệu.')
+  } else {
+    logger.info('Chưa kết nối đến cơ sở dữ liệu.')
+  }
   try {
     const models = fs.readdirSync(modelsPath)
-    // Lặp qua từng tệp trong thư mục models
     for (const modelFile of models) {
       if (modelFile.endsWith('.js')) {
         const modelPath = path.join(modelsPath, modelFile)
         const Model = require(modelPath)
-        // Thực hiện truy vấn để lấy dữ liệu từ cơ sở dữ liệu
         const data = await Model.find({})
-        // Tạo thư mục cho mô hình nếu nó không tồn tại
         const modelExportPath = path.join(exportsPath, modelFile.replace('.js', ''))
         if (!fs.existsSync(modelExportPath)) {
           fs.mkdirSync(modelExportPath)
         }
-        // Ghi dữ liệu ra tệp JSON
         const outputPath = path.join(modelExportPath, `${modelFile.replace('.js', '')}_data.json`)
-        const compressedData = zlib.gzipSync(JSON.stringify(data, null, 2))
-        fs.writeFileSync(outputPath, compressedData)
+        fs.writeFileSync(outputPath, JSON.stringify(data, null, 2))
         logger.info(`Dữ liệu từ ${modelFile.replace('.js', '')} đã được xuất thành công.`)
       }
     }
   } catch (error) {
     logger.error('Lỗi khi xuất dữ liệu:', error)
+  } finally {
+    mongoose.connection.close()
+      .then(() => {
+        logger.info('Đã đóng kết nối đến cơ sở dữ liệu.')
+      })
+      .catch((error) => {
+        logger.error('Lỗi khi đóng kết nối đến cơ sở dữ liệu:', error)
+      })
   }
-}
+})()
 
 
-module.exports = exportData
+// module.exports = exportData
 

@@ -1,5 +1,5 @@
 import mongoose from 'mongoose' // Erase if already required
-import { paginate, toJSON } from './plugins'
+import { paginate } from './plugins'
 
 // Declare the Schema of the Mongo model
 var productSchema = new mongoose.Schema({
@@ -62,7 +62,6 @@ var productSchema = new mongoose.Schema({
   timestamps: true
 })
 // add plugin that converts mongoose to json
-productSchema.plugin(toJSON)
 productSchema.plugin(paginate)
 //Export the model
 module.exports = mongoose.model('Product', productSchema)
