@@ -2,321 +2,215 @@
   {
     "title": "Điện thoại",
     "slug": "dien-thoai",
-    "link": "/dtdd",
+    "url": "/dtdd",
     "image": "https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn//content/icon-phone-96x96-2.png",
     "subcategories": []
   },
   {
     "title": "Laptop",
     "slug": "laptop",
-    "link": "/laptop-ldp",
+    "url": "/laptop-ldp",
     "image": "https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn//content/icon-laptop-96x96-1.png",
     "subcategories": []
   },
   {
     "title": "Tablet",
     "slug": "tablet",
-    "link": "/may-tinh-bang",
+    "url": "/may-tinh-bang",
     "image": "https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn//content/icon-tablet-96x96-1.png",
     "subcategories": []
   },
   {
     "title": "Phụ kiện",
     "slug": "phu-kien",
-    "link": "/phu-kien",
+    "url": "/phu-kien",
     "image": "https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn//content/icon-phu-kien-96x96-1.png",
     "subcategories": [
       {
         "title": "Sạc dự phòng",
         "slug": "sac-du-phong",
-        "link": "/sac-dtdd"
+        "link": "https://www.thegioididong.com/sac-dtdd",
+        "url": "/sac-dtdd"
       },
       {
         "title": "Sạc, cáp",
         "slug": "sac-cap",
-        "link": "/sac-cap"
+        "link": "https://www.thegioididong.com/sac-cap",
+        "url": "/sac-cap"
       },
       {
         "title": "Ốp lưng điện thoại",
         "slug": "op-lung-dien-thoai",
-        "link": "/op-lung-flipcover"
+        "link": "https://www.thegioididong.com/op-lung-flipcover",
+        "url": "/op-lung-flipcover"
       },
       {
         "title": "Ốp lưng máy tính bảng",
         "slug": "op-lung-may-tinh-bang",
-        "link": "/op-lung-may-tinh-bang"
+        "link": "https://www.thegioididong.com/op-lung-may-tinh-bang",
+        "url": "/op-lung-may-tinh-bang"
       },
       {
         "title": "Miếng dán",
         "slug": "mieng-dan",
-        "link": "/mieng-dan-man-hinh"
+        "link": "https://www.thegioididong.com/mieng-dan-man-hinh",
+        "url": "/mieng-dan-man-hinh"
       },
       {
         "title": "Gậy chụp ảnh, Gimbal",
         "slug": "gay-chup-anh-gimbal",
-        "link": "/gay-tu-suong"
+        "link": "https://www.thegioididong.com/gay-tu-suong",
+        "url": "/gay-tu-suong"
       },
       {
         "title": "Giá đỡ điện thoại, laptop",
         "slug": "gia-do-dien-thoai-laptop",
-        "link": "/gia-do-dien-thoai"
+        "link": "https://www.thegioididong.com/gia-do-dien-thoai",
+        "url": "/gia-do-dien-thoai"
       },
       {
         "title": "Đế, móc điện thoại",
         "slug": "de-moc-dien-thoai",
-        "link": "/de-moc-dien-thoai"
+        "link": "https://www.thegioididong.com/de-moc-dien-thoai",
+        "url": "/de-moc-dien-thoai"
       },
       {
         "title": "Túi đựng AirPods",
         "slug": "tui-dung-airpods",
-        "link": "/tui-dung-airpods"
+        "link": "https://www.thegioididong.com/tui-dung-airpods",
+        "url": "/tui-dung-airpods"
       },
       {
         "title": "AirTag, Vỏ bảo vệ AirTag",
         "slug": "airtag-vo-bao-ve-airtag",
-        "link": "/airtag"
+        "link": "https://www.thegioididong.com/airtag",
+        "url": "/airtag"
       },
       {
         "title": "Bàn phím, bút tablet",
         "slug": "ban-phim-but-tablet",
-        "link": "/phu-kien-thong-minh"
+        "link": "https://www.thegioididong.com/phu-kien-thong-minh",
+        "url": "/phu-kien-thong-minh"
       },
       {
         "title": "Chuột, bàn phím",
         "slug": "chuot-ban-phim",
-        "link": "/chuot-ban-phim"
+        "link": "https://www.thegioididong.com/chuot-ban-phim",
+        "url": "/chuot-ban-phim"
       },
       {
         "title": "Thiết bị mạng",
         "slug": "thiet-bi-mang",
-        "link": "/thiet-bi-mang"
+        "link": "https://www.thegioididong.com/thiet-bi-mang",
+        "url": "/thiet-bi-mang"
       },
       {
         "title": "Balo, túi chống sốc",
         "slug": "balo-tui-chong-soc",
-        "link": "/tui-chong-soc"
+        "link": "https://www.thegioididong.com/tui-chong-soc",
+        "url": "/tui-chong-soc"
       },
       {
         "title": "Phần mềm",
         "slug": "phan-mem",
-        "link": "/phan-mem"
+        "link": "https://www.thegioididong.com/phan-mem",
+        "url": "/phan-mem"
       },
       {
         "title": "Camera",
         "slug": "camera",
-        "link": "/camera-giam-sat"
+        "link": "https://www.thegioididong.com/camera-giam-sat",
+        "url": "/camera-giam-sat"
       },
       {
         "title": "Máy chiếu",
         "slug": "may-chieu",
-        "link": "/may-chieu"
+        "link": "https://www.thegioididong.com/may-chieu",
+        "url": "/may-chieu"
       },
       {
         "title": "Ổ cắm, bóng đèn thông minh",
         "slug": "o-cam-bong-den-thong-minh",
-        "link": "/o-cam-thong-minh"
+        "link": "https://www.thegioididong.com/o-cam-thong-minh",
+        "url": "/o-cam-thong-minh"
       },
       {
         "title": "Apple",
         "slug": "apple",
-        "link": "/phu-kien/apple"
+        "link": "https://www.thegioididong.com/phu-kien/apple",
+        "url": "/phu-kien/apple"
       },
       {
         "title": "Samsung",
         "slug": "samsung",
-        "link": "/phu-kien/samsung"
+        "link": "https://www.thegioididong.com/phu-kien/samsung",
+        "url": "/phu-kien/samsung"
       },
       {
         "title": "Sony",
         "slug": "sony",
-        "link": "/phu-kien/sony"
+        "link": "https://www.thegioididong.com/phu-kien/sony",
+        "url": "/phu-kien/sony"
       },
       {
         "title": "JBL",
         "slug": "jbl",
-        "link": "/phu-kien/jbl"
+        "link": "https://www.thegioididong.com/phu-kien/jbl",
+        "url": "/phu-kien/jbl"
       },
       {
         "title": "Anker",
         "slug": "anker",
-        "link": "/phu-kien/anker"
+        "link": "https://www.thegioididong.com/phu-kien/anker",
+        "url": "/phu-kien/anker"
       },
       {
         "title": "Tai nghe",
         "slug": "tai-nghe",
-        "link": "/tai-nghe"
+        "link": "https://www.thegioididong.com/tai-nghe",
+        "url": "/tai-nghe"
       },
       {
         "title": "Loa",
         "slug": "loa",
-        "link": "/loa-ldp"
+        "link": "https://www.thegioididong.com/loa-ldp",
+        "url": "/loa-ldp"
       },
       {
         "title": "Micro",
         "slug": "micro",
-        "link": "/micro-cac-loai"
+        "link": "https://www.thegioididong.com/micro-cac-loai",
+        "url": "/micro-cac-loai"
       },
       {
         "title": "Ổ cứng di động",
         "slug": "o-cung-di-dong",
-        "link": "/o-cung-di-dong"
+        "link": "https://www.thegioididong.com/o-cung-di-dong",
+        "url": "/o-cung-di-dong"
       },
       {
         "title": "Thẻ nhớ",
         "slug": "the-nho",
-        "link": "/the-nho-dien-thoai"
+        "link": "https://www.thegioididong.com/the-nho-dien-thoai",
+        "url": "/the-nho-dien-thoai"
       },
       {
         "title": "USB",
         "slug": "usb",
-        "link": "/usb"
+        "link": "https://www.thegioididong.com/usb",
+        "url": "/usb"
       },
       {
         "title": "Phụ kiện ô tô",
         "slug": "phu-kien-o-to",
-        "link": "/phu-kien-oto"
+        "link": "https://www.thegioididong.com/phu-kien-oto",
+        "url": "/phu-kien-oto"
       },
       {
         "title": "Pin tiểu",
         "slug": "pin-tieu",
-        "link": "/pin"
-      }
-    ]
-  },
-  {
-    "title": "Smartwatch",
-    "slug": "smartwatch",
-    "link": "/dong-ho-thong-minh-ldp",
-    "image": "https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn//content/icon-smartwatch-96x96-1.png",
-    "subcategories": []
-  },
-  {
-    "title": "Đồng hồ",
-    "slug": "dong-ho",
-    "link": "/dong-ho",
-    "image": "https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn//content/watch-icon-96x96.png",
-    "subcategories": []
-  },
-  {
-    "title": "Máy cũ giá rẻ",
-    "slug": "may-cu-gia-re",
-    "link": "/may-doi-tra",
-    "image": "https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn//content/icon-header-may-cu-30x30.png",
-    "subcategories": []
-  },
-  {
-    "title": "PC, Máy in",
-    "slug": "pc-may-in",
-    "link": "/pc-may-in",
-    "image": "https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn//content/icon-pc-96x96.png",
-    "subcategories": [
-      {
-        "title": "Máy in",
-        "slug": "may-in",
-        "link": "/may-in"
-      },
-      {
-        "title": "Mực in",
-        "slug": "muc-in",
-        "link": "/muc-in"
-      },
-      {
-        "title": "Màn hình máy tính",
-        "slug": "man-hinh-may-tinh",
-        "link": "/man-hinh-may-tinh"
-      },
-      {
-        "title": "Máy tính để bàn",
-        "slug": "may-tinh-de-ban",
-        "link": "/may-tinh-de-ban"
-      },
-      {
-        "title": "Phần mềm",
-        "slug": "phan-mem",
-        "link": "/phan-mem"
-      }
-    ]
-  },
-  {
-    "title": "Sim, Thẻ cào",
-    "slug": "sim-the-cao",
-    "link": "/sim-so-dep",
-    "subcategories": []
-  },
-  {
-    "title": "Dịch vụ tiện ích",
-    "slug": "dich-vu-tien-ich",
-    "link": "/tien-ich/thanh-toan-tra-gop",
-    "subcategories": [
-      {
-        "title": "Đóng tiền trả góp",
-        "slug": "dong-tien-tra-gop",
-        "link": "/tien-ich/thanh-toan-tra-gop"
-      },
-      {
-        "title": "Đóng tiền điện",
-        "slug": "dong-tien-dien",
-        "link": "/tien-ich/thanh-toan-tien-dien"
-      },
-      {
-        "title": "Đóng tiền nước",
-        "slug": "dong-tien-nuoc",
-        "link": "/tien-ich/thanh-toan-tien-nuoc"
-      },
-      {
-        "title": "Đóng tiền NET FPT",
-        "slug": "dong-tien-net-fpt",
-        "link": "/tien-ich/thanh-toan-internet-fpt"
-      },
-      {
-        "title": "Đóng tiền net, cáp VNPT",
-        "slug": "dong-tien-net-cap-vnpt",
-        "link": "/tien-ich/thanh-toan-internet-vnpt"
-      },
-      {
-        "title": "Vé tàu, xe, máy bay",
-        "slug": "ve-tau-xe-may-bay",
-        "link": "/tien-ich/thanh-toan-ve-tau-xe"
-      },
-      {
-        "title": "Mua bảo hiểm xe máy, ô tô",
-        "slug": "mua-bao-hiem-xe-may-o-to",
-        "link": "/tien-ich/bao-hiem-o-to-xe-may"
-      },
-      {
-        "title": "Đóng tiền bảo hiểm",
-        "slug": "dong-tien-bao-hiem",
-        "link": "/tien-ich/thanh-toan-bao-hiem"
-      },
-      {
-        "title": "Mua gói truyền hình",
-        "slug": "mua-goi-truyen-hinh",
-        "link": "/tien-ich/goi-cuoc-truyen-hinh"
-      },
-      {
-        "title": "Mua gói data 3G, 4G",
-        "slug": "mua-goi-data-3g-4g",
-        "link": "/tien-ich/goi-cuoc-data"
-      },
-      {
-        "title": "Nạp tiền trả trước",
-        "slug": "nap-tien-tra-truoc",
-        "link": "/tien-ich/nap-tien-dien-thoai"
-      },
-      {
-        "title": "Nạp tiền trả sau",
-        "slug": "nap-tien-tra-sau",
-        "link": "/tien-ich/nap-tien-dien-thoai-tra-sau"
-      },
-      {
-        "title": "Thẻ cào game",
-        "slug": "the-cao-game",
-        "link": "/tien-ich/the-cao-game"
-      },
-      {
-        "title": "Thẻ cào điện thoại",
-        "slug": "the-cao-dien-thoai",
-        "link": "/tien-ich/the-cao-dien-thoai"
+        "link": "https://www.thegioididong.com/pin",
+        "url": "/pin"
       }
     ]
   }

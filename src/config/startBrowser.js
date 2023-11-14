@@ -13,7 +13,7 @@ const startBrowser =async() => {
       'ignoreHTTPSErrors':true
     })
   } catch (error) {
-    logger.log('Không tạo được browser:'+error)
+    logger.log('Không tạo được browser: '+error)
   }
   return browser
 }
