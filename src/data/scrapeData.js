@@ -1,4 +1,4 @@
-const startBrowser = require('~/config/startBrowser')
+const startBrowser = require('~/config/initScrape')
 const { scrapeData } = require('~/controllers/scrapeController')
 
 let browser = startBrowser()

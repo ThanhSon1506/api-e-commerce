@@ -1,94 +1,3024 @@
 [
   {
-    "_id": "6528c7d71a605eeda6b608c2",
-    "title": "Máy giặt Toshiba",
-    "slug": "may-giat-toshiba",
-    "description": "Máy giặt Toshiba",
-    "brand": "Lenovo",
-    "price": 50000,
-    "quantity": 0,
-    "sold": 0,
-    "images": [
-      "https://res.cloudinary.com/dbotrwjph/image/upload/v1699109421/e-commerce/hvxq0l9jm9yotzddzebd.png",
-      "https://res.cloudinary.com/dbotrwjph/image/upload/v1699109421/e-commerce/hnvtuq9bajlcv7yfqspu.jpg",
-      "https://res.cloudinary.com/dbotrwjph/image/upload/v1699109422/e-commerce/ecghwt95bqbdcpe0eo1d.jpg",
-      "https://res.cloudinary.com/dbotrwjph/image/upload/v1699109831/e-commerce/s3daje6mpg80vugkvfkk.png"
-    ],
-    "ratings": [
+    "_id": "9e87d2bf56a5",
+    "title": "Điện thoại iPhone 15 Pro Max 256GB",
+    "slug": "iphone-15-pro-max",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-apple-iphone",
+      "title": "dtdd-apple-iphone",
+      "name": "Điện thoại iPhone (Apple)"
+    },
+    "totalRating": 30,
+    "storage": [
       {
-        "star": 1,
-        "posteBy": "65254f630ae0138006e6d2e6",
-        "comment": "Sản phẩm tệ",
-        "_id": "653b52804e7f1f0fabacd9f9"
+        "title": "256GB"
+      },
+      {
+        "title": "512GB"
+      },
+      {
+        "title": "1TB"
       }
     ],
-    "totalRating": 1,
-    "createdAt": "2023-11-12T06:27:25.887Z",
-    "updatedAt": "2023-11-12T06:27:25.887Z",
-    "__v": 0
+    "color": [
+      {
+        "title": "Titan xanh"
+      },
+      {
+        "title": "Titan tự nhiên"
+      },
+      {
+        "title": "Titan đen"
+      },
+      {
+        "title": "Titan trắng"
+      }
+    ],
+    "quantity": 30,
+    "price": 34990000,
+    "discount": 3,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/305658/Slider/iphone-15-pro-max-256gb---10--1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/305658/Slider/vi-vn-iphone-15-pro-max-256gb--(2).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/305658/Slider/vi-vn-iphone-15-pro-max-256gb--(4).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/305658/Slider/vi-vn-iphone-15-pro-max-256gb--(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/305658/Slider/vi-vn-iphone-15-pro-max-256gb--(3).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/305658/Slider/vi-vn-iphone-15-pro-max-256gb--(6).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/305658/Slider/vi-vn-iphone-15-pro-max-256gb--(7).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/305658/Slider/vi-vn-iphone-15-pro-max-256gb--(8).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/305658/Slider/vi-vn-iphone-15-pro-max-256gb--(9).jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "OLED\n                                            6.7\"\n                                            Super Retina XDR"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "iOS 17"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 48 MP & Phụ 12 MP, 12 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "12 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Apple A17 Pro 6 nhân"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "1 Nano SIM & 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4422 mAh\n                                            20 W"
+      }
+    ]
   },
   {
-    "_id": "652a281c2877c3a7773e15e5",
-    "title": "Máy giặt Toshibsa111",
-    "slug": "may-giat-toshibsa111",
-    "description": "Máy giặt Tosshiba111",
-    "brand": "Aenovo",
-    "price": 60000,
-    "quantity": 0,
-    "sold": 0,
-    "images": [],
-    "ratings": [],
-    "totalRating": 0,
-    "createdAt": "2023-11-12T06:27:25.890Z",
-    "updatedAt": "2023-11-12T06:27:25.890Z",
-    "__v": 0
+    "_id": "2a550f7bf43e",
+    "title": "Điện thoại iPhone 15 Pro 128GB",
+    "slug": "iphone-15-pro",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-apple-iphone",
+      "title": "dtdd-apple-iphone",
+      "name": "Điện thoại iPhone (Apple)"
+    },
+    "totalRating": 6,
+    "storage": [
+      {
+        "title": "128GB"
+      },
+      {
+        "title": "256GB"
+      },
+      {
+        "title": "512GB"
+      },
+      {
+        "title": "1TB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Titan xanh"
+      },
+      {
+        "title": "Titan trắng"
+      },
+      {
+        "title": "Titan tự nhiên"
+      },
+      {
+        "title": "Titan đen"
+      }
+    ],
+    "quantity": 6,
+    "price": 28990000,
+    "discount": 3,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/299033/Slider/vi-vn-iphone-15-pro-slider--1-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299033/Slider/vi-vn-iphone-15-pro-slider--(2).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299033/Slider/vi-vn-iphone-15-pro-slider--(3).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299033/Slider/vi-vn-iphone-15-pro-slider--(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299033/Slider/vi-vn-iphone-15-pro-slider--(6).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299033/Slider/vi-vn-iphone-15-pro-slider--(4).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299033/Slider/vi-vn-iphone-15-pro-slider--(7).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299033/Slider/vi-vn-iphone-15-pro-slider--(8).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299033/Slider/vi-vn-iphone-15-pro-slider--(9).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299033/Slider/iphone-15-pro-slider--10--1020x570.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "OLED\n                                            6.1\"\n                                            Super Retina XDR"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "iOS 17"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 48 MP & Phụ 12 MP, 12 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "12 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Apple A17 Pro 6 nhân"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "1 Nano SIM & 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "3274 mAh\n                                            20 W"
+      }
+    ]
   },
   {
-    "_id": "652a87f7ac325c4cc511aaba",
-    "title": "Máy giặt",
-    "slug": "may-giat",
-    "description": "Máy giặt",
-    "brand": "Aenovo",
-    "price": 60000,
-    "quantity": 0,
-    "sold": 0,
-    "images": [],
-    "ratings": [],
-    "totalRating": 0,
-    "createdAt": "2023-11-12T06:27:25.891Z",
-    "updatedAt": "2023-11-12T06:27:25.891Z",
-    "__v": 0
+    "_id": "573de716c7db",
+    "title": "Điện thoại iPhone 15 Plus 128GB",
+    "slug": "iphone-15-plus",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-apple-iphone",
+      "title": "dtdd-apple-iphone",
+      "name": "Điện thoại iPhone (Apple)"
+    },
+    "totalRating": 10,
+    "storage": [
+      {
+        "title": "128GB"
+      },
+      {
+        "title": "256GB"
+      },
+      {
+        "title": "512GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Xanh dương nhạt"
+      },
+      {
+        "title": "Đen"
+      },
+      {
+        "title": "Hồng nhạt"
+      },
+      {
+        "title": "Xanh lá nhạt"
+      },
+      {
+        "title": "Vàng nhạt"
+      }
+    ],
+    "quantity": 10,
+    "price": 25990000,
+    "discount": 0,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/303891/Slider/vi-vn-iphone-15-plus-slider--(2).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/303891/Slider/vi-vn-iphone-15-plus-slider--(9).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/303891/Slider/vi-vn-iphone-15-plus-slider--(8).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/303891/Slider/vi-vn-iphone-15-plus-slider--(6).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/303891/Slider/vi-vn-iphone-15-plus-slider--(3).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/303891/Slider/vi-vn-iphone-15-plus-slider--(4).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/303891/Slider/iphone-15-plus-12-1020x570.png",
+      "https:https://cdn.tgdd.vn/Products/Images/42/303891/Slider/vi-vn-iphone-15-plus-slider--(7).jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "OLED\n                                            6.7\"\n                                            Super Retina XDR"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "iOS 17"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 48 MP & Phụ 12 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "12 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Apple A16 Bionic"
+      },
+      {
+        "name": "RAM:",
+        "content": "6 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "1 Nano SIM & 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4383 mAh\n                                            20 W"
+      }
+    ]
   },
   {
-    "_id": "65431d3e9889274d5c6a3570",
-    "title": "Máy giặt Toshiba1",
-    "slug": "may-giat-toshiba1",
-    "description": "Máy giặt Toshiba1",
-    "brand": "Lenovo",
-    "price": 50000,
-    "quantity": 0,
-    "sold": 0,
-    "images": [],
-    "ratings": [],
-    "totalRating": 0,
-    "createdAt": "2023-11-12T06:27:25.893Z",
-    "updatedAt": "2023-11-12T06:27:25.893Z",
-    "__v": 0
+    "_id": "06f276b980ed",
+    "title": "Điện thoại iPhone 15 128GB",
+    "slug": "iphone-15",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-apple-iphone",
+      "title": "dtdd-apple-iphone",
+      "name": "Điện thoại iPhone (Apple)"
+    },
+    "totalRating": 5,
+    "storage": [
+      {
+        "title": "128GB"
+      },
+      {
+        "title": "256GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Đen"
+      },
+      {
+        "title": "Xanh dương nhạt"
+      },
+      {
+        "title": "Hồng nhạt"
+      },
+      {
+        "title": "Vàng nhạt"
+      },
+      {
+        "title": "Xanh lá nhạt"
+      }
+    ],
+    "quantity": 5,
+    "price": 22990000,
+    "discount": 4,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/281570/Slider/vi-vn-iphone-15-slider--(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/281570/Slider/vi-vn-iphone-15-slider--(3).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/281570/Slider/vi-vn-iphone-15-slider--(2).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/281570/Slider/vi-vn-iphone-15-slider--(6).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/281570/Slider/vi-vn-iphone-15-slider--(7).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/281570/Slider/iphone-15-slider--9-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/281570/Slider/iphone-15-slider-3--1--1020x570.png",
+      "https:https://cdn.tgdd.vn/Products/Images/42/281570/Slider/vi-vn-iphone-15-slider--(1).jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "OLED\n                                            6.1\"\n                                            Super Retina XDR"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "iOS 17"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 48 MP & Phụ 12 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "12 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Apple A16 Bionic"
+      },
+      {
+        "name": "RAM:",
+        "content": "6 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "1 Nano SIM & 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "3349 mAh\n                                            20 W"
+      }
+    ]
   },
   {
-    "_id": "65431d449889274d5c6a3572",
-    "title": "Máy giặt Toshiba11",
-    "slug": "may-giat-toshiba11",
-    "description": "Máy giặt Toshiba11",
-    "brand": "Lenovo",
-    "price": 50000,
-    "quantity": 0,
-    "sold": 0,
-    "images": [],
-    "ratings": [],
+    "_id": "2360db37b2f8",
+    "title": "Điện thoại OPPO Find N3 5G",
+    "slug": "oppo-find-n3",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-oppo",
+      "title": "dtdd-oppo",
+      "name": "Điện thoại OPPO"
+    },
     "totalRating": 0,
-    "createdAt": "2023-11-12T06:27:25.893Z",
-    "updatedAt": "2023-11-12T06:27:25.893Z",
-    "__v": 0
+    "storage": [],
+    "color": [
+      {
+        "title": "Vàng đồng"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 0,
+    "price": 0,
+    "discount": 0,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/302953/Slider/vi-vn-oppo-find-n3-slider--(7).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/302953/Slider/vi-vn-oppo-find-n3-slider--(6).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/302953/Slider/vi-vn-oppo-find-n3-slider--(2).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/302953/Slider/vi-vn-oppo-find-n3-slider--(3).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/302953/Slider/vi-vn-oppo-find-n3-slider--(4).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/302953/Slider/vi-vn-oppo-find-n3-slider--(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/302953/Slider/vi-vn-oppo-find-n3-slider--(8).jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "AMOLED\n                                            Chính 7.82\" & Phụ 6.31\"\n                                            Quad HD+ (2K+)"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 48 MP & Phụ 48 MP, 64 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "Trong: 20 MP & Ngoài: 32 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Snapdragon 8 Gen 2 8 nhân"
+      },
+      {
+        "name": "RAM:",
+        "content": "16 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "512 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM hoặc 1 Nano SIM + 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4805 mAh\n                                            67 W"
+      }
+    ]
+  },
+  {
+    "_id": "2792ef3469d0",
+    "title": "Điện thoại OPPO Find N3 Flip 5G Hồng",
+    "slug": "oppo-find-n3-flip-hong",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-oppo",
+      "title": "dtdd-oppo",
+      "name": "Điện thoại OPPO"
+    },
+    "totalRating": 0,
+    "storage": [
+      {
+        "title": "Hồng"
+      },
+      {
+        "title": "Đen + Vàng đồng"
+      }
+    ],
+    "color": [],
+    "quantity": 0,
+    "price": 0,
+    "discount": 0,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/317981/Slider/oppo-find-n3-flip-hong638357727104862948.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/317981/Slider/oppo-find-n3-flip-hong638357727102482934.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/317981/Slider/oppo-find-n3-flip-hong638357727103722921.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/317981/Slider/oppo-find-n3-flip-hong638357727098912935.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/317981/Slider/oppo-find-n3-flip-hong638357727100052925.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/317981/Slider/oppo-find-n3-flip-hong638357727097252877.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/317981/Slider/oppo-find-n3-flip-hong638357727101122892.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "AMOLED\n                                            Chính 6.8\" & Phụ 3.26\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 48 MP, 32 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "32 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "MediaTek Dimensity 9200 5G 8 nhân"
+      },
+      {
+        "name": "RAM:",
+        "content": "12 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4300 mAh\n                                            44 W"
+      }
+    ]
+  },
+  {
+    "_id": "3778497be036",
+    "title": "Điện thoại Xiaomi Redmi 12 4GB",
+    "slug": "xiaomi-redmi-12-4gb",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-xiaomi",
+      "title": "dtdd-xiaomi",
+      "name": "Điện thoại Xiaomi"
+    },
+    "totalRating": 530,
+    "storage": [
+      {
+        "title": "4GB"
+      },
+      {
+        "title": "8GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Bạc"
+      },
+      {
+        "title": "Đen"
+      },
+      {
+        "title": "Xanh Dương"
+      }
+    ],
+    "quantity": 530,
+    "price": 4290000,
+    "discount": 13,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/307556/Slider/vi-vn-xiaomi-redmi-12-4gb-slider-1.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/307556/Slider/xiaomi-redmi-12-4gb638203481619948404.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/307556/Slider/xiaomi-redmi-12-4gb638203481620578376.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/307556/Slider/vi-vn-xiaomi-redmi-12-4gb-slider-4.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/307556/Slider/xiaomi-redmi-12-4gb638203481622938419.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/307556/Slider/xiaomi-redmi-12-4gb638203481623718417.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "IPS LCD\n                                            6.79\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 8 MP, 2 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "8 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "MediaTek Helio G88"
+      },
+      {
+        "name": "RAM:",
+        "content": "4 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM (SIM 2 chung khe thẻ nhớ)\n                                            Hỗ trợ 4G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            18 W"
+      }
+    ]
+  },
+  {
+    "_id": "72ad52fd2a44",
+    "title": "Điện thoại vivo Y17s (6GB/128GB)",
+    "slug": "vivo-y17s",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-vivo",
+      "title": "dtdd-vivo",
+      "name": "Điện thoại vivo"
+    },
+    "totalRating": 14,
+    "storage": [
+      {
+        "title": "6GB - 128GB"
+      },
+      {
+        "title": "4GB - 64GB"
+      },
+      {
+        "title": "4GB - 128GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Xanh đen"
+      },
+      {
+        "title": "Tím"
+      }
+    ],
+    "quantity": 14,
+    "price": 4490000,
+    "discount": 4,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/314975/Slider/vi-vn-vivo-y17s-slider--(4).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/314975/Slider/vivo-y17s-6gb-slider-55-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/314975/Slider/vi-vn-vivo-y17s-slider--(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/314975/Slider/vivo-y17s-6gb-slider-23-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/314975/Slider/vivo-y17s-6gb-slider-77-1020x570.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "IPS LCD\n                                            6.56\"\n                                            HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 2 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "8 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "MediaTek Helio G85"
+      },
+      {
+        "name": "RAM:",
+        "content": "6 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 4G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            15 W"
+      }
+    ]
+  },
+  {
+    "_id": "701606eed857",
+    "title": "Điện thoại iPhone 14 Pro Max 128GB",
+    "slug": "iphone-14-pro-max",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-apple-iphone",
+      "title": "dtdd-apple-iphone",
+      "name": "Điện thoại iPhone (Apple)"
+    },
+    "totalRating": 414,
+    "storage": [
+      {
+        "title": "128GB"
+      },
+      {
+        "title": "256GB"
+      },
+      {
+        "title": "512GB"
+      },
+      {
+        "title": "1TB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Tím"
+      },
+      {
+        "title": "Đen"
+      },
+      {
+        "title": "Vàng"
+      }
+    ],
+    "quantity": 414,
+    "price": 29990000,
+    "discount": 9,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/251192/Slider/iphone-14-pro-max-tong-quan-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/251192/Slider/iphone-14-pro-max-up-3-new-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/251192/Slider/vi-vn-iphone-14-pro-max-up-4.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/251192/Slider/vi-vn-iphone-14-pro-max-up-5.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/251192/Slider/vi-vn-iphone-14-pro-max-up-6.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/251192/Slider/vi-vn-iphone-14-pro-max-up-7.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/251192/Slider/vi-vn-iphone-14-pro-max-up-8.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/251192/Slider/vi-vn-iphone-14-pro-max-up-9.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/251192/Slider/vi-vn-iphone-14-pro-max-up-10.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/251192/Slider/vi-vn-iphone-14-pro-max-up-11.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/251192/Slider/vi-vn-iphone-14-pro-max-up-12.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/251192/Slider/vi-vn-iphone-14-pro-max-up-13.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/251192/Slider/vi-vn-iphone-14-pro-max-up-17.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/251192/Slider/vi-vn-iphone-14-pro-max-up-18.jpeg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "OLED\n                                            6.7\"\n                                            Super Retina XDR"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "iOS 16"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 48 MP & Phụ 12 MP, 12 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "12 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Apple A16 Bionic"
+      },
+      {
+        "name": "RAM:",
+        "content": "6 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "1 Nano SIM & 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4323 mAh\n                                            20 W"
+      }
+    ]
+  },
+  {
+    "_id": "117d587870eb",
+    "title": "Điện thoại Xiaomi 13T 5G 8GB",
+    "slug": "xiaomi-13t",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-xiaomi",
+      "title": "dtdd-xiaomi",
+      "name": "Điện thoại Xiaomi"
+    },
+    "totalRating": 45,
+    "storage": [
+      {
+        "title": "8GB"
+      },
+      {
+        "title": "12GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Xanh Dương"
+      },
+      {
+        "title": "Xanh lá"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 45,
+    "price": 11990000,
+    "discount": 8,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/309814/Slider/vi-vn-xiaomi-13t-8gb-slider--(3).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309814/Slider/vi-vn-xiaomi-13t-8gb-slider--(2).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309814/Slider/vi-vn-xiaomi-13t-8gb-slider--(4).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309814/Slider/vi-vn-xiaomi-13t-8gb-slider--(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309814/Slider/vi-vn-xiaomi-13t-8gb-slider--(6).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309814/Slider/vi-vn-xiaomi-13t-8gb-slider--(7).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309814/Slider/vi-vn-xiaomi-13t-8gb-slider--(8).jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "AMOLED\n                                            6.67\"\n                                            1.5K"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 50 MP, 12 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "20 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "MediaTek Dimensity 8200-Ultra"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            67 W"
+      }
+    ]
+  },
+  {
+    "_id": "729b666a81b1",
+    "title": "Điện thoại OPPO Reno10 5G 128GB",
+    "slug": "oppo-reno10-5g-128gb",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-oppo",
+      "title": "dtdd-oppo",
+      "name": "Điện thoại OPPO"
+    },
+    "totalRating": 23,
+    "storage": [
+      {
+        "title": "128GB"
+      },
+      {
+        "title": "256GB Xám"
+      },
+      {
+        "title": "256GB Xanh"
+      }
+    ],
+    "color": [],
+    "quantity": 23,
+    "price": 9990000,
+    "discount": 3,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/309722/Slider/oppo-reno10-5g-128gb638254510437463590.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309722/Slider/oppo-reno10-5g-128gb638254510440573582.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309722/Slider/oppo-reno10-5g-128gb638254510442383628.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309722/Slider/oppo-reno10-5g-128gb638254510446713655.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309722/Slider/oppo-reno10-5g-slider-8-1020x570.png",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309722/Slider/oppo-reno10-5g-slider--111--1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309722/Slider/oppo-reno10-5g-slider-9-1020x570.png",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "AMOLED\n                                            6.7\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 64 MP & Phụ 32 MP, 8 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "32 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "MediaTek Dimensity 7050 5G 8 nhân"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM (SIM 2 chung khe thẻ nhớ)\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            67 W"
+      }
+    ]
+  },
+  {
+    "_id": "6c88184f61b7",
+    "title": "Điện thoại OPPO Reno10 Pro+ 5G",
+    "slug": "oppo-reno10-pro-plus",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-oppo",
+      "title": "dtdd-oppo",
+      "name": "Điện thoại OPPO"
+    },
+    "totalRating": 0,
+    "storage": [],
+    "color": [
+      {
+        "title": "Tím"
+      },
+      {
+        "title": "Xám"
+      }
+    ],
+    "quantity": 0,
+    "price": 0,
+    "discount": 0,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/306980/Slider/oppo-reno10-pro-plus-5g-slider-7-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306980/Slider/oppo-reno10-pro-plus-3-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306980/Slider/oppo-reno10-pro-plus-222-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306980/Slider/oppo-reno10-pro-plus638254580651629312.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306980/Slider/oppo-reno10-pro-plus638254580648789281.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "AMOLED\n                                            6.7\"\n                                            1.5K+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 64 MP, 8 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "32 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Snapdragon 8+ Gen 1"
+      },
+      {
+        "name": "RAM:",
+        "content": "12 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4700 mAh\n                                            100 W"
+      }
+    ]
+  },
+  {
+    "_id": "e660f0612a8a",
+    "title": "Điện thoại OPPO Reno10 Pro 5G",
+    "slug": "oppo-reno10-pro",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-oppo",
+      "title": "dtdd-oppo",
+      "name": "Điện thoại OPPO"
+    },
+    "totalRating": 20,
+    "storage": [],
+    "color": [
+      {
+        "title": "Xám"
+      },
+      {
+        "title": "Tím"
+      }
+    ],
+    "quantity": 20,
+    "price": 0,
+    "discount": 0,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/306979/Slider/vi-vn-oppo-reno10-pro-5g-slider-(1).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306979/Slider/oppo-reno10-pro-5g-slider-10-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306979/Slider/vi-vn-oppo-reno10-pro-5g-slider-(3).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306979/Slider/oppo-reno10-pro-6666-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306979/Slider/vi-vn-oppo-reno10-pro-5g-slider-(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306979/Slider/vi-vn-oppo-reno10-pro-5g-slider-(7).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306979/Slider/oppo-reno10-pro-5g-slider-9-1020x570.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "AMOLED\n                                            6.7\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 32 MP, 8 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "32 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Snapdragon 778G 5G"
+      },
+      {
+        "name": "RAM:",
+        "content": "12 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4600 mAh\n                                            80 W"
+      }
+    ]
+  },
+  {
+    "_id": "5cb4cbdcf5c8",
+    "title": "Điện thoại OPPO A57 128GB",
+    "slug": "oppo-a57-128gb",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-oppo",
+      "title": "dtdd-oppo",
+      "name": "Điện thoại OPPO"
+    },
+    "totalRating": 316,
+    "storage": [],
+    "color": [
+      {
+        "title": "Xanh lá"
+      },
+      {
+        "title": "Vàng"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 316,
+    "price": 4990000,
+    "discount": 24,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/285082/Slider/oppo-a57-4g637916782093061646-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/285082/Slider/oppo-a57-4g637916782095512041-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/285082/Slider/oppo-a57-4g637916782098222429-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/285082/Slider/oppo-a57-4g637916782097292303-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/285082/Slider/oppo-a57-4g637916782096422175-1020x570.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "IPS LCD\n                                            6.56\"\n                                            HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 12"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 13 MP & Phụ 2 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "8 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "MediaTek Helio G35"
+      },
+      {
+        "name": "RAM:",
+        "content": "4 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 4G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            33 W"
+      }
+    ]
+  },
+  {
+    "_id": "577d2df9482c",
+    "title": "Điện thoại vivo V25 5G",
+    "slug": "vivo-v25",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-vivo",
+      "title": "dtdd-vivo",
+      "name": "Điện thoại vivo"
+    },
+    "totalRating": 39,
+    "storage": [
+      {
+        "title": "V25"
+      },
+      {
+        "title": "V25E"
+      }
+    ],
+    "color": [
+      {
+        "title": "Vàng"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 39,
+    "price": 10490000,
+    "discount": 33,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/283148/Slider/vi-vn-vivo-v25-slider--(1).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/283148/Slider/vi-vn-vivo-v25--(1).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/283148/Slider/vi-vn-vivo-v25--44--1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/283148/Slider/vivo-v25-camera-sld-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/283148/Slider/vi-vn-vivo-v25--(2).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/283148/Slider/vi-vn-vivo-v25--(5).jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "AMOLED\n                                            6.44\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 12"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 64 MP & Phụ 8 MP, 2 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "50 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "MediaTek Dimensity 900 5G"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM (SIM 2 chung khe thẻ nhớ)\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4500 mAh\n                                            44 W"
+      }
+    ]
+  },
+  {
+    "_id": "bd47b263f9b3",
+    "title": "Điện thoại Xiaomi 13T Pro 5G",
+    "slug": "xiaomi-13t-pro",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-xiaomi",
+      "title": "dtdd-xiaomi",
+      "name": "Điện thoại Xiaomi"
+    },
+    "totalRating": 28,
+    "storage": [],
+    "color": [
+      {
+        "title": "Xanh lá"
+      },
+      {
+        "title": "Xanh Dương"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 28,
+    "price": 15990000,
+    "discount": 9,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/309816/Slider/vi-vn-xiaomi-13t-pro-slider--(3).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309816/Slider/vi-vn-xiaomi-13t-pro-slider--(2).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309816/Slider/vi-vn-xiaomi-13t-pro-slider--(4).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309816/Slider/vi-vn-xiaomi-13t-pro-slider--(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309816/Slider/vi-vn-xiaomi-13t-pro-slider--(6).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309816/Slider/vi-vn-xiaomi-13t-pro-slider--(7).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309816/Slider/vi-vn-xiaomi-13t-pro-slider--(8).jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "AMOLED\n                                            6.67\"\n                                            1.5K"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 50 MP, 12 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "20 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "MediaTek Dimensity 9200+ 5G 8 nhân"
+      },
+      {
+        "name": "RAM:",
+        "content": "12 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            120 W"
+      }
+    ]
+  },
+  {
+    "_id": "8fbd4c167a12",
+    "title": "Điện thoại Xiaomi Redmi Note 12 (8GB/256GB)",
+    "slug": "xiaomi-redmi-note-12-8gb-256gb",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-xiaomi",
+      "title": "dtdd-xiaomi",
+      "name": "Điện thoại Xiaomi"
+    },
+    "totalRating": 63,
+    "storage": [
+      {
+        "title": "8GB - 256GB"
+      },
+      {
+        "title": "8GB - 128GB"
+      },
+      {
+        "title": "4GB - 128GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Vàng"
+      },
+      {
+        "title": "Xanh lá"
+      },
+      {
+        "title": "Xám"
+      },
+      {
+        "title": "Xanh Dương"
+      }
+    ],
+    "quantity": 63,
+    "price": 6490000,
+    "discount": 15,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/309846/Slider/xiaomi-redmi-note-12-8gb-256gb638239894596024880.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309846/Slider/xiaomi-redmi-note-12-8gb-256gb638239894600194921.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309846/Slider/xiaomi-redmi-note-12-8gb-256gb638239894600964951.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309846/Slider/xiaomi-redmi-note-12-8gb-256gb638239894601734904.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309846/Slider/xiaomi-redmi-note-12-8gb-256gb638239894603644906.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/309846/Slider/xiaomi-redmi-note-12-8gb-256gb638239894606854919.jpeg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "AMOLED\n                                            6.67\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 8 MP, 2 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "13 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Snapdragon 685 8 nhân"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 4G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            33 W"
+      }
+    ]
+  },
+  {
+    "_id": "802ff9ea328c",
+    "title": "Điện thoại Xiaomi Redmi Note 12 Pro 128GB",
+    "slug": "xiaomi-redmi-note-12-pro-4g",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-xiaomi",
+      "title": "dtdd-xiaomi",
+      "name": "Điện thoại Xiaomi"
+    },
+    "totalRating": 192,
+    "storage": [
+      {
+        "title": "128GB"
+      },
+      {
+        "title": "256GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Xanh dương nhạt"
+      },
+      {
+        "title": "Xám"
+      },
+      {
+        "title": "Xanh Dương"
+      }
+    ],
+    "quantity": 192,
+    "price": 7190000,
+    "discount": 11,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/299734/Slider/xiaomi-redmi-note-12-pro-4g-tong-quan-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299734/Slider/vi-vn-xiaomi-redmi-note-12-pro-4g--(6).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299734/Slider/vi-vn-xiaomi-redmi-note-12-pro-4g--(4).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299734/Slider/vi-vn-xiaomi-redmi-note-12-pro-4g--(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299734/Slider/vi-vn-xiaomi-redmi-note-12-pro-4g--(2).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299734/Slider/xiaomi-redmi-note-12-pro-slider-5-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299734/Slider/xiaomi-redmi-note-12-pro-4g-pin-1020x570.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "AMOLED\n                                            6.67\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 11"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 108 MP & Phụ 8 MP, 2 MP, 2 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "16 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Snapdragon 732G"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM (SIM 2 chung khe thẻ nhớ)\n                                            Hỗ trợ 4G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            67 W"
+      }
+    ]
+  },
+  {
+    "_id": "05033a47d0bc",
+    "title": "Điện thoại Xiaomi Redmi 12C 64GB",
+    "slug": "xiaomi-redmi-12c-64gb",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-xiaomi",
+      "title": "dtdd-xiaomi",
+      "name": "Điện thoại Xiaomi"
+    },
+    "totalRating": 215,
+    "storage": [
+      {
+        "title": "64GB"
+      },
+      {
+        "title": "128GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Xám"
+      },
+      {
+        "title": "Xanh Dương"
+      },
+      {
+        "title": "Xanh lá"
+      }
+    ],
+    "quantity": 215,
+    "price": 3590000,
+    "discount": 30,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/303575/Slider/xiaomi-redmi-12c-23-2048x1144.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/303575/Slider/xiaomi-redmi-12c-64gb638136959924936795.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/303575/Slider/xiaomi-redmi-12c-64gb638136959906556823.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/303575/Slider/xiaomi-redmi-12c-64gb638136959935126853.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/303575/Slider/xiaomi-redmi-12c-64gb638136959897246626.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "IPS LCD\n                                            6.71\"\n                                            HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 12"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ QVGA"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "5 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "MediaTek Helio G85"
+      },
+      {
+        "name": "RAM:",
+        "content": "4 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "64 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 4G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            10 W"
+      }
+    ]
+  },
+  {
+    "_id": "e86a67a6efe8",
+    "title": "Điện thoại Xiaomi 13 Lite 5G",
+    "slug": "xiaomi-13-lite-5g",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-xiaomi",
+      "title": "dtdd-xiaomi",
+      "name": "Điện thoại Xiaomi"
+    },
+    "totalRating": 81,
+    "storage": [],
+    "color": [
+      {
+        "title": "Đen"
+      },
+      {
+        "title": "Xanh Dương"
+      }
+    ],
+    "quantity": 81,
+    "price": 11490000,
+    "discount": 17,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/302531/Slider/xiaomi-13-lite-5g638134601256744396.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/302531/Slider/xiaomi-13-lite-5g638134601259164505.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/302531/Slider/xiaomi-13-lite-5g638134601260784464.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/302531/Slider/xiaomi-13-lite-5g638134601258374413.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/302531/Slider/xiaomi-13-lite-5g638134601260034449.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/302531/Slider/xiaomi-13-lite-5g638134601262344528.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/302531/Slider/xiaomi-13-lite-5g638134601261584486.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "AMOLED\n                                            6.55\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 12"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 8 MP, 2 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "Chính 32 MP & Phụ 8 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Snapdragon 7 Gen 1 8 nhân"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4500 mAh\n                                            67 W"
+      }
+    ]
+  },
+  {
+    "_id": "b1b832587818",
+    "title": "Điện thoại Xiaomi 12 5G",
+    "slug": "xiaomi-mi-12",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-xiaomi",
+      "title": "dtdd-xiaomi",
+      "name": "Điện thoại Xiaomi"
+    },
+    "totalRating": 93,
+    "storage": [],
+    "color": [
+      {
+        "title": "Xám"
+      },
+      {
+        "title": "Xanh Dương"
+      },
+      {
+        "title": "Tím"
+      }
+    ],
+    "quantity": 93,
+    "price": 13990000,
+    "discount": 21,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/234621/Slider/Artboard1-fixed-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/234621/Slider/Artboard6-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/234621/Slider/Artboard4-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/234621/Slider/Artboard7-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/234621/Slider/Artboard3-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/234621/Slider/Artboard2-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/234621/Slider/Artboard5-1020x570.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "AMOLED\n                                            6.28\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 12"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 13 MP, 5 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "32 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Snapdragon 8 Gen 1"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4500 mAh\n                                            67 W"
+      }
+    ]
+  },
+  {
+    "_id": "ad177a1d5dcb",
+    "title": "Điện thoại realme C53 (6GB/128GB)",
+    "slug": "realme-c53",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-realme",
+      "title": "dtdd-realme",
+      "name": "Điện thoại realme"
+    },
+    "totalRating": 484,
+    "storage": [
+      {
+        "title": "6GB - 128GB"
+      },
+      {
+        "title": "8GB - 256GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Vàng"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 484,
+    "price": 4290000,
+    "discount": 6,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/306785/Slider/vi-vn-realme-c53-slider--(1).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306785/Slider/vi-vn-realme-c53-slider--(3).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306785/Slider/vi-vn-realme-c53-slider--(2).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306785/Slider/realme-c53-slider-7-2040x1140.png",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306785/Slider/vi-vn-realme-c53-slider--(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/306785/Slider/realme-c53-slider-8-2040x1140.png",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "IPS LCD\n                                            6.74\"\n                                            HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 0.08 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "8 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Unisoc Tiger T612"
+      },
+      {
+        "name": "RAM:",
+        "content": "6 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 4G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            33 W"
+      }
+    ]
+  },
+  {
+    "_id": "6391358c7e24",
+    "title": "Điện thoại realme C30s (3GB/64GB)",
+    "slug": "realme-c30s-3gb-64gb",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-realme",
+      "title": "dtdd-realme",
+      "name": "Điện thoại realme"
+    },
+    "totalRating": 46,
+    "storage": [],
+    "color": [
+      {
+        "title": "Xanh Dương"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 46,
+    "price": 0,
+    "discount": 0,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/305887/Slider/realme-c30s-tong-quan-1020x570.png",
+      "https:https://cdn.tgdd.vn/Products/Images/42/305887/Slider/realme-c30s-(3gb-64gb)638169946070327160.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/305887/Slider/realme-c30s-(3gb-64gb)638169946066427295.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/305887/Slider/realme-c30s-(3gb-64gb)638169946069157236.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/305887/Slider/realme-c30s-6-1020x570.png",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "IPS LCD\n                                            6.5\"\n                                            HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 12"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "8 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "5 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Unisoc SC9863A1"
+      },
+      {
+        "name": "RAM:",
+        "content": "3 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "64 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 4G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            10 W"
+      }
+    ]
+  },
+  {
+    "_id": "86e8bf35ee9d",
+    "title": "Điện thoại realme C55 6GB",
+    "slug": "realme-c55",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-realme",
+      "title": "dtdd-realme",
+      "name": "Điện thoại realme"
+    },
+    "totalRating": 180,
+    "storage": [
+      {
+        "title": "6GB - 128GB"
+      },
+      {
+        "title": "8GB - 256GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Vàng"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 180,
+    "price": 4990000,
+    "discount": 8,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/301603/Slider/vi-vn-realme-c55-slider--(1).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/301603/Slider/vi-vn-realme-c55-slider--(7).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/301603/Slider/vi-vn-realme-c55-slider--(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/301603/Slider/vi-vn-realme-c55-slider--(2).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/301603/Slider/vi-vn-realme-c55-slider--(3).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/301603/Slider/vi-vn-realme-c55-slider--(6).jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "IPS LCD\n                                            6.72\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 64 MP & Phụ 2 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "8 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "MediaTek Helio G88"
+      },
+      {
+        "name": "RAM:",
+        "content": "6 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 4G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            33 W"
+      }
+    ]
+  },
+  {
+    "_id": "87b2cc895ce9",
+    "title": "Điện thoại realme 10",
+    "slug": "realme-10",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-realme",
+      "title": "dtdd-realme",
+      "name": "Điện thoại realme"
+    },
+    "totalRating": 73,
+    "storage": [],
+    "color": [
+      {
+        "title": "Trắng"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 73,
+    "price": 6390000,
+    "discount": 15,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/292672/Slider/realme-10638085152492371276.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/292672/Slider/realme-10638085152500811323.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/292672/Slider/realme-10638085152495421296.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/292672/Slider/realme-10638085152502901314.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "Super AMOLED\n                                            6.4\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 12"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 2 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "16 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "MediaTek Helio G99"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 4G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            33 W"
+      }
+    ]
+  },
+  {
+    "_id": "d5b27d9bd587",
+    "title": "Điện thoại realme C51 64GB",
+    "slug": "realme-c51",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-realme",
+      "title": "dtdd-realme",
+      "name": "Điện thoại realme"
+    },
+    "totalRating": 13,
+    "storage": [
+      {
+        "title": "64GB"
+      },
+      {
+        "title": "128GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Xanh ngọc"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 13,
+    "price": 3690000,
+    "discount": 10,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/311355/Slider/realme-c51-slider-1-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/311355/Slider/vi-vn-realme-c51-slider--(3).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/311355/Slider/vi-vn-realme-c51-slider--(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/311355/Slider/vi-vn-realme-c51-slider--(1).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/311355/Slider/vi-vn-realme-c51-slider--(4).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/311355/Slider/vi-vn-realme-c51-slider--(2).jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "IPS LCD\n                                            6.74\"\n                                            HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 0.3 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "5 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Unisoc Tiger T612"
+      },
+      {
+        "name": "RAM:",
+        "content": "4 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "64 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 4G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            33 W"
+      }
+    ]
+  },
+  {
+    "_id": "e1e1b74500f4",
+    "title": "Điện thoại OPPO Reno8 Pro 5G",
+    "slug": "oppo-reno8-pro",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-oppo",
+      "title": "dtdd-oppo",
+      "name": "Điện thoại OPPO"
+    },
+    "totalRating": 55,
+    "storage": [],
+    "color": [
+      {
+        "title": "Đen"
+      },
+      {
+        "title": "Xanh ngọc"
+      }
+    ],
+    "quantity": 55,
+    "price": 18990000,
+    "discount": 26,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/260546/Slider/oppo-reno8-pro---1--1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/260546/Slider/oppo-reno8-pro---7--1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/260546/Slider/oppo-reno8-pro---6--1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/260546/Slider/oppo-reno8-pro---5--1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/260546/Slider/oppo-reno8-pro---3--1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/260546/Slider/vi-vn-oppo-reno8-pro--(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/260546/Slider/vi-vn-oppo-reno8-pro---8--1020x570.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "AMOLED\n                                            6.7\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 12"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 8 MP, 2 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "32 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "MediaTek Dimensity 8100 Max 8 nhân"
+      },
+      {
+        "name": "RAM:",
+        "content": "12 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4500 mAh\n                                            80 W"
+      }
+    ]
+  },
+  {
+    "_id": "3b3c662b2bc2",
+    "title": "Điện thoại Samsung Galaxy Z Fold5 5G 256GB",
+    "slug": "samsung-galaxy-z-fold5",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-samsung",
+      "title": "dtdd-samsung",
+      "name": "Điện thoại Samsung"
+    },
+    "totalRating": 5,
+    "storage": [
+      {
+        "title": "256GB"
+      },
+      {
+        "title": "512GB"
+      },
+      {
+        "title": "1TB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Kem"
+      },
+      {
+        "title": "Xanh da trời nhạt"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 5,
+    "price": 40990000,
+    "discount": 17,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/301608/Slider/vi-vn-samsung-galaxy-z-fold5-256-(1).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/301608/Slider/vi-vn-samsung-galaxy-z-fold5-256-(2).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/301608/Slider/vi-vn-samsung-galaxy-z-fold5-256-(3).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/301608/Slider/vi-vn-samsung-galaxy-z-fold5-256-(4).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/301608/Slider/vi-vn-samsung-galaxy-z-fold5-256-(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/301608/Slider/sam-sung-galaxy-zfold-5-slider-9-1020x570-1.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/301608/Slider/vi-vn-samsung-galaxy-z-fold5-256-(6).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/301608/Slider/vi-vn-samsung-galaxy-z-fold5-256-(8).jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "Dynamic AMOLED 2X\n                                            Chính 7.6\" & Phụ 6.2\"\n                                            Quad HD+ (2K+)"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 12 MP, 10 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "10 MP & 4 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Snapdragon 8 Gen 2 for Galaxy"
+      },
+      {
+        "name": "RAM:",
+        "content": "12 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM hoặc 1 Nano SIM + 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4400 mAh\n                                            25 W"
+      }
+    ]
+  },
+  {
+    "_id": "72dbfd7f69cb",
+    "title": "Điện thoại Samsung Galaxy Z Fold4 5G 256GB",
+    "slug": "samsung-galaxy-z-fold4",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-samsung",
+      "title": "dtdd-samsung",
+      "name": "Điện thoại Samsung"
+    },
+    "totalRating": 103,
+    "storage": [
+      {
+        "title": "256GB"
+      },
+      {
+        "title": "512GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Kem"
+      },
+      {
+        "title": "Đen"
+      },
+      {
+        "title": "Xanh rêu"
+      }
+    ],
+    "quantity": 103,
+    "price": 40990000,
+    "discount": 31,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/250625/Slider/vi-vn-samsung-galaxy-z-fold4--(1).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/250625/Slider/vi-vn-samsung-galaxy-z-fold4--(2).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/250625/Slider/samsung-galaxy-z-fold4-ban-le-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/250625/Slider/vi-vn-samsung-galaxy-z-fold4--(4).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/250625/Slider/vi-vn-samsung-galaxy-z-fold4--(6).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/250625/Slider/vi-vn-samsung-galaxy-z-fold4--(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/250625/Slider/vi-vn-samsung-galaxy-z-fold4--(7).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/250625/Slider/vi-vn-samsung-galaxy-z-fold4--(8).jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "Dynamic AMOLED 2X\n                                            Chính 7.6\" & Phụ 6.2\"\n                                            Quad HD+ (2K+)"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 12"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 12 MP, 10 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "10 MP & 4 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Snapdragon 8+ Gen 1"
+      },
+      {
+        "name": "RAM:",
+        "content": "12 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "1 Nano SIM & 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4400 mAh\n                                            25 W"
+      }
+    ]
+  },
+  {
+    "_id": "fa11e0734ca2",
+    "title": "Điện thoại iPhone 14 Pro 128GB",
+    "slug": "iphone-14-pro",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-apple-iphone",
+      "title": "dtdd-apple-iphone",
+      "name": "Điện thoại iPhone (Apple)"
+    },
+    "totalRating": 184,
+    "storage": [
+      {
+        "title": "128GB"
+      },
+      {
+        "title": "256GB"
+      },
+      {
+        "title": "512GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Vàng"
+      },
+      {
+        "title": "Tím"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 184,
+    "price": 27990000,
+    "discount": 12,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/247508/Slider/iphone-14-pro-tong-quan-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/247508/Slider/iphone-14-pro-up-3-new-1933x982.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/247508/Slider/vi-vn-iphone-14-pro-up-4.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/247508/Slider/vi-vn-iphone-14-pro-up-5.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/247508/Slider/vi-vn-iphone-14-pro-up-6.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/247508/Slider/vi-vn-iphone-14-pro-up-7.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/247508/Slider/vi-vn-iphone-14-pro-up-8.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/247508/Slider/vi-vn-iphone-14-pro-up-9.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/247508/Slider/vi-vn-iphone-14-pro-up-10.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/247508/Slider/vi-vn-iphone-14-pro-up-11.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/247508/Slider/vi-vn-iphone-14-pro-up-12.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/247508/Slider/vi-vn-iphone-14-pro-up-13.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/247508/Slider/vi-vn-iphone-14-pro-up-17.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/247508/Slider/vi-vn-iphone-14-pro-up-18.jpeg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "OLED\n                                            6.1\"\n                                            Super Retina XDR"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "iOS 16"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 48 MP & Phụ 12 MP, 12 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "12 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Apple A16 Bionic"
+      },
+      {
+        "name": "RAM:",
+        "content": "6 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "1 Nano SIM & 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "3200 mAh\n                                            20 W"
+      }
+    ]
+  },
+  {
+    "_id": "683b7f7fedf2",
+    "title": "Điện thoại Samsung Galaxy S23 Ultra 5G 256GB",
+    "slug": "samsung-galaxy-s23-ultra",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-samsung",
+      "title": "dtdd-samsung",
+      "name": "Điện thoại Samsung"
+    },
+    "totalRating": 111,
+    "storage": [
+      {
+        "title": "8GB - 256GB"
+      },
+      {
+        "title": "12GB - 512GB"
+      },
+      {
+        "title": "12GB - 1TB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Xanh rêu"
+      },
+      {
+        "title": "Tím nhạt"
+      },
+      {
+        "title": "Kem"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 111,
+    "price": 31990000,
+    "discount": 25,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/249948/Slider/tong-quan-s23-ultra-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/249948/Slider/vi-vn-samsung-galaxy-s23-ultra-3.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/249948/Slider/man-hinh-s23-ultra-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/249948/Slider/samsung-galaxy-s23-ultra-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/249948/Slider/vi-vn-samsung-galaxy-s23-ultra-6.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/249948/Slider/samsung-galaxy-s23-ultra-cau-hinh-2048x1144.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/249948/Slider/camera-s23-ultra-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/249948/Slider/vi-vn-samsung-galaxy-s23-ultra-9.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "Dynamic AMOLED 2X\n                                            6.8\"\n                                            Quad HD+ (2K+)"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 200 MP & Phụ 12 MP, 10 MP, 10 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "12 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Snapdragon 8 Gen 2 for Galaxy"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM hoặc 1 Nano SIM + 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            45 W"
+      }
+    ]
+  },
+  {
+    "_id": "b9daf64bb9c0",
+    "title": "Điện thoại iPhone 14 Plus 128GB",
+    "slug": "iphone-14-plus",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-apple-iphone",
+      "title": "dtdd-apple-iphone",
+      "name": "Điện thoại iPhone (Apple)"
+    },
+    "totalRating": 102,
+    "storage": [
+      {
+        "title": "128GB"
+      },
+      {
+        "title": "256GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Xanh Dương"
+      },
+      {
+        "title": "Vàng"
+      },
+      {
+        "title": "Đen"
+      },
+      {
+        "title": "Trắng"
+      },
+      {
+        "title": "Tím nhạt"
+      }
+    ],
+    "quantity": 102,
+    "price": 24990000,
+    "discount": 13,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/245545/Slider/vi-vn-iphone-14-plus-up-2.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/245545/Slider/iphone-14-plus-up-3-new-1933x982.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/245545/Slider/iphone-14-plus-up-4-1933x982.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/245545/Slider/iphone-14-plus-up-5-1933x982.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/245545/Slider/vi-vn-iphone-14-plus-up-6.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/245545/Slider/iphone-14-plus-up-7-1933x982-1.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/245545/Slider/iphone-14-plus-up-8-1933x982.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/245545/Slider/vi-vn-iphone-14-plus-up-10.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/245545/Slider/iphone-14-plus-up-11-1933x982.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/245545/Slider/iphone-14-plus-up-12-1933x982.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/245545/Slider/vi-vn-iphone-14-plus-up-13.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/245545/Slider/vi-vn-iphone-14-plus-up-14.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/245545/Slider/vi-vn-iphone-14-plus-up-15.jpeg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "OLED\n                                            6.7\"\n                                            Super Retina XDR"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "iOS 16"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "2 camera 12 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "12 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Apple A15 Bionic"
+      },
+      {
+        "name": "RAM:",
+        "content": "6 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "1 Nano SIM & 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4325 mAh\n                                            20 W"
+      }
+    ]
+  },
+  {
+    "_id": "8240796eb4eb",
+    "title": "Điện thoại Samsung Galaxy Z Flip5 5G 256GB",
+    "slug": "samsung-galaxy-z-flip5",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-samsung",
+      "title": "dtdd-samsung",
+      "name": "Điện thoại Samsung"
+    },
+    "totalRating": 16,
+    "storage": [
+      {
+        "title": "256GB"
+      },
+      {
+        "title": "512GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Xanh mint"
+      },
+      {
+        "title": "Tím nhạt"
+      },
+      {
+        "title": "Xám"
+      },
+      {
+        "title": "Kem"
+      }
+    ],
+    "quantity": 16,
+    "price": 25990000,
+    "discount": 15,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/299250/Slider/vi-vn-samsung-galaxy-z-flip5-256gb-(1).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299250/Slider/vi-vn-samsung-galaxy-z-flip5-256gb-(2).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299250/Slider/vi-vn-samsung-galaxy-z-flip5-256gb-(4).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299250/Slider/vi-vn-samsung-galaxy-z-flip5-256gb-(5).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299250/Slider/vi-vn-samsung-galaxy-z-flip5-256gb-(3).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299250/Slider/vi-vn-samsung-galaxy-z-flip5-256gb-(6).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299250/Slider/vi-vn-samsung-galaxy-z-flip5-256gb-(7).jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299250/Slider/samsung-galaxy-z-flip5-256gb--10--1021x570.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "Chính: Dynamic AMOLED 2X, Phụ: Super AMOLED\n                                            Chính 6.7\" & Phụ 3.4\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "2 camera 12 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "10 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Snapdragon 8 Gen 2 for Galaxy"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "1 Nano SIM & 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "3700 mAh\n                                            25 W"
+      }
+    ]
+  },
+  {
+    "_id": "de3ab78ab775",
+    "title": "Điện thoại OPPO Find N2 Flip 5G",
+    "slug": "oppo-find-n2-flip",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-oppo",
+      "title": "dtdd-oppo",
+      "name": "Điện thoại OPPO"
+    },
+    "totalRating": 43,
+    "storage": [],
+    "color": [
+      {
+        "title": "Tím"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 43,
+    "price": 0,
+    "discount": 0,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/299034/Slider/oppo-find-n2-flip638164614936691947.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299034/Slider/oppo-find-n2-flip638164614943351991.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299034/Slider/oppo-find-n2-flip638164614941621995.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299034/Slider/oppo-find-n2-flip638164614942531987.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299034/Slider/oppo-find-n2-flip638164614938261952.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299034/Slider/oppo-find-n2-flip638164614939082078.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299034/Slider/oppo-find-n2-flip638164614939911993.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/299034/Slider/oppo-find-n2-flip638164614940782016.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "AMOLED\n                                            Chính 6.8\" & Phụ 3.26\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 8 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "32 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "MediaTek Dimensity 9000+ 8 nhân"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4300 mAh\n                                            44 W"
+      }
+    ]
+  },
+  {
+    "_id": "f56e581ab7b7",
+    "title": "Điện thoại Samsung Galaxy S23+ 5G 256GB",
+    "slug": "samsung-galaxy-s23-plus",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-samsung",
+      "title": "dtdd-samsung",
+      "name": "Điện thoại Samsung"
+    },
+    "totalRating": 53,
+    "storage": [
+      {
+        "title": "8GB - 256GB"
+      },
+      {
+        "title": "8GB - 512GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Xanh rêu"
+      },
+      {
+        "title": "Đen"
+      },
+      {
+        "title": "Kem"
+      },
+      {
+        "title": "Tím nhạt"
+      }
+    ],
+    "quantity": 53,
+    "price": 26990000,
+    "discount": 25,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/290829/Slider/tong-quan-s23-plus-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/290829/Slider/thiet-ke-s23-plus-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/290829/Slider/man-hinh-s23-plus-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/290829/Slider/samsung-galaxy-s23-plus-5g-512gb-fix-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/290829/Slider/vi-vn-samsung-galaxy-s23-plus-5.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/290829/Slider/samsung-galaxy-s23-plus-hieu-nang-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/290829/Slider/pin-s23-plus-1020x570.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "Dynamic AMOLED 2X\n                                            6.6\"\n                                            Full HD+"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 13"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 50 MP & Phụ 12 MP, 10 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "12 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Snapdragon 8 Gen 2 for Galaxy"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "256 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM hoặc 1 Nano SIM + 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "4700 mAh\n                                            45 W"
+      }
+    ]
+  },
+  {
+    "_id": "5eaf2fcce3b9",
+    "title": "Điện thoại iPhone 14 128GB",
+    "slug": "iphone-14",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-apple-iphone",
+      "title": "dtdd-apple-iphone",
+      "name": "Điện thoại iPhone (Apple)"
+    },
+    "totalRating": 119,
+    "storage": [
+      {
+        "title": "128GB"
+      },
+      {
+        "title": "256GB"
+      }
+    ],
+    "color": [
+      {
+        "title": "Tím nhạt"
+      },
+      {
+        "title": "Trắng"
+      },
+      {
+        "title": "Xanh Dương"
+      },
+      {
+        "title": "Đen"
+      },
+      {
+        "title": "Đỏ"
+      }
+    ],
+    "quantity": 119,
+    "price": 21990000,
+    "discount": 14,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/240259/Slider/vi-vn-iphone-14-up-2.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/240259/Slider/iphone-14-up-3-new-1933x982.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/240259/Slider/vi-vn-iphone-14-up-4.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/240259/Slider/vi-vn-iphone-14-up-5.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/240259/Slider/vi-vn-iphone-14-up-6.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/240259/Slider/vi-vn-iphone-14-up-7.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/240259/Slider/vi-vn-iphone-14-up-8.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/240259/Slider/vi-vn-iphone-14-up-9.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/240259/Slider/vi-vn-iphone-14-up-10.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/240259/Slider/vi-vn-iphone-14-up-11.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/240259/Slider/vi-vn-iphone-14-up-12.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/240259/Slider/vi-vn-iphone-14-up-13.jpeg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/240259/Slider/vi-vn-iphone-14-up-14.jpeg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "OLED\n                                            6.1\"\n                                            Super Retina XDR"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "iOS 16"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "2 camera 12 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "12 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Apple A15 Bionic"
+      },
+      {
+        "name": "RAM:",
+        "content": "6 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "1 Nano SIM & 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "3279 mAh\n                                            20 W"
+      }
+    ]
+  },
+  {
+    "_id": "b310af845562",
+    "title": "Điện thoại Samsung Galaxy S22 Ultra 5G 128GB",
+    "slug": "samsung-galaxy-s22-ultra",
+    "brand": {
+      "code": "DTDD",
+      "slug": "dtdd-samsung",
+      "title": "dtdd-samsung",
+      "name": "Điện thoại Samsung"
+    },
+    "totalRating": 199,
+    "storage": [],
+    "color": [
+      {
+        "title": "Đỏ đô"
+      },
+      {
+        "title": "Đen"
+      }
+    ],
+    "quantity": 199,
+    "price": 30990000,
+    "discount": 45,
+    "category": "96a78ec29d97",
+    "images": [
+      "https:https://cdn.tgdd.vn/Products/Images/42/235838/Slider/samsung-galaxy-s22-ultra-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/235838/Slider/2.ButSpen-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/235838/Slider/3.Trainghiemthigiac-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/235838/Slider/4.Vixulimanhme-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/235838/Slider/5.Thietkebenbi-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/235838/Slider/8.Matthanbongdem-1020x570.jpg",
+      "https:https://cdn.tgdd.vn/Products/Images/42/235838/Slider/6.Dungluongpin-1020x570.jpg",
+      "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
+    ],
+    "attributes": [
+      {
+        "name": "Màn hình:",
+        "content": "Dynamic AMOLED 2X\n                                            6.8\"\n                                            Quad HD+ (2K+)"
+      },
+      {
+        "name": "Hệ điều hành:",
+        "content": "Android 12"
+      },
+      {
+        "name": "Camera sau:",
+        "content": "Chính 108 MP & Phụ 12 MP, 10 MP, 10 MP"
+      },
+      {
+        "name": "Camera trước:",
+        "content": "40 MP"
+      },
+      {
+        "name": "Chip:",
+        "content": "Snapdragon 8 Gen 1"
+      },
+      {
+        "name": "RAM:",
+        "content": "8 GB"
+      },
+      {
+        "name": "Dung lượng lưu trữ:",
+        "content": "128 GB"
+      },
+      {
+        "name": "SIM:",
+        "content": "2 Nano SIM hoặc 1 Nano SIM + 1 eSIM\n                                            Hỗ trợ 5G"
+      },
+      {
+        "name": "Pin, Sạc:",
+        "content": "5000 mAh\n                                            45 W"
+      }
+    ]
   }
 ]

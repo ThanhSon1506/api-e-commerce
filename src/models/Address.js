@@ -1,15 +1,32 @@
-const mongoose = require('mongoose') // Erase if already required
+const mongoose = require('mongoose')
 
-// Declare the Schema of the Mongo model
-var addressSchema = new mongoose.Schema({
-  address:{
-    type:mongoose.Schema.Types.String,
-    required:true,
-    unique:true,
-    index:true
+const wardSchema = new mongoose.Schema({
+  name: {
+    type: mongoose.Schema.Types.String,
+    required: true
   }
-
 })
 
-//Export the model
-module.exports = mongoose.model('Address', addressSchema)
+const districtSchema = new mongoose.Schema({
+  name: {
+    type: mongoose.Schema.Types.String,
+    required: true
+  },
+  wards: [wardSchema]
+})
+
+const provinceSchema = new mongoose.Schema({
+  name: {
+    type: mongoose.Schema.Types.String,
+    required: true,
+    unique: true,
+    lowercase: true
+  },
+  districts: [districtSchema],
+  address: {
+    type: mongoose.Schema.Types.String,
+    required: false
+  }
+})
+
+module.exports = mongoose.model('Address', provinceSchema)

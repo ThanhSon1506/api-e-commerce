@@ -23,6 +23,11 @@ const productValidation = {
         'string.base': 'Description phải là một chuỗi',
         'string.empty': 'Description không được để trống',
         'any.required': 'Description là trường bắt buộc'
+      }),
+      category: Joi.string().required().messages({
+        'string.base': 'category phải là một chuỗi',
+        'string.empty': 'category không được để trống',
+        'any.required': 'category là trường bắt buộc'
       })
     })
   },

@@ -1,18 +1,93 @@
 [
   {
-    "_id": "6540ae6ec5c70148c91bb3ef",
-    "title": "github",
-    "slug": "github",
-    "createdAt": "2023-11-12T06:27:25.658Z",
-    "updatedAt": "2023-11-12T06:27:25.658Z",
-    "__v": 0
+    "link": "https://www.thegioididong.com/laptop-hp-compaq",
+    "slug": "laptop-hp-compaq",
+    "title": "laptop-hp-compaq",
+    "image": "https://cdn.tgdd.vn/Brand/1/logo-hp-149x40-1.png",
+    "code": "LAPTOP-LDP"
   },
   {
-    "_id": "654103b1ee35590704b7e157",
-    "title": "stackover",
-    "slug": "stackover",
-    "createdAt": "2023-11-12T06:27:25.658Z",
-    "updatedAt": "2023-11-12T06:27:25.658Z",
-    "__v": 0
+    "link": "https://www.thegioididong.com/laptop-asus",
+    "slug": "laptop-asus",
+    "title": "laptop-asus",
+    "image": "https://cdn.tgdd.vn/Brand/1/logo-asus-149x40.png",
+    "code": "LAPTOP-LDP"
+  },
+  {
+    "link": "https://www.thegioididong.com/laptop-acer",
+    "slug": "laptop-acer",
+    "title": "laptop-acer",
+    "image": "https://cdn.tgdd.vn/Brand/1/logo-acer-149x40.png",
+    "code": "LAPTOP-LDP"
+  },
+  {
+    "link": "https://www.thegioididong.com/laptop-lenovo",
+    "slug": "laptop-lenovo",
+    "title": "laptop-lenovo",
+    "image": "https://cdn.tgdd.vn/Brand/1/logo-lenovo-149x40.png",
+    "code": "LAPTOP-LDP"
+  },
+  {
+    "link": "https://www.thegioididong.com/laptop-dell",
+    "slug": "laptop-dell",
+    "title": "laptop-dell",
+    "image": "https://cdn.tgdd.vn/Brand/1/logo-dell-149x40.png",
+    "code": "LAPTOP-LDP"
+  },
+  {
+    "link": "https://www.thegioididong.com/laptop-msi",
+    "slug": "laptop-msi",
+    "title": "laptop-msi",
+    "image": "https://cdn.tgdd.vn/Brand/1/logo-msi-149x40.png",
+    "code": "LAPTOP-LDP"
+  },
+  {
+    "link": "https://www.thegioididong.com/laptop-apple-macbook",
+    "slug": "laptop-apple-macbook",
+    "title": "laptop-apple-macbook",
+    "image": "https://cdn.tgdd.vn/Brand/1/logo-macbook-149x40.png",
+    "code": "LAPTOP-LDP"
+  },
+  {
+    "link": "https://www.thegioididong.com/laptop-itel",
+    "slug": "laptop-itel",
+    "title": "laptop-itel",
+    "image": "https://cdn.tgdd.vn/Brand/1/logo-itel-149x40.png",
+    "code": "LAPTOP-LDP"
+  },
+  {
+    "link": "https://www.thegioididong.com/laptop-gigabyte",
+    "slug": "laptop-gigabyte",
+    "title": "laptop-gigabyte",
+    "image": "https://cdn.tgdd.vn/Brand/1/logo-gigabyte-149x40.png",
+    "code": "LAPTOP-LDP"
+  },
+  {
+    "link": "https://www.thegioididong.com/laptop-surface",
+    "slug": "laptop-surface",
+    "title": "laptop-surface",
+    "image": "https://cdn.tgdd.vn/Brand/1/logo-surface-149x40-1.png",
+    "code": "LAPTOP-LDP"
+  },
+  {
+    "link": "https://www.thegioididong.com/laptop-masstel",
+    "slug": "laptop-masstel",
+    "title": "laptop-masstel",
+    "image": "https://cdn.tgdd.vn/Brand/1/Masstel42-b0-200x48-1.png",
+    "code": "LAPTOP-LDP"
+  },
+  {
+    "link": "https://www.thegioididong.com/laptop-lg",
+    "slug": "laptop-lg",
+    "title": "laptop-lg",
+    "image": "https://cdn.tgdd.vn/Brand/1/logo-lg-149x40.png",
+    "code": "LAPTOP-LDP"
+  },
+  {
+    "link": "https://www.thegioididong.com/laptop-singpc",
+    "slug": "laptop-singpc",
+    "title": "laptop-singpc",
+    "image": "https://cdn.tgdd.vn/Brand/1/logo-singpc-149x40-1.jpg",
+    "code": "LAPTOP-LDP"
   }
 ]

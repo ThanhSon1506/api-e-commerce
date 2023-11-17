@@ -15,11 +15,10 @@ var productSchema = new mongoose.Schema({
     lowercase: true
   },
   description: {
-    type: mongoose.Schema.Types.String,
-    required: true
+    type: mongoose.Schema.Types.String
   },
   brand: {
-    type: mongoose.Schema.Types.String,
+    type: mongoose.Schema.Types.Array,
     required: true
   },
   price: {
@@ -42,8 +41,14 @@ var productSchema = new mongoose.Schema({
     type: Array
   },
   color: {
-    type: mongoose.Schema.Types.String,
-    enum: ['Black', 'Grown', 'Red']
+    type: mongoose.Schema.Types.Array
+  },
+  storage: {
+    type: mongoose.Schema.Types.Array
+  },
+  discount:{
+    type: mongoose.Schema.Types.Number,
+    default: 0
   },
   ratings: [
     {
@@ -55,6 +60,9 @@ var productSchema = new mongoose.Schema({
   totalRating: {
     type: mongoose.Schema.Types.Number,
     default: 0
+  },
+  attributes:{
+    type: Array
   }
 },
 {
