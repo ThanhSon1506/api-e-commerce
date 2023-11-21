@@ -4,11 +4,19 @@ const wardSchema = new mongoose.Schema({
   name: {
     type: mongoose.Schema.Types.String,
     required: true
+  },
+  value: {
+    type: mongoose.Schema.Types.String,
+    required: true
   }
 })
 
 const districtSchema = new mongoose.Schema({
   name: {
+    type: mongoose.Schema.Types.String,
+    required: true
+  },
+  value: {
     type: mongoose.Schema.Types.String,
     required: true
   },
@@ -18,9 +26,11 @@ const districtSchema = new mongoose.Schema({
 const provinceSchema = new mongoose.Schema({
   name: {
     type: mongoose.Schema.Types.String,
-    required: true,
-    unique: true,
-    lowercase: true
+    required: true
+  },
+  value: {
+    type: mongoose.Schema.Types.String,
+    required: true
   },
   districts: [districtSchema],
   address: {

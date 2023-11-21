@@ -9,6 +9,12 @@ var brandSchema = new mongoose.Schema({
     unique:true,
     index:true
   },
+  code:{
+    type:mongoose.Schema.Types.String,
+    required:true,
+    unique:true,
+    index:true
+  },
   slug:{
     type:mongoose.Schema.Types.String,
     required:true,

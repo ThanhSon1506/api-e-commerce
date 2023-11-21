@@ -6,21 +6,6 @@
     "auditLog": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\.c3fb2edfeb659410945f8a7c3665e2d94ce74a5e-audit.json",
     "files": [
         {
-            "date": 1699075333230,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-04.log",
-            "hash": "d2a9a43ec62c630fcaadd58d1d4568d5e6967681da1bd9c9b1d80de32a7e893e"
-        },
-        {
-            "date": 1699160180706,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-05.log",
-            "hash": "33c0e6abcd208288c8828ac5f088d565ac9bd5f7d99a7bb3cd1d8e59be5f8ef0"
-        },
-        {
-            "date": 1699240778212,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-06.log",
-            "hash": "653339a4574606fd659fa23446870783916e90b6340b52cf57ddab3344185d25"
-        },
-        {
             "date": 1699328984428,
             "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-07.log",
             "hash": "7840577d047a1168664920c29c678e6ad4e1d108abd4247a24bf63166f11ccc0"
@@ -74,6 +59,26 @@
             "date": 1700192517862,
             "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-17.log",
             "hash": "562a185624d731cda86d6491bb2d7d16c35272b41be8d2f9c3b5530c1d1bb136"
+        },
+        {
+            "date": 1700287421651,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-18.log",
+            "hash": "d91d4698ea03b1dbf5bf7236bb42d9120344ff233bcd19928bb68396f85af3a3"
+        },
+        {
+            "date": 1700369688050,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-19.log",
+            "hash": "0276f18ea5ba8846037dd2eed999bf35631b7132fba0342bc88bf9539586d591"
+        },
+        {
+            "date": 1700454201800,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-20.log",
+            "hash": "d42a3ee6be624764c86259e8ebbf8dafbfa064831031af0e5d5e681e5dbaf3e4"
+        },
+        {
+            "date": 1700527622437,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-21.log",
+            "hash": "2629b193c0abf846b62dfa29edd2ea7de216464181c35452c856b97e23b54559"
         }
     ],
     "hashType": "sha256"

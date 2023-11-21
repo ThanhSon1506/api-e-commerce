@@ -95,6 +95,7 @@ const scrapeService = {
         return categoryElements.map(element => {
           let objectData = {
             link: element.href || '',
+            code: element.href.replace('https://www.thegioididong.com/', '').split('-')[0].toUpperCase() || '',
             slug: element.href.replace('https://www.thegioididong.com/', '') || '',
             title: element.href.replace('https://www.thegioididong.com/', '') || '',
             image: element.querySelector('img').src || ''
@@ -290,58 +291,92 @@ const scrapeService = {
 
     await page.close()
     logger.info('Đã đóng.')
-    // process.exit(0)
-    // return filteredData
+    process.exit(0)
   }),
 
-  scrapeAddrress: expressAsyncHandler(async (browser, url) => {
+  scrapeAddress: expressAsyncHandler(async (browser, url) => {
     const modelName = 'Address'
     let page = await browser.newPage()
-    logger.info('Mở tab mới....')
-    await page.goto(url)
-    logger.info('Truy cập vào ' + url)
-    await page.click('.header__address')
-    await page.waitForSelector('.listing-location')
-    logger.info('Website đã load xong...')
+    try {
+      logger.info('Mở tab mới....')
+      await page.goto(url)
+      logger.info('Truy cập vào ' + url)
 
-    const provinces = await page.$$eval('#lst-prov .listing-locale ul li a', options => {
-      return options.map(option => {
-        return {
-          name: option.innerText.trim(),
-          value: option.getAttribute('data-value'),
-          districts: []
-        }
-      })
-    })
+      await page.waitForSelector('.header .header__top .header__address', { visible: true })
+      await page.click('.header .header__top .header__address')
+      await page.waitForSelector('.locationbox-v2', { visible: true })
+      logger.info('Website đã load xong...')
 
-    for (const province of provinces) {
-      await page.click(`a[data-value="${province.value}"]`)
-      await page.waitForSelector('#lst-dis')
-      const districtNames = await page.$$eval('.listing-locale ul li a', options => {
+      const provinces = await page.$$eval('#lst-prov .listing-locale ul li a', options => {
         return options.map(option => {
           return {
             name: option.innerText.trim(),
-            value: option.getAttribute('data-value')
+            value: option.getAttribute('data-value'),
+            districts: []
           }
         })
       })
 
-      province.districts = districtNames.map(districtName => ({...districtName, wards: [] }))
-
-      for (const district of province.districts) {
-        await page.click(`a[data-value="${province.value}"]`)
-        await page.waitForSelector('#lst-dis')
-        const wardNames = await page.$$eval('.ward-selector option', options => {
-          return options.map(option => option.innerText.trim())
+      for (const province of provinces) {
+        logger.info(`Nhấp vào tỉnh/ thành phố: ${province.name}`)
+        await Promise.all([
+          page.click(`#lst-prov .listing-locale a[data-value="${province.value}"]`),
+          page.waitForSelector('#lst-dis', { visible: true })
+        ])
+        const districtNames = await page.$$eval('#lst-dis .listing-locale ul li a', options => {
+          return options.map(option => {
+            return {
+              name: option.innerText.trim(),
+              value: option.getAttribute('data-dis')
+            }
+          })
         })
 
-        district.wards = wardNames.map(wardName => ({ name: wardName }))
+        province.districts = districtNames.map(districtName => ({ ...districtName, wards: [] }))
+        logger.info(JSON.stringify(province.districts, null, 2))
+        for (const district of province.districts) {
+          try {
+            logger.info(`Nhấp vào quận/huyện: ${district.name}`)
+            page.click(`#lst-dis .listing-locale a[data-dis="${district.value}"]`)
+            const wardSelector = await page.$('#lst-ward')
+            if (wardSelector) {
+              await Promise.all([
+                page.waitForSelector('#lst-ward', { visible: true, timeout: 10000 })
+              ])
+            } else {
+              await page.click('.location-title .back-ic')
+            }
+          } catch (error) {
+            logger.error(`Lỗi khi xử lý quận/huyện ${district.name}`)
+            logger.error(error)
+          }
+          const wardNames = await page.$$eval('#lst-ward .listing-locale ul li a', options => {
+            return options.map(option => {
+              return {
+                name:option.innerText.trim(),
+                value: option.getAttribute('data-value')
+              }
+            } )
+          })
+          await page.click('.location-title .back-ic')
+          district.wards = wardNames.map(wardName => ({ ...wardName }))
+          logger.info(JSON.stringify( district.wards, null, 2))
+        }
+        await page.click('.location-title .back-ic')
       }
-
-      // Close the modal
-      await page.click('.close-modal-selector')
-      // Wait for the modal to close
-      await page.waitForSelector('.your-modal-selector', { hidden: true })
+      logger.info(JSON.stringify(provinces, null, 2))
+      const modelExportPath = path.join(exportsPath, modelName )
+      if (!fs.existsSync(modelExportPath)) {
+        fs.mkdirSync(modelExportPath)
+      }
+      const outputPath = path.join(modelExportPath, `${modelName}_data.json`)
+      fs.writeFileSync(outputPath, JSON.stringify(provinces, null, 2) )
+      logger.info('Dữ liệu address đã được xuất')
+    } catch (error) {
+      logger.error('Lỗi:', error)
+    } finally {
+      await page.close()
+      process.exit(0)
     }
   })
 }
