@@ -8,8 +8,8 @@ const router = extendRouter(express.Router())
 
 
 // =================================ROUTER====================================================
-router.routeWithTag('/register', { tag: 'Auth' }).post(validate(authValidation.register), authController.postRegister)
 router.routeWithTag('/login', { tag: 'Auth' }).post( validate(authValidation.login), authController.postLogin)
+router.routeWithTag('/register', { tag: 'Auth' }).post(validate(authValidation.register), authController.postRegister)
 router.routeWithTag('/refresh', { tag: 'Auth' }).post( verifyRefreshToken, authController.requestRefreshToken)
 router.routeWithTag('/logout', { tag: 'Auth' }).post( verifyToken, authController.userLogout)
 router.routeWithTag('/forgot-password', { tag: 'Auth' }).post( validate(authValidation.forgotPassword), authController.forgotPassword)
