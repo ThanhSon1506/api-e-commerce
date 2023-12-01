@@ -6,31 +6,6 @@
     "auditLog": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\.c3fb2edfeb659410945f8a7c3665e2d94ce74a5e-audit.json",
     "files": [
         {
-            "date": 1699673920129,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-11.log",
-            "hash": "8cfbbd7001ce253c000a0560538e0a6494cce542c61a573e38ac62ff09046ce7"
-        },
-        {
-            "date": 1699767027971,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-12.log",
-            "hash": "50fcf9a7a7664404dde905931a70f642081b511a795352e02d6bf74ebce1ddb8"
-        },
-        {
-            "date": 1699852912305,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-13.log",
-            "hash": "ac6c22b6e169062a7484b1411ea8d52780d9dd3ce62985969a7c3c448b047499"
-        },
-        {
-            "date": 1699932655277,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-14.log",
-            "hash": "5f6e66ce1e9ef087e96a68b510d9f9177f2cba9199f7512de38f356527f56787"
-        },
-        {
-            "date": 1700026559345,
-            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-15.log",
-            "hash": "7315db76eb3290c73e4bb2110a70ec2e07db664142a18ad71dfe0234120219c3"
-        },
-        {
             "date": 1700124996301,
             "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-16.log",
             "hash": "4e9aa68516b466be9b68ae611753b7373b517f5ccd4a5b6ac462bd95391e405d"
@@ -69,6 +44,11 @@
             "date": 1700820623024,
             "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-24.log",
             "hash": "6d68e299975a2e27e808d9233b201768e9ff997fc379fd4ba42963d8f4497dfd"
+        },
+        {
+            "date": 1701314944751,
+            "name": "F:\\2023\\product\\reactjs\\ecommerce\\api\\src\\logs\\2023-11-30.log",
+            "hash": "2d0129eee96225e3980fe323b428255a0ce0c4e50c63649b09def95f0160af6b"
         }
     ],
     "hashType": "sha256"
