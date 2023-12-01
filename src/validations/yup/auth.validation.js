@@ -4,7 +4,8 @@ const authValidation ={
   login :{
     body: Yup.object().keys({
       email: Yup.string().required().email(),
-      password: Yup.string().required().custom(password)
+      password: Yup.string().required().custom(password),
+      lastName:Yup.string().required()
     })
   },
   registerer :{
