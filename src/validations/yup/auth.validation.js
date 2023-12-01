@@ -6,6 +6,12 @@ const authValidation ={
       email: Yup.string().required().email(),
       password: Yup.string().required().custom(password)
     })
+  },
+  registerer :{
+    body: Yup.object().keys({
+      email: Yup.string().required().email(),
+      password: Yup.string().required().custom(password)
+    })
   }
 }
 
