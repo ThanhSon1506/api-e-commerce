@@ -69,23 +69,30 @@ const scrapeService = {
     const detailLinks = []
     let currentPage = 1
     const maxPages = 5
+    const infoLink=path.basename(url)
     let page = await browser.newPage()
     logger.info('Mở tab mới....')
     await page.goto(url)
     logger.info('Truy cập vào ' + url)
-    await page.waitForSelector('.slider-bannertop .item')
-    logger.info('Website đã load xong...')
+    let filteredData=[]
+    try {
+      await page.waitForSelector('.slider-bannertop .item')
+      logger.info('Website đã load xong...')
 
-    let dataContents = await page.$$eval('.slider-bannertop .item img', elements => {
-      return elements.map(img => {
-        const dataSrc = img.getAttribute('data-src')
-        const src = img.getAttribute('src')
-        const imageUrl = dataSrc ? `https:${dataSrc}` : (src ? `https:${src}` : null)
-        return { banner:imageUrl }
+      let dataContents = await page.$$eval('.slider-bannertop .item img', elements => {
+        return elements.map(img => {
+          const dataSrc = img.getAttribute('data-src')
+          const src = img.getAttribute('src')
+          const imageUrl = dataSrc ? `https:${dataSrc}` : (src ? `https:${src}` : null)
+          return { banner:imageUrl }
+        })
+
       })
+      filteredData = dataContents.filter(item => item.banner !== '')
+    } catch (error) {
+      logger.error(`Lỗi xử lý selector: ${error.message}`)
+    }
 
-    })
-    const filteredData = dataContents.filter(item => item.banner !== '')
     // const jsonData = JSON.stringify(filteredData, null, 2)
     const quickLinkElementsPhone = await page.$('.lst-quickfilter.q-manu')
     let brandsFromQuickLinkPhone = []
@@ -141,7 +148,8 @@ const scrapeService = {
 
 
     while (currentPage <= maxPages) {
-      const pageUrl = `https://www.thegioididong.com/dtdd#c=42&o=17&pi=${currentPage}`
+      const pageUrl = `https://www.thegioididong.com/${infoLink}#c=42&o=17&pi=${currentPage}`
+      // const pageUrl = `https://www.thegioididong.com/${infoLink}#c=42&o=17&pi=1`
       await page.goto(pageUrl, { waitUntil: 'domcontentloaded' })
       const pageLinks = await page.$$eval('.listproduct .item a', detailElements => {
         return detailElements.map(element => {
@@ -153,7 +161,11 @@ const scrapeService = {
         logger.info('Không có thêm nội dung để tải.')
         break
       }
-      pageLinks.forEach(link => {
+      const filteredLinks = pageLinks.filter(link => {
+        // Loại bỏ các giá trị bắt đầu bằng "javascript:" và chứa "#"
+        return !link.startsWith('javascript:') && !link.includes('#')
+      })
+      filteredLinks.forEach(link => {
         if (!detailLinks.includes(link)) {
           detailLinks.push(link)
         }
@@ -161,7 +173,8 @@ const scrapeService = {
       currentPage++
       await page.waitForTimeout(3000)
     }
-    let validLinks = detailLinks.filter(link => /^https:\/\/www\.thegioididong\.com\/dtdd\//.test(link))
+    // const validLinks = detailLinks.filter(link => new RegExp(`^https://www\\.thegioididong\\.com/${infoLink}/`).test(link))
+
     const scrapeDetail = async(link) => {
       let pageDetail = await browser.newPage()
       await pageDetail.goto(link)
@@ -204,15 +217,32 @@ const scrapeService = {
         })
       })
       detailData = detailData.map(obj => ({ ...obj, category: categoriesId }))
-      const imageLinks = await pageDetail.$$eval('.owl-item .owl-lazy', elements => {
+      const bannerLinks = await pageDetail.$$eval('.owl-item .owl-lazy', elements => {
         return elements.map(img => {
           const dataSrc = img.getAttribute('data-src')
           const src = img.getAttribute('src')
-          const imageUrl = dataSrc ? `https:${dataSrc}` : (src ? `https:${src}` : null)
+          const imageUrl = dataSrc ? dataSrc : (src ? src : null)
           return imageUrl
         })
       })
-      detailData = detailData.map(obj => ({ ...obj, images: imageLinks }))
+      detailData = detailData.map(obj => ({ ...obj, banners: bannerLinks }))
+      try {
+        await pageDetail.waitForSelector('.box01__tab .item .item-border img')
+        const imageLinks = await pageDetail.$$eval('.box01__tab .item  .item-border img', images => {
+          return images.map(img => {
+            const dataSrc = img.getAttribute('data-src')
+            const src = img.getAttribute('src')
+            const imageUrl = dataSrc || src || null
+            return imageUrl
+          })
+        })
+        detailData = detailData.map(obj => ({ ...obj, images: imageLinks }))
+      } catch (error) {
+        logger.error('Không tìm thấy selector .box01__tab .item .item-border img')
+
+      }
+
+
       const attributes = await pageDetail.$$eval('.parameter__list li', elements => {
         return elements.map(item => {
           const name = item.querySelector('.lileft')?.textContent.trim()
@@ -262,20 +292,26 @@ const scrapeService = {
 
     const objectDataDetail = []
     const objectProductDetail = []
-    for (let link of validLinks) {
+    for (let link of detailLinks) {
       const scrapedData = await scrapeDetail(link)
       const objectProduct=JSON.stringify(...scrapedData, null, 2)
       const scrapedDataProductDetail = await scrapeDetailProduct(link, JSON.parse(objectProduct)?._id)
       objectProductDetail.push(...scrapedDataProductDetail)
       objectDataDetail.push(...scrapedData)
     }
-    const modelName='Product'
-    const modelExportPath = path.join(exportsPath, modelName )
+    const modelName = 'Product'
+    const modelExportPath = path.join(exportsPath, modelName)
     if (!fs.existsSync(modelExportPath)) {
       fs.mkdirSync(modelExportPath)
     }
     const outputPath = path.join(modelExportPath, `${modelName}_data.json`)
-    fs.writeFileSync(outputPath, JSON.stringify(objectDataDetail, null, 2) )
+    let existingData = []
+    if (fs.existsSync(outputPath)) {
+      const existingDataString = fs.readFileSync(outputPath, 'utf8')
+      existingData = JSON.parse(existingDataString)
+    }
+    existingData.push(...objectDataDetail)
+    fs.writeFileSync(outputPath, JSON.stringify(existingData, null, 2))
 
     const modelDetailProduct='DetailProduct'
     const modelExportPathDetail = path.join(exportsPath, modelDetailProduct )
@@ -283,15 +319,22 @@ const scrapeService = {
       fs.mkdirSync(modelExportPathDetail)
     }
     const outputPathDetail = path.join(modelExportPathDetail, `${modelDetailProduct}_data.json`)
-    fs.writeFileSync(outputPathDetail, JSON.stringify(objectProductDetail, null, 2) )
+    let existingDataDetail = []
+    if (fs.existsSync(outputPath)) {
+      const existingDataString = fs.readFileSync(outputPath, 'utf8')
+      existingDataDetail = JSON.parse(existingDataString)
+    }
+    existingData.push(...objectProductDetail)
+
+    fs.writeFileSync(outputPathDetail, JSON.stringify(existingDataDetail, null, 2) )
 
     scrapeData.header=filteredData
     logger.info('Ghi dữ liệu vào tệp JSON hoàn tất')
     logger.info(JSON.stringify(objectProductDetail, null, 2))
 
-    await page.close()
-    logger.info('Đã đóng.')
-    process.exit(0)
+    // await page.close()
+    // logger.info('Đã đóng.')
+    // process.exit(0)
   }),
 
   scrapeAddress: expressAsyncHandler(async (browser, url) => {
@@ -375,8 +418,8 @@ const scrapeService = {
     } catch (error) {
       logger.error('Lỗi:', error)
     } finally {
-      await page.close()
-      process.exit(0)
+      // await page.close()
+      // process.exit(0)
     }
   })
 }

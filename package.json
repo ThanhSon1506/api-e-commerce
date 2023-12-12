@@ -5,6 +5,7 @@
   "scripts": {
     "cli": "babel-node ./src/bin/cli.js",
     "data:scrape": "babel-node ./src/data/scrapeData.js",
+    "data:clear": "babel-node ./src/data/clearModels.js",
     "data:import": "npx babel-node ./src/data/importData.js",
     "data:export": "npx babel-node ./src/data/exportData.js",
     "lint:fix": "eslint . --fix",
@@ -47,6 +48,7 @@
     "passport": "^0.6.0",
     "path": "^0.12.7",
     "puppeteer": "^21.5.1",
+    "rimraf": "^5.0.5",
     "slugify": "^1.6.6",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",

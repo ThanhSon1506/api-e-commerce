@@ -15,6 +15,10 @@ const router = express.Router()
 
 const defaultRoutes = [
   {
+    path: '/',
+    route: docsRoute
+  },
+  {
     path: '/auth',
     route: authRoute
   },
@@ -56,10 +60,9 @@ const devRoutes = [
   {
     path: '/docs',
     route: docsRoute
-  }
-]
+  }]
 
-defaultRoutes.forEach((route) => {
+defaultRoutes?.forEach((route) => {
   router.use(route.path, route.route)
 })
 

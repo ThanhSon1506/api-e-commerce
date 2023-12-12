@@ -36,6 +36,9 @@ const productValidation = {
       title: Joi.string().messages({
         'string.base': 'Trường "title" phải là một chuỗi ký tự.'
       }),
+      category: Joi.string().messages({
+        'string.base': 'Trường "title" phải là một chuỗi ký tự.'
+      }),
       role: Joi.string().messages({
         'string.base': 'Trường "role" phải là một chuỗi ký tự.'
       }),

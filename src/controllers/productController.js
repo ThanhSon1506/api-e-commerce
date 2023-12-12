@@ -37,8 +37,8 @@ const productController = {
   }),
   // Filtering, sorting, pagination
   getProducts: expressAsyncHandler(async (req, res) => {
-    const filter = pick(req.query, ['title', 'price'])
-    const options= pick(req.query, ['sortBy', 'limit', 'page', 'fields', 'populate'])
+    const filter = pick(req.query, ['title', 'price', 'category'])
+    const options= pick(req.query, ['sortBy', 'limit', 'page', 'fields', 'populate', 'select '])
     const result = await productService.queryProducts(filter, options)
     return res.status(200).json({
       success:result?true:false,
