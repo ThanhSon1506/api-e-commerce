@@ -19,14 +19,15 @@ require('./utils/cleanupLogsJob')
 require('./data/backupData')
 const app = express()
 const corsOptions = {
-  origin: config.urlClient,
+  origin:'*',
   credentials: true,
-  optionSuccessStatus: 200, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
   methods: ['GET', 'POST', 'PUT', 'DELETE']
 }
 dotenv.config()
 dbConnect()
 
+app.use(cors(corsOptions))
 if (config.env !== 'test') {
   app.use(morgan.successHandler)
   app.use(morgan.errorHandler)
@@ -37,7 +38,6 @@ app.use(helmet())
 app.use(xss())
 
 app.use(express.json())
-app.use(cors(corsOptions))
 app.options('*', cors(corsOptions))
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: true }))
