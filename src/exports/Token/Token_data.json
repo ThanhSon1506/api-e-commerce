@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "_id": "65740ffbaa37724397bee3f3",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTI1NGY2MzBhZTAxMzgwMDZlNmQyZTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDIxMDUwODMsImV4cCI6MTcwNDY5NzA4MywidHlwZSI6InJlZnJlc2gifQ.jDAwFYx-cTWikAXtGB_VJmcCiHIzNKsd_TFZUSTH178",
+    "user": "65254f630ae0138006e6d2e6",
+    "type": "refresh",
+    "expires": "2024-01-08T06:58:03.265Z",
+    "blacklisted": false,
+    "createdAt": "2023-12-09T06:58:03.328Z",
+    "updatedAt": "2023-12-09T06:58:03.328Z",
+    "__v": 0
+  },
+  {
+    "_id": "6574100daa37724397bee3f7",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTI1NGY2MzBhZTAxMzgwMDZlNmQyZTYiLCJpYXQiOjE3MDIxMDUxMDEsImV4cCI6MTcwMjEwNTcwMSwidHlwZSI6InZlcmlmeUVtYWlsIn0.pN9Go8rQ89XV2afgYMSpatHWzyt7LXUR0jcJl1XPP5M",
+    "user": "65254f630ae0138006e6d2e6",
+    "type": "verifyEmail",
+    "expires": "2023-12-09T07:08:21.737Z",
+    "blacklisted": false,
+    "createdAt": "2023-12-09T06:58:21.754Z",
+    "updatedAt": "2023-12-09T06:58:21.754Z",
+    "__v": 0
+  }
+]

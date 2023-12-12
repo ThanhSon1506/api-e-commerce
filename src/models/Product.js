@@ -10,8 +10,8 @@ var productSchema = new mongoose.Schema({
   },
   slug: {
     type: mongoose.Schema.Types.String,
-    required: true,
-    unique: true,
+    // required: true,
+    // unique: true,
     lowercase: true
   },
   description: {
@@ -27,7 +27,7 @@ var productSchema = new mongoose.Schema({
   },
   category: {
     type: mongoose.Types.ObjectId,
-    ref: 'Category'
+    ref: 'ProductCategory'
   },
   quantity: {
     type: mongoose.Schema.Types.Number,
