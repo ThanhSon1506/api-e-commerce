@@ -20,20 +20,19 @@ const ErrorHandler = {
   // Error Handler
   // eslint-disable-next-line no-unused-vars
   errorHandler: (err, req, res, next) => {
-    logger.error(err?.stack)
     const statusCode = res.statusCode === 200 ? 500 : res.statusCode
     return res.status(statusCode).json({
       success: false,
-      message: err.errors.map((err => {
-        let field = err.split(':')[0]
-        let code = err.split(':')[1]
-        return field + ' ' + language[req.query.language][code]
-      }))
+      message:
+        err?.errors?.map((err) => {
+          let field = err.split(':')[0]
+          let code = err.split(':')[1]
+          return field + ' ' + language[req.query.language][code]
+        }) || 'Đã có lỗi xảy ra, vui lòng thử lại sau'
       // message: err?.message
       // stack: err?.stack
     })
   }
 }
-
 
 module.exports = ErrorHandler
