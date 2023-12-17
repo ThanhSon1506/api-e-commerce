@@ -11,7 +11,7 @@ const router = extendRouter(express.Router())
 router
   .routeWithTag('/', { tag: 'product' })
   .post( auth('manageProducts'), validate(productValidation.createProduct), productController.createProduct)
-  .get( validate(productValidation.getProducts), productController.getProducts)
+  .get( auth('manageProducts'), validate(productValidation.getProducts), productController.getProducts)
 router
   .routeWithTag('/ratings', { tag: 'product' })
   .put(auth(), validate(productValidation.ratingProduct), productController.ratingProduct)

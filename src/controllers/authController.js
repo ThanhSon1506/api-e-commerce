@@ -60,16 +60,12 @@ const authController = {
     const { email, password } = req.body
     const user = await authService.loginUserWithEmailAndPassword(email, password)
     const tokens = await tokenService.generateAuthTokens(user)
-    const accessToken= tokens.access.token
-    res.cookie('refreshToken', tokens.refresh.token, {
-      httpOnly: true,
-      secure: false,
-      path: '/',
-      sameSite: 'strict'
+
+    res.status(200).json({
+      success:false,
+      accessToken: tokens.access.token,
+      refreshToken: tokens.refresh.token
     })
-    // eslint-disable-next-line no-unused-vars
-    const { password: userPassword, role, ...other } = user._doc
-    return res.send({ status:true, message:'Login successfully', accessToken, other })
   }),
   /**
  * Logout auth
@@ -83,7 +79,7 @@ const authController = {
       httpOnly: true,
       secure: true
     })
-    return res.status(200).json({ success: true, message: 'Logged out!' })
+    return res.status(200).json({ error: false, message: 'Logged out!' })
   }),
   /**
  * refresh token in auth

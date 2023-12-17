@@ -38,7 +38,7 @@ const userValidation ={
       name: Joi.string().messages({
         'string.base': 'Trường "name" phải là một chuỗi ký tự.'
       }),
-      role: Joi.string().messages({
+      role: Joi.array().messages({
         'string.base': 'Trường "role" phải là một chuỗi ký tự.'
       }),
       sortBy: Joi.string().messages({

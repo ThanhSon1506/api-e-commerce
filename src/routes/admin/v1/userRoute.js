@@ -10,7 +10,7 @@ const router = extendRouter(express.Router())
 router
   .routeWithTag('/', { tag: 'User' })
   .post(auth('manageUsers'), validate(userValidation.createUser), userController.createUser)
-  .get(auth('getUsers'), validate(userValidation.getUsers), userController.getAllUsers)
+  .get(auth('manageUsers'), validate(userValidation.getUsers), userController.getAllUsers)
 
 router
   .routeWithTag('/current', { tag: 'User' })
