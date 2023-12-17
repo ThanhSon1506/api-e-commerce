@@ -17,10 +17,10 @@ const authService = {
   loginUserWithEmailAndPassword :expressAsyncHandler( async (email, password) => {
     const user = await userService.getUserByEmail(email)
     if (!user) {
-      throw new ApiError(httpStatus.UNAUTHORIZED, 'Email không hợp lệ')
+      throw new ApiError(httpStatus.UNAUTHORIZED, 'Email hoặc Mật khẩu không chính xác')
     }
-    if ( !(await user.isCorrectPassword(password))) {
-      throw new ApiError(httpStatus.UNAUTHORIZED, 'Mật khẩu không chính xác')
+    if (!(await user.isCorrectPassword(password))) {
+      throw new ApiError(httpStatus.UNAUTHORIZED, 'Email hoặc Mật khẩu không chính xác')
     }
     return user
   }),

@@ -4,7 +4,8 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
 import dbConnect from '~/config/initMongo'
-import routes from '~/routes/v1'
+import routesAdmin from '~/routes/admin/v1'
+import routesClient from '~/routes/client/v1'
 import config from '~/config/config'
 import morgan from '~/config/morgan'
 import mongoSanitize from 'express-mongo-sanitize'
@@ -43,11 +44,12 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 if (config.env === 'production') {
-  app.use('/v1', apiLimiter)
-  app.use('/v1/auth', authLimiter)
+  app.use('/admin/v1', apiLimiter)
+  app.use('/admin/v1/auth', authLimiter)
 }
 
-app.use('/v1', routes)
+app.use('/admin/v1', routesAdmin)
+app.use('/api/v1', routesClient)
 
 app.use((req, res, next) => {
   next(new ApiError(httpStatus.NOT_FOUND, 'Not found'))

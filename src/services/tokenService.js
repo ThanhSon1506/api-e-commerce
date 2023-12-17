@@ -17,10 +17,12 @@ const tokenService ={
  * @param {string} [secret]
  * @returns {string}
  */
-  generateToken: (userId, role, expires, type, secret = config.jwt.secret ) => {
+  generateToken: (user, role, expires, type, secret = config.jwt.secret ) => {
     const payload = {
-      sub: userId,
-      role:role,
+      sub: user.id,
+      org_id:user.org_id,
+      role: role,
+      name: (user.lastName? user.lastName + ' ': '') + (user.firstName || ''),
       iat: moment().unix(),
       exp: expires.unix(),
       type
@@ -67,9 +69,9 @@ const tokenService ={
   generateAuthTokens:expressAsyncHandler(async(user) => {
     if (user) {
       const accessTokenExpires = moment().add(config.jwt.accessExpirationMinutes, 'minutes')
-      const accessToken = tokenService.generateToken(user.id, user.role, accessTokenExpires, tokenTypes.ACCESS)
+      const accessToken = tokenService.generateToken(user, user.role, accessTokenExpires, tokenTypes.ACCESS)
       const refreshTokenExpires = moment().add(config.jwt.refreshExpirationDays, 'days')
-      const refreshToken = tokenService.generateToken(user.id, user.role, refreshTokenExpires, tokenTypes.REFRESH)
+      const refreshToken = tokenService.generateToken(user, user.role, refreshTokenExpires, tokenTypes.REFRESH)
       // Mongo
       await tokenService.saveToken(refreshToken, user.id, refreshTokenExpires, tokenTypes.REFRESH)
       // Redis
@@ -97,7 +99,7 @@ const tokenService ={
       throw new ApiError(httpStatus.NOT_FOUND, 'No users found with this email')
     }
     const expires = moment().add(config.jwt.resetPasswordExpirationMinutes, 'minutes')
-    const resetPasswordToken = tokenService.generateToken(user.id, null, expires, tokenTypes.RESET_PASSWORD)
+    const resetPasswordToken = tokenService.generateToken(user, user.role, expires, tokenTypes.RESET_PASSWORD)
     await tokenService.saveToken(resetPasswordToken, user.id, expires, tokenTypes.RESET_PASSWORD)
     return resetPasswordToken
   },
@@ -109,7 +111,7 @@ const tokenService ={
  */
   generateVerifyEmailToken : async (user) => {
     const expires = moment().add(config.jwt.verifyEmailExpirationMinutes, 'minutes')
-    const verifyEmailToken = tokenService.generateToken(user.id, user.role, expires, tokenTypes.VERIFY_EMAIL)
+    const verifyEmailToken = tokenService.generateToken(user, user.role, expires, tokenTypes.VERIFY_EMAIL)
     await tokenService.saveToken(verifyEmailToken, user.id, expires, tokenTypes.VERIFY_EMAIL)
     return verifyEmailToken
   }

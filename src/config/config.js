@@ -54,8 +54,8 @@ module.exports = {
     port:envVars.REDIS_PORT
   },
   mongoose: {
-    url: envVars.MONGODB_URL + (envVars.NODE_ENV === 'test' ? '-test' : ''),
-    url_local:envVars.MONGO_LOCAL + (envVars.NODE_ENV === 'test' ? '-test' : ''),
+    url: envVars.MONGODB_URL,
+    url_local:envVars.MONGO_LOCAL,
     options: {
       useNewUrlParser: true,
       useUnifiedTopology: true

@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "E:\\workpage\\app\\api-e-commerce\\src\\logs\\.9a2dfe40bf9fe1e93dd1f46d07868d1fcc80ca5c-audit.json",
+    "files": [
+        {
+            "date": 1702809950572,
+            "name": "E:\\workpage\\app\\api-e-commerce\\src\\logs\\2023-12-17.log",
+            "hash": "29712b4e4e79aa440f845c7f4e422f3f58d654c5f8b424cde3d77e4b6c327dbc"
+        }
+    ],
+    "hashType": "sha256"
+}
