@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
     minlength: [8, 'Minimum password length is 8 characters']
   },
   role: {
-    type: mongoose.Schema.Types.String,
+    type: mongoose.Schema.Types.Array,
     default: 'user'
   },
   cart:[{
@@ -69,6 +69,10 @@ const userSchema = new mongoose.Schema({
   },
   passwordResetExpires: {
     type: mongoose.Schema.Types.String
+  },
+  org_id: {
+    type: mongoose.Schema.Types.String,
+    required: true
   }
 },
 { timestamps: true }

@@ -1,12 +1,11 @@
 const mongoose = require('mongoose')
 const { tokenTypes } = require('../config/tokens')
+const config = require('~/config/config')
 
 const tokenSchema = mongoose.Schema(
   {
     token: {
-      type: mongoose.Schema.Types.String,
-      required: true,
-      index: true
+      type: mongoose.Schema.Types.String
     },
     user: {
       type: mongoose.SchemaTypes.ObjectId,
@@ -15,12 +14,10 @@ const tokenSchema = mongoose.Schema(
     },
     type: {
       type: mongoose.Schema.Types.String,
-      enum: [tokenTypes.REFRESH, tokenTypes.RESET_PASSWORD, tokenTypes.VERIFY_EMAIL],
-      required: true
+      enum: [tokenTypes.REFRESH, tokenTypes.RESET_PASSWORD, tokenTypes.VERIFY_EMAIL]
     },
     expires: {
-      type: mongoose.Schema.Types.Date,
-      required: true
+      type: mongoose.Schema.Types.Date
     },
     blacklisted: {
       type: mongoose.Schema.Types.Boolean,
@@ -36,6 +33,10 @@ const tokenSchema = mongoose.Schema(
 /**
  * @typedef Token
  */
+
+tokenSchema.index({ 'createdAt': 1 }, { expireAfterSeconds: Number(config.jwt.refreshExpirationDays * 24 * 60 * 60 ) })
+tokenSchema.index({ token: 1, type: 1 })
+
 const Token = mongoose.model('Token', tokenSchema)
 
 module.exports = Token
