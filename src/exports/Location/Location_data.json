@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "65805aa36a7555e7d3ead387",
+    "name": "Địa điểm mặc định",
+    "location_type": "default",
+    "email": "admin@gmail.com",
+    "address1": "151 dien bien phu",
+    "address2": null,
+    "zip": "700000",
+    "city": null,
+    "province": "Hồ Chí Minh",
+    "country": "Việt Nam",
+    "phone": "0326440254",
+    "country_code": "VN",
+    "country_name": null,
+    "province_code": "3",
+    "district": "TP. Thủ Đức (Gồm Q2, Q9, Q.TĐ)",
+    "district_code": "2087",
+    "ward": null,
+    "ward_code": null,
+    "creted_at": null,
+    "is_pated_at": null,
+    "updarimary": false,
+    "is_unavailable_quantity": false,
+    "type": "default",
+    "is_primary": true,
+    "org_id": "65805aa36a7555e7d3ead385",
+    "createdAt": "2023-12-18T14:43:47.418Z",
+    "updatedAt": "2023-12-18T14:43:47.418Z",
+    "__v": 0
+  }
+]

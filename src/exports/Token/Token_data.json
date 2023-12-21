@@ -20,5 +20,16 @@
     "createdAt": "2023-12-09T06:58:21.754Z",
     "updatedAt": "2023-12-09T06:58:21.754Z",
     "__v": 0
+  },
+  {
+    "_id": "65805aa46a7555e7d3ead38b",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTgwNWFhMzZhNzU1NWU3ZDNlYWQzODkiLCJvcmdfaWQiOiI2NTgwNWFhMzZhNzU1NWU3ZDNlYWQzODUiLCJyb2xlIjpbImFkbWluIl0sIm5hbWUiOiJabiBEZXciLCJpYXQiOjE3MDI5MTA2MjgsImV4cCI6MTcwNTUwMjYyOCwidHlwZSI6InJlZnJlc2gifQ.r_qfrCPHuUjfmekCbkElwjuhGqxsqYuj_tOdMU5xPWA",
+    "user": "65805aa36a7555e7d3ead389",
+    "type": "refresh",
+    "expires": "2024-01-17T14:43:48.640Z",
+    "blacklisted": false,
+    "createdAt": "2023-12-18T14:43:48.656Z",
+    "updatedAt": "2023-12-18T14:43:48.656Z",
+    "__v": 0
   }
 ]
