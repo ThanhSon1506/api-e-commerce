@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "_id": "65805aa36a7555e7d3ead389",
+    "firstName": "Dew",
+    "lastName": "Zn",
+    "mobile": "32",
+    "email": "admin@gmail.com",
+    "password": "$2b$12$rfLaSd9ZZaypax71FHtJWukEwjPKoJAVLC4H4jCxsCK.4cjOSdxCK",
+    "role": [
+      "admin"
+    ],
+    "cart": [],
+    "address": [],
+    "wishlist": [],
+    "isBlocked": false,
+    "isEmailVerified": true,
+    "org_id": "65805aa36a7555e7d3ead385",
+    "createdAt": "2023-12-18T14:43:47.476Z",
+    "updatedAt": "2023-12-18T14:43:47.476Z",
+    "__v": 0
+  }
+]
