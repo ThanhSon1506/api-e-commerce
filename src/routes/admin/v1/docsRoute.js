@@ -9,7 +9,7 @@ const router = express.Router()
 const swaggerDefinition= getSwaggerDefinitions()
 const specs = swaggerJSDoc({
   swaggerDefinition,
-  apis: ['./src/routes/v1/*.js', './src/models/*.js']
+  apis: ['./src/routes/admin/v1/*.js', './src/models/*.js']
 })
 
 

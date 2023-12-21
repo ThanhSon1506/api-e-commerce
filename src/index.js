@@ -5,7 +5,7 @@ const logger = require('./config/logger')
 let server
 
 server = app.listen(config.port, () => {
-  logger.info(`Server is running on the port http://${config.host}:${config.port}/v1/docs`)
+  logger.info(`Server is running on the port http://${config.host}:${config.port}/admin/v1/docs`)
 })
 
 

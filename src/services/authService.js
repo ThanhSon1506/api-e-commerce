@@ -32,11 +32,7 @@ const authService = {
   refreshAuth: expressAsyncHandler(async (refreshToken) => {
     const refreshTokenDoc = await tokenService.verifyToken(refreshToken, tokenTypes.REFRESH)
     const user = await userService.getUserById(refreshTokenDoc.user)
-    if (!user) {
-      throw new Error()
-    }
-    await refreshTokenDoc.deleteOne()
-    const tokens = await tokenService.generateAuthTokens(user)
+    const tokens = await tokenService.generateRefreshAuthTokens(user)
     return tokens
   }),
   /**

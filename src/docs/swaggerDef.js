@@ -9,7 +9,7 @@ const { convertStringRoute } = require('~/utils/convert')
 const getSwaggerDefinitions = () => {
   const modelsPath = './src/models/**/*.js'
   const models = glob.sync(modelsPath)
-  const routesPath = './src/routes/v1'
+  const routesPath = './src/routes/admin/v1'
   const routes = glob.sync(`${routesPath}/**/*.js`)
 
   const swaggerDefinitions = {
