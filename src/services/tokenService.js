@@ -54,8 +54,7 @@ const tokenService ={
  */
 
   verifyToken: async (token, type) => {
-    const payload = jwt.verify(token, config.jwt.secret)
-    const tokenDoc = await Token.findOne({ token, type, user: payload.sub, blacklisted: false })
+    const tokenDoc = await Token.findOne({ token, type, blacklisted: false })
     if (!tokenDoc) {
       throw new Error('Token not found')
     }
@@ -75,7 +74,7 @@ const tokenService ={
       // Mongo
       await tokenService.saveToken(refreshToken, user.id, refreshTokenExpires, tokenTypes.REFRESH)
       // Redis
-      await tokenService.saveTokenWithRedis(user, refreshToken)
+      // await tokenService.saveTokenWithRedis(user, refreshToken)
       return {
         access: {
           token: accessToken,
@@ -85,6 +84,18 @@ const tokenService ={
           token: refreshToken,
           expires: refreshTokenExpires.toDate()
         }
+      }
+    }
+  }),
+  generateRefreshAuthTokens:expressAsyncHandler(async(user) => {
+    if (user) {
+      const accessTokenExpires = moment().add(config.jwt.accessExpirationMinutes, 'minutes')
+      const accessToken = tokenService.generateToken(user, user.role, accessTokenExpires, tokenTypes.ACCESS)
+      return {
+        access: {
+          token: accessToken,
+          expires: accessTokenExpires.toDate()
+        },
       }
     }
   }),

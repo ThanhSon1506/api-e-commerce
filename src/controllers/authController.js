@@ -62,7 +62,7 @@ const authController = {
     const tokens = await tokenService.generateAuthTokens(user)
 
     res.status(200).json({
-      success:false,
+      success:true,
       accessToken: tokens.access.token,
       refreshToken: tokens.refresh.token
     })
@@ -87,16 +87,10 @@ const authController = {
  * @returns {Promise<Object>}
  */
   requestRefreshToken: expressAsyncHandler(async (req, res) => {
-    const refreshToken = req.cookies.refreshToken
+    const refreshToken = req.headers.authorization?.split('Bearer ')
     const tokens = await authService.refreshAuth(refreshToken)
     const newAccessToken=tokens.access.token
-    res.cookie('refreshToken', tokens.refresh.token, {
-      httpOnly: true,
-      secure: false,
-      path: '/',
-      sameSite: 'strict'
-    })
-    return res.status(200).json({ accessToken: newAccessToken })
+    return res.status(200).json({ success:true, accessToken: newAccessToken })
   }),
   /**
  * forgot password

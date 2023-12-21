@@ -38,21 +38,15 @@ const authMiddleware = {
     // });
   }),
   verifyRefreshToken: expressAsyncHandler((req, res, next) => {
-    const refreshToken = req.cookies.refreshToken
-    if (refreshToken === null) return res.status(401).json({ status: false, message: 'Invalid request' })
+    const refreshToken = req.headers.authorization?.split('Bearer ')[1]
+    if (!refreshToken) return res.status(401).json({ success: false, message: 'Your token is not valid' })
     try {
       const decodeJwt = jwt.verify(refreshToken, config.jwt.secret)
-      // verify if token is cookie or not
-      redisClient.get(decodeJwt.sub, (err, data) => {
-        if (err) throw new Error(err)
-
-        if (data === null) return res.status(401).json({ status: false, message: 'Invalid request. Token is not invalid' })
-        if (JSON.parse(data).token != refreshToken) return res.status(401).json({ status: false, message: 'Invalid request. Token is not correct data' })
-        next()
-      })
+      if (!decodeJwt) return res.status(401).json({ success: false, message: 'Your token is not valid' })
+      next()
     } catch (error) {
       return res.status(401).json({
-        status: false, message: 'Your token is not valid', data: error
+        success: false, message: 'Your token is not valid'
       })
     }
   })
