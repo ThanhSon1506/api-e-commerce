@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "65805aa36a7555e7d3ead385",
+    "country": "Việt Nam",
+    "country_code": "VN",
+    "province": "Hồ Chí Minh",
+    "province_code": "3",
+    "address1": "151 dien bien phu",
+    "email": "admin@gmail.com",
+    "name": "Shop dev",
+    "shop_owner": "Shop dev",
+    "phone": "0326440254",
+    "timezone": "(GMT+07:00) Hanoi",
+    "zip": "700000",
+    "money_format": "{{amount}}₫",
+    "domain": "http://localhost:4000",
+    "createdAt": "2023-12-18T14:43:47.371Z",
+    "updatedAt": "2023-12-18T14:43:47.371Z",
+    "__v": 0
+  }
+]

@@ -13,7 +13,7 @@ if (!fs.existsSync(exportsPath)) {
 }
 
 (async function exportData() {
-  await mongoose.connect(config.mongoose.url_local, config.mongoose.options).then(() => logger.info('Database connected!')).catch(err => logger.error(err))
+  await mongoose.connect(config.mongoose.url, config.mongoose.options).then(() => logger.info('Database connected!')).catch(err => logger.error(err))
   if (mongoose.connection.readyState === 1) {
     logger.info('Đã kết nối đến cơ sở dữ liệu.')
   } else {

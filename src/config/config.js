@@ -10,25 +10,30 @@ const envVarsSchema = Joi.object()
     HOST_NAME: Joi.string().description('the host name serve in host'),
     URL_SERVER: Joi.string().description('the url serve in host'),
     URL_CLIENT: Joi.string().description('the url client in host'),
+
     PORT: Joi.number().default(3000),
     MONGO_DB: Joi.string().required().description('Mongo DB url'),
-    MONGO_LOCAL: Joi.string().required().description('Mongo DB url'),
+
     JWT_KEY: Joi.string().required().description('JWT secret key'),
     JWT_ACCESS_EXPIRATION_MINUTES: Joi.number().default(30).description('minutes after which access tokens expire'),
     JWT_REFRESH_EXPIRATION_DAYS: Joi.number().default(30).description('days after which refresh tokens expire'),
     JWT_RESET_PASSWORD_EXPIRATION_MINUTES: Joi.number().default(10).description('minutes after which reset password token expires'),
     JWT_VERIFY_EMAIL_EXPIRATION_MINUTES: Joi.number().default(10).description('minutes after which verify email token expires'),
     JWT_SECURE:Joi.boolean().default(false).description('Boolean in jwt secure'),
+
     EMAIL_HOST: Joi.string().description('server that will send the emails'),
     EMAIL_PORT: Joi.number().description('port to connect to the email server'),
     EMAIL_NAME: Joi.string().description('username for email server'),
     EMAIL_APP_PASSWORD: Joi.string().description('password for email server'),
     EMAIL_FROM: Joi.string().description('the from field in the emails sent by the app'),
+
     LIMIT_PRODUCTS: Joi.number().default(2).description('limit product'),
+
     REDIS_URI:Joi.string().description('Redis DB url'),
-    REDIS_PASSWORD:Joi.string().description('Redis DB password'),
+    REDIS_PASSWORD:Joi.string().default('').description('Redis DB password'),
     REDIS_PORT:Joi.string().description('Redis DB port'),
     DAYS_TO_KEEP:Joi.number().default(7).description('Days to keep file in project'),
+
     CLOUDINARY_NAME:Joi.string().description('the name cloudinary'),
     CLOUDINARY_KEY:Joi.string().description('the key cloudinary'),
     CLOUDINARY_SECRET:Joi.string().description('the secret cloudinary')
@@ -54,8 +59,7 @@ module.exports = {
     port:envVars.REDIS_PORT
   },
   mongoose: {
-    url: envVars.MONGODB_URL,
-    url_local:envVars.MONGO_LOCAL,
+    url: envVars.MONGO_DB,
     options: {
       useNewUrlParser: true,
       useUnifiedTopology: true
