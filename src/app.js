@@ -3,35 +3,37 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
-import dbConnect from '~/config/initMongo'
-import routesAdmin from '~/routes/admin/v1'
-import routesClient from '~/routes/client/v1'
-import config from '~/config/config'
-import morgan from '~/config/morgan'
 import mongoSanitize from 'express-mongo-sanitize'
-import ErrorHandler from '~/middleware/errorHandler'
 import compression from 'compression'
 import helmet from 'helmet'
 import xss from 'xss-clean'
-import { apiLimiter, authLimiter } from '~/middleware/rateLimiter'
-import ApiError from './utils/ApiError'
 import httpStatus from 'http-status'
-require('./utils/cleanupLogsJob')
-require('./data/backupData')
+import dbConnect from './config/initMongo'
+import routesAdmin from './routes/admin/v1'
+import routesClient from './routes/client/v1'
+import config from './config/config'
+import morgan from './config/morgan'
+import ErrorHandler from './middleware/errorHandler'
+import { apiLimiter, authLimiter } from './middleware/rateLimiter'
+import ApiError from './utils/ApiError'
+import './utils/cleanupLogsJob'
+import './data/backupData'
+
 const app = express()
 const corsOptions = {
-  origin:'*',
+  origin: '*',
   credentials: true,
   optionSuccessStatus: 200,
   methods: ['GET', 'POST', 'PUT', 'DELETE']
 }
+
 dotenv.config()
 dbConnect()
 
 app.use(cors(corsOptions))
 if (config.env !== 'test') {
-  app.use(morgan.successHandler)
-  app.use(morgan.errorHandler)
+  // app.use(morgan.successHandler)
+  // app.use(morgan.errorHandler)
 }
 app.use(mongoSanitize())
 app.use(compression())
@@ -58,4 +60,4 @@ app.use((req, res, next) => {
 app.use(ErrorHandler.notFound)
 app.use(ErrorHandler.errorHandler)
 
-module.exports = app
+export default app

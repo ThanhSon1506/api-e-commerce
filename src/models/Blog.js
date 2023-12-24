@@ -1,5 +1,5 @@
-import mongoose from 'mongoose' // Erase if already required
-import { paginate } from './plugins'
+var mongoose = require('mongoose'); // Erase if already required
+var paginate = require('./plugins').paginate;
 
 // Declare the Schema of the Mongo model
 var blogSchema = new mongoose.Schema({
@@ -50,12 +50,17 @@ var blogSchema = new mongoose.Schema({
   timestamps: true,
   toJSON: { virtuals: true },
   toObject: { virtuals: true }
-})
+});
+
 // Function to increment numberViews
 blogSchema.statics.incrementViews = async function (blogId) {
-  return await this.findByIdAndUpdate(blogId, { $inc: { numberViews: 1 } }, { new: true })
-}
+  return await this.findByIdAndUpdate(blogId, { $inc: { numberViews: 1 } }, { new: true });
+};
+
 // add plugin that converts mongoose to json
-blogSchema.plugin(paginate)
+blogSchema.plugin(paginate);
+
 //Export the model
-module.exports = mongoose.model('Blog', blogSchema)
+var BlogModel = mongoose.models.Blog || mongoose.model('Blog', blogSchema);
+
+module.exports = BlogModel;

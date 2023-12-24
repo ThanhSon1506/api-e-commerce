@@ -1,7 +1,7 @@
 const expressAsyncHandler = require('express-async-handler')
 import Shop from '~/models/Shop'
 import Location from '~/models/Location'
-import User from '~/models/User'
+import User from '~/models/User.js'
 import tokenService from '~/services/tokenService'
 
 const shopService = {

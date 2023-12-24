@@ -1,7 +1,7 @@
 const expressAsyncHandler = require('express-async-handler')
 import Coupon from '~/models/Coupon'
 import Order from '~/models/Order'
-import User from '~/models/User'
+import User from '~/models/User.js'
 
 const orderService={
   createOrder:expressAsyncHandler(async(userId, productBody) => {

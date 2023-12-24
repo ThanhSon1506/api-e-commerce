@@ -15,4 +15,6 @@ var detailProductSchema = new mongoose.Schema({
 // add plugin that converts mongoose to json
 detailProductSchema.plugin(paginate)
 //Export the model
-module.exports = mongoose.model('DetailProduct', detailProductSchema)
+var DetailProductModel = mongoose.models.DetailProduct || mongoose.model('DetailProduct', detailProductSchema)
+
+module.exports = DetailProductModel

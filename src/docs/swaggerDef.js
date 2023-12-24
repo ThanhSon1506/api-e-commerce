@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const glob = require('glob')
 const path = require('path')
 // const validationObjects = require('~/utils/readAllValidations')
-const { version } = require('../../package.json')
+// const { version } = require('../../package.json')
 const config = require('~/config/config')
 const { convertStringRoute } = require('~/utils/convert')
 
@@ -16,7 +16,7 @@ const getSwaggerDefinitions = () => {
     openapi: '3.0.3',
     info: {
       title: 'Swagger Nodejs - OpenAPI 3.0',
-      version,
+      version:'1.0.1',
       description: `
           The Project Nodejs APIs documentation
           - 🪲: bug

@@ -1,5 +1,5 @@
-import mongoose from 'mongoose' // Erase if already required
-import { paginate } from './plugins'
+var mongoose = require('mongoose'); // Erase if already required
+var paginate = require('./plugins').paginate;
 
 // Declare the Schema of the Mongo model
 var blogCategorySchema = new mongoose.Schema({
@@ -17,9 +17,12 @@ var blogCategorySchema = new mongoose.Schema({
   }
 }, {
   timestamps: true
-})
+});
+
 // add plugin that converts mongoose to json
-blogCategorySchema.plugin(paginate)
+blogCategorySchema.plugin(paginate);
 
 //Export the model
-module.exports = mongoose.model('BlogCategory', blogCategorySchema)
+var BlogCategoryModel = mongoose.models.BlogCategory || mongoose.model('BlogCategory', blogCategorySchema);
+
+module.exports = BlogCategoryModel;

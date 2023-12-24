@@ -28,4 +28,6 @@ var couponSchema = new mongoose.Schema({
 // add plugin that converts mongoose to json
 couponSchema.plugin(paginate)
 //Export the model
-module.exports = mongoose.model('Coupon', couponSchema)
+var CouponModel = mongoose.models.Coupon || mongoose.model('Coupon', couponSchema)
+
+module.exports = CouponModel

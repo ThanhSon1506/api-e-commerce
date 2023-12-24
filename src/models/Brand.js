@@ -27,4 +27,6 @@ var brandSchema = new mongoose.Schema({
 // add plugin that converts mongoose to json
 brandSchema.plugin(paginate)
 //Export the model
-module.exports = mongoose.model('Brand', brandSchema)
+var BrandModel = mongoose.models.Brand || mongoose.model('Brand', brandSchema)
+
+module.exports = BrandModel

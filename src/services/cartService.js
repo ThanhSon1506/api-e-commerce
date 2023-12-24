@@ -1,5 +1,5 @@
 const expressAsyncHandler = require('express-async-handler')
-import User from '~/models/User'
+import User from '~/models/User.js'
 
 const cartService = {
   createCart: expressAsyncHandler(async (userId, cartBody) => {

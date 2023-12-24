@@ -24,4 +24,5 @@ const shopSchema = mongoose.Schema(
 /**
  * @typedef Shop
  */
-module.exports = mongoose.model('Shop', shopSchema)
+const ShopModel = mongoose.models.Shop || mongoose.model('Shop', shopSchema)
+module.exports = ShopModel

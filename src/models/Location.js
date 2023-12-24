@@ -36,5 +36,6 @@ const locationSchema = mongoose.Schema(
 /**
  * @typedef Location
  */
-module.exports = mongoose.model('Location', locationSchema)
+var LocationModel = mongoose.models.Location || mongoose.model('Location', locationSchema)
 
+module.exports = LocationModel
