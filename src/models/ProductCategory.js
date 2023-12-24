@@ -1,5 +1,5 @@
-import mongoose from 'mongoose' // Erase if already required
-import { paginate } from './plugins'
+var mongoose = require('mongoose') // Erase if already required
+var paginate = require('./plugins').paginate
 
 // Declare the Schema of the Mongo model
 var productCategorySchema = new mongoose.Schema({
@@ -17,12 +17,11 @@ var productCategorySchema = new mongoose.Schema({
   },
   link: {
     type: mongoose.Schema.Types.String,
-    default:null
+    default: null
   },
-  image:{
+  image: {
     type: mongoose.Schema.Types.String,
-    default:null
-
+    default: null
   },
   subcategories: {
     type: mongoose.Schema.Types.Array
@@ -34,4 +33,5 @@ var productCategorySchema = new mongoose.Schema({
 // add plugin that converts mongoose to json
 productCategorySchema.plugin(paginate)
 //Export the model
-module.exports = mongoose.model('ProductCategory', productCategorySchema)
+const ProductCategoryModel = mongoose.models.ProductCategory || mongoose.model('ProductCategory', productCategorySchema)
+module.exports = ProductCategoryModel

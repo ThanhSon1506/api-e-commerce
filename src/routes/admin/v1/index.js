@@ -1,16 +1,16 @@
-const userRoute = require('./userRoute')
-const authRoute = require('./authRoute')
-const productRoute = require('./productRoute')
-const productCategoryRoute = require('./productCategoryRoute')
-const blogCategoryRoute = require('./blogCategoryRoute')
-const blogRoute = require('./blogRoute')
-const docsRoute =require('./docsRoute')
-const brandRoute =require('./brandRoute')
-const couponRoute =require('./couponRoute')
-const orderRoute =require('./orderRoute')
-const shopRoute =require('./shopRoute')
-const express = require('express')
-const config = require('~/config/config')
+import express from 'express'
+import userRoute from './userRoute'
+import authRoute from './authRoute'
+import productRoute from './productRoute'
+import productCategoryRoute from './productCategoryRoute'
+import blogCategoryRoute from './blogCategoryRoute'
+import blogRoute from './blogRoute'
+import docsRoute from './docsRoute'
+import brandRoute from './brandRoute'
+import couponRoute from './couponRoute'
+import orderRoute from './orderRoute'
+import shopRoute from './shopRoute'
+import config from '../../../config/config'
 
 const router = express.Router()
 
@@ -45,11 +45,11 @@ const defaultRoutes = [
   },
   {
     path: '/brand',
-    route:brandRoute
+    route: brandRoute
   },
   {
     path: '/coupon',
-    route:couponRoute
+    route: couponRoute
   },
   {
     path: '/order',
@@ -78,4 +78,4 @@ if (config.env === 'development') {
   })
 }
 
-module.exports = router
+export default router

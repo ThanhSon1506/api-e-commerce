@@ -1,4 +1,4 @@
-const tokenTypes = {
+var tokenTypes = {
   ACCESS: 'access',
   REFRESH: 'refresh',
   RESET_PASSWORD: 'resetPassword',
@@ -6,5 +6,5 @@ const tokenTypes = {
 }
 
 module.exports = {
-  tokenTypes
+  tokenTypes: tokenTypes
 }

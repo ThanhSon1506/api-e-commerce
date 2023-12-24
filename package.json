@@ -1,20 +1,21 @@
 {
   "name": "cuahangdientu",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "cli": "babel-node ./src/bin/cli.js",
     "data:scrape": "babel-node ./src/data/scrapeData.js",
+    "data:clear": "babel-node ./src/data/clearModels.js",
     "data:clear": "babel-node ./src/data/clearModels.js",
     "data:import": "npx babel-node ./src/data/importData.js",
     "data:export": "npx babel-node ./src/data/exportData.js",
     "lint:fix": "eslint . --fix",
     "lint": "eslint src --ext js --report-unused-disable-directives --max-warnings 0",
-    "clean": "rmdir /q /s build && mkdir build",
+    "clean": "rimraf build && mkdir build",
     "build-babel": "babel ./src -d ./build/src",
     "build": "npm run clean && npm run build-babel",
-    "production": "npm run build && node ./build/src/index.js",
-    "dev": "nodemon --exec babel-node ./src/index.js",
+    "production": "node ./build/src/index.js",
+    "dev": "nodemon --experimental-modules --es-module-specifier-solution=node --exec babel-node ./src/index.js",
     "dev-eslint": "nodemon --exec \"npm run lint:fix && babel-node ./src/index.js\""
   },
   "dependencies": {
@@ -28,6 +29,7 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
+    "esm": "^3.2.25",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
     "express-mongo-sanitize": "^2.2.0",

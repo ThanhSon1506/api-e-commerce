@@ -30,4 +30,6 @@ var orderSchema = new mongoose.Schema({
 // add plugin that converts mongoose to json
 orderSchema.plugin(paginate)
 //Export the model
-module.exports = mongoose.model('Order', orderSchema)
+var OrderModel = mongoose.models.Order || mongoose.model('Order', orderSchema)
+
+module.exports = OrderModel

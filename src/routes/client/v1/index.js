@@ -1,6 +1,7 @@
-const express = require('express')
-const config = require('~/config/config')
+import express from 'express'
+// import config from '~/config/config';
 import productRoute from './productRoute'
+
 const router = express.Router()
 
 const defaultRoutes = [
@@ -8,7 +9,6 @@ const defaultRoutes = [
     path: '/',
     route: productRoute
   }
- 
 ]
 
 // const devRoutes = [
@@ -24,8 +24,8 @@ defaultRoutes?.forEach((route) => {
 /* istanbul ignore next */
 // if (config.env === 'development') {
 //   devRoutes.forEach((route) => {
-//     router.use(route.path, route.route)
-//   })
+//     router.use(route.path, route.route);
+//   });
 // }
 
-module.exports = router
+export default router

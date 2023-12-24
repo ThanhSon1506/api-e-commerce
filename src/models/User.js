@@ -1,8 +1,8 @@
-import mongoose from 'mongoose'
-import { paginate } from './plugins'
-const { isEmail } = require('validator')
-const bcrypt = require('bcrypt')
-const crypto = require('crypto')
+var mongoose = require('mongoose')
+var paginate = require('./plugins').paginate
+var isEmail = require('validator').isEmail
+var bcrypt = require('bcrypt')
+var crypto = require('crypto')
 
 
 const userSchema = new mongoose.Schema({
@@ -50,10 +50,6 @@ const userSchema = new mongoose.Schema({
       ref: 'Product'
     }
   ],
-  isBlocked: {
-    type: mongoose.Schema.Types.Boolean,
-    default: false
-  },
   isEmailVerified:{
     type:mongoose.Schema.Types.Boolean,
     default:false
@@ -78,49 +74,34 @@ const userSchema = new mongoose.Schema({
 { timestamps: true }
 )
 
-// fire a function after doc saved to db
-// userSchema.post('save', function (doc, next) {
-//     console.log('new user was created & saved', doc);
-//     next();
-// });
-
-// fire a function before doc saved to db
 userSchema.pre('save', function (next) {
   if (!this.isModified('password')) {
     next()
   }
-  const bcryptSalt = bcrypt.genSaltSync(12)
+  var bcryptSalt = bcrypt.genSaltSync(12)
   this.password = bcrypt.hashSync(this.password, bcryptSalt)
   next()
 })
-/**
- * Check if email is taken
- * @param {mongoose.Schema.Types.String} email - The user's email
- * @param {ObjectId} [excludeUserId] - The id of the user to be excluded
- * @returns {Promise<boolean>}
- */
+
 userSchema.statics.isEmailTaken = async function (email, excludeUserId) {
-  const user = await this.findOne({ email, _id: { $ne: excludeUserId } })
+  var user = await this.findOne({ email: email, _id: { $ne: excludeUserId } })
   return !!user
 }
-/**
- * Check if password is change
- * @param {mongoose.Schema.Types.String} password - The user's password
- * @returns {Promise<boolean>}
- */
+
 userSchema.methods = {
   isCorrectPassword: async function (password) {
     return await bcrypt.compare(password, this.password)
   },
   createPasswordChangedToken: async function () {
-    const resetToken = crypto.randomBytes(32).tomongoose.Schema.Types.String('hex')
+    var resetToken = crypto.randomBytes(32).toString('hex')
     this.passwordResetToken = crypto.createHash('sha256').update(resetToken).digest('hex')
     this.passwordResetExpires = Date.now() + 15 * 60 * 1000
     return resetToken
   }
 }
-// add plugin that converts mongoose to json
-userSchema.plugin(paginate)
-const userModel = mongoose.model('User', userSchema)
 
-module.exports = userModel
+userSchema.plugin(paginate)
+
+const UserModel = mongoose.models.User || mongoose.model('User', userSchema)
+
+module.exports = UserModel

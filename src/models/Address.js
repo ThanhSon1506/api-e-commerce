@@ -39,4 +39,6 @@ const provinceSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('Address', provinceSchema)
+const AddressModel = mongoose.models.Address || mongoose.model('Address', provinceSchema)
+
+module.exports = AddressModel
