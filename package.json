@@ -6,7 +6,6 @@
     "cli": "babel-node ./src/bin/cli.js",
     "data:scrape": "babel-node ./src/data/scrapeData.js",
     "data:clear": "babel-node ./src/data/clearModels.js",
-    "data:clear": "babel-node ./src/data/clearModels.js",
     "data:import": "npx babel-node ./src/data/importData.js",
     "data:export": "npx babel-node ./src/data/exportData.js",
     "lint:fix": "eslint . --fix",
