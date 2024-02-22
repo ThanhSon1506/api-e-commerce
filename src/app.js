@@ -10,7 +10,6 @@ import xss from 'xss-clean'
 import httpStatus from 'http-status'
 import dbConnect from './config/initMongo'
 import routesAdmin from './routes/admin/v1'
-import routesClient from './routes/client/v1'
 import config from './config/config'
 import morgan from './config/morgan'
 import ErrorHandler from './middleware/errorHandler'
@@ -32,8 +31,8 @@ dbConnect()
 
 app.use(cors(corsOptions))
 if (config.env !== 'test') {
-  // app.use(morgan.successHandler)
-  // app.use(morgan.errorHandler)
+  app.use(morgan.successHandler)
+  app.use(morgan.errorHandler)
 }
 app.use(mongoSanitize())
 app.use(compression())
@@ -50,8 +49,7 @@ if (config.env === 'production') {
   app.use('/admin/v1/auth', authLimiter)
 }
 
-app.use('/admin/v1', routesAdmin)
-app.use('/api/v1', routesClient)
+app.use('/v1', routesAdmin)
 
 app.use((req, res, next) => {
   next(new ApiError(httpStatus.NOT_FOUND, 'Not found'))

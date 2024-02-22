@@ -1,5 +1,5 @@
 const express = require('express')
-const userController = require('~/controllers/userController')
+const userController = require('../../../controllers/userController')
 const auth = require('~/middleware/auth')
 const validate = require('~/middleware/validate')
 const extendRouter = require('~/utils/extendRouter')

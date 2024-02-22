@@ -2,7 +2,6 @@ import app from './app.js'
 import config from './config/config.js'
 import logger from './config/logger.js'
 
-let server
 
 app.listen(config.port, () => {
   logger.info(`Server is running on the port http://${config.host}:${config.port}/v1/docs`)
