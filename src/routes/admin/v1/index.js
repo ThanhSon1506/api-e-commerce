@@ -58,6 +58,10 @@ const defaultRoutes = [
   {
     path: '/shop',
     route:shopRoute
+  },
+  {
+    path: '/docs',
+    route: docsRoute
   }
 ]
 
